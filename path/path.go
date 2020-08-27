@@ -8,45 +8,45 @@ var (
 	ErrBadPattern = path.ErrBadPattern
 )
 
-type Path string
+type Path struct{ inner string }
 
 func New(path string) Path {
-	return Path(path)
+	return Path{inner: path}
 }
 
 func (p Path) Base() string {
-	return path.Base(string(p))
+	return path.Base(p.inner)
 }
 
 func (p Path) Clean() Path {
-	return Path(path.Clean(string(p)))
+	return New(path.Clean(p.inner))
 }
 
 func (p Path) Dir() Path {
-	return Path(path.Dir(string(p)))
+	return New(path.Dir(p.inner))
 }
 
 func (p Path) Ext() string {
-	return path.Ext(string(p))
+	return path.Ext(p.inner)
 }
 
 func (p Path) IsAbs() bool {
-	return path.IsAbs(string(p))
+	return path.IsAbs(p.inner)
 }
 
 func (p Path) Join(elem ...string) Path {
-	return Path(path.Join(append([]string{string(p)}, elem...)...))
+	return New(path.Join(append([]string{p.inner}, elem...)...))
 }
 
 func (p Path) Match(pattern string) (matched bool, err error) {
-	return path.Match(pattern, string(p))
+	return path.Match(pattern, p.inner)
 }
 
 func (p Path) Split() (dir Path, file string) {
-	sdir, sfile := path.Split(string(p))
-	return Path(sdir), sfile
+	sdir, sfile := path.Split(p.inner)
+	return New(sdir), sfile
 }
 
 func (p Path) String() string {
-	return string(p)
+	return p.inner
 }

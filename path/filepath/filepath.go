@@ -16,14 +16,14 @@ var (
 
 type WalkFunc = filepath.WalkFunc
 
-type FilePath string
+type FilePath struct{ inner string }
 
 func New(path string) FilePath {
-	return FilePath(path)
+	return FilePath{inner: path}
 }
 
 func FromSlash(path string) FilePath {
-	return FilePath(filepath.FromSlash(path))
+	return New(filepath.FromSlash(path))
 }
 
 func Glob(pattern string) (matches []FilePath, err error) {
@@ -33,74 +33,74 @@ func Glob(pattern string) (matches []FilePath, err error) {
 	}
 
 	for _, v := range vs {
-		matches = append(matches, FilePath(v))
+		matches = append(matches, New(v))
 	}
 
 	return matches, nil
 }
 
 func (fp FilePath) Abs() (FilePath, error) {
-	v, err := filepath.Abs(string(fp))
-	return FilePath(v), err
+	v, err := filepath.Abs(fp.inner)
+	return New(v), err
 }
 
 func (fp FilePath) Base() string {
-	return filepath.Base(string(fp))
+	return filepath.Base(fp.inner)
 }
 
 func (fp FilePath) Clean() FilePath {
-	return FilePath(filepath.Clean(string(fp)))
+	return New(filepath.Clean(fp.inner))
 }
 
 func (fp FilePath) Dir() FilePath {
-	return FilePath(filepath.Dir(string(fp)))
+	return New(filepath.Dir(fp.inner))
 }
 
 func (fp FilePath) EvalSymlinks() (FilePath, error) {
-	v, err := filepath.EvalSymlinks(string(fp))
-	return FilePath(v), err
+	v, err := filepath.EvalSymlinks(fp.inner)
+	return New(v), err
 }
 
 func (fp FilePath) Ext() string {
-	return filepath.Ext(string(fp))
+	return filepath.Ext(fp.inner)
 }
 
 func (fp FilePath) IsAbs() bool {
-	return filepath.IsAbs(string(fp))
+	return filepath.IsAbs(fp.inner)
 }
 
 func (fp FilePath) Join(elem ...string) FilePath {
-	return FilePath(filepath.Join(append([]string{string(fp)}, elem...)...))
+	return New(filepath.Join(append([]string{fp.inner}, elem...)...))
 }
 
 func (fp FilePath) Match(pattern string) (matched bool, err error) {
-	return filepath.Match(pattern, string(fp))
+	return filepath.Match(pattern, fp.inner)
 }
 
 func (fp FilePath) Rel(target FilePath) (FilePath, error) {
-	v, err := filepath.Rel(string(fp), string(target))
-	return FilePath(v), err
+	v, err := filepath.Rel(fp.inner, target.inner)
+	return New(v), err
 }
 
 func (fp FilePath) Split() (dir FilePath, file string) {
-	sdir, sfile := filepath.Split(string(fp))
-	return FilePath(sdir), sfile
+	sdir, sfile := filepath.Split(fp.inner)
+	return New(sdir), sfile
 }
 
 func (fp FilePath) ToSlash() string {
-	return filepath.ToSlash(string(fp))
+	return filepath.ToSlash(fp.inner)
 }
 
 func (fp FilePath) VolumeName() string {
-	return filepath.VolumeName(string(fp))
+	return filepath.VolumeName(fp.inner)
 }
 
 func (fp FilePath) Walk(fn WalkFunc) error {
-	return filepath.Walk(string(fp), fn)
+	return filepath.Walk(fp.inner, fn)
 }
 
 func (fp FilePath) String() string {
-	return string(fp)
+	return fp.inner
 }
 
 type List []FilePath
@@ -113,7 +113,7 @@ func NewList(list string) List {
 
 	v := make(List, len(fpaths))
 	for i, fpath := range fpaths {
-		v[i] = FilePath(fpath)
+		v[i] = New(fpath)
 	}
 
 	return v
