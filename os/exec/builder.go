@@ -7,86 +7,59 @@ import (
 )
 
 type Builder struct {
-	ctx    context.Context
-	name   string
-	args   []string
-	dir    string
-	envs   []string
-	stderr io.Writer
-	stdout io.Writer
-	stdin  io.Reader
+	inner *exec.Cmd
 }
 
 func NewBuilder(name string, args ...string) *Builder {
-	return NewBuilderContext(context.TODO(), name, args...)
+	return &Builder{inner: exec.Command(name, args...)}
 }
 
 func NewBuilderContext(ctx context.Context, name string, args ...string) *Builder {
-	return &Builder{
-		ctx:  ctx,
-		name: name,
-		args: args,
-	}
-}
-
-func (b *Builder) Context(ctx context.Context) *Builder {
-	b.ctx = ctx
-	return b
+	return &Builder{inner: exec.CommandContext(ctx, name, args...)}
 }
 
 func (b *Builder) Arg(arg string) *Builder {
-	b.args = append(b.args, arg)
+	b.inner.Args = append(b.inner.Args, arg)
 	return b
 }
 
 func (b *Builder) Args(args []string) *Builder {
-	b.args = append(b.args, args...)
+	b.inner.Args = append(b.inner.Args, args...)
 	return b
 }
 
 func (b *Builder) Dir(dir string) *Builder {
-	b.dir = dir
+	b.inner.Dir = dir
 	return b
 }
 
 func (b *Builder) Env(key, value string) *Builder {
-	b.envs = append(b.envs, key+"="+value)
+	b.inner.Env = append(b.inner.Env, key+"="+value)
 	return b
 }
 
 func (b *Builder) Envs(envs map[string]string) *Builder {
 	for key, value := range envs {
-		b.envs = append(b.envs, key+"="+value)
+		b.inner.Env = append(b.inner.Env, key+"="+value)
 	}
 	return b
 }
 
 func (b *Builder) Stderr(w io.Writer) *Builder {
-	b.stderr = w
+	b.inner.Stderr = w
 	return b
 }
 
 func (b *Builder) Stdout(w io.Writer) *Builder {
-	b.stdout = w
+	b.inner.Stdout = w
 	return b
 }
 
 func (b *Builder) Stdin(r io.Reader) *Builder {
-	b.stdin = r
+	b.inner.Stdin = r
 	return b
 }
 
 func (b *Builder) Build() *exec.Cmd {
-	cmd := exec.CommandContext(b.ctx, b.name, b.args...)
-	cmd.Dir = b.dir
-	cmd.Env = b.envs
-	cmd.Stderr = b.stderr
-	cmd.Stdout = b.stdout
-	cmd.Stdin = b.stdin
-
-	return cmd
-}
-
-func (b *Builder) Run() error {
-	return b.Build().Run()
+	return b.inner
 }
