@@ -17,16 +17,15 @@ type Builder struct {
 	stdin  io.Reader
 }
 
-func NewBuilder(name string) *Builder {
-	return NewBuilderContext(context.TODO(), name)
+func NewBuilder(name string, args ...string) *Builder {
+	return NewBuilderContext(context.TODO(), name, args...)
 }
 
-func NewBuilderContext(ctx context.Context, name string) *Builder {
+func NewBuilderContext(ctx context.Context, name string, args ...string) *Builder {
 	return &Builder{
 		ctx:  ctx,
 		name: name,
-		args: []string{},
-		envs: []string{},
+		args: args,
 	}
 }
 
@@ -86,4 +85,8 @@ func (b *Builder) Build() *exec.Cmd {
 	cmd.Stdin = b.stdin
 
 	return cmd
+}
+
+func (b *Builder) Run() error {
+	return b.Build().Run()
 }

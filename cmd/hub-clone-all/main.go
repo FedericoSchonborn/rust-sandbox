@@ -91,13 +91,12 @@ func run() error {
 			return fmt.Errorf("invalid method option: %s", *method)
 		}
 
-		gitcmd := xexec.NewBuilder("git").
-			Args([]string{"clone", url}).
+		err := xexec.NewBuilder("git", "clone", url).
 			Stderr(os.Stderr).
 			Stdout(os.Stdout).
 			Stdin(os.Stdin).
-			Build()
-		if err := gitcmd.Run(); err != nil {
+			Run()
+		if err != nil {
 			return err
 		}
 	}
