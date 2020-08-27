@@ -4,12 +4,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
+	"syscall"
 
-	xfmt "github.com/fdschonborn/x/fmt"
 	xexec "github.com/fdschonborn/x/os/exec"
 	"github.com/spf13/pflag"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 type Repos []Repo
@@ -26,15 +28,18 @@ const (
 )
 
 var (
-	baseUrl = pflag.StringP("base-url", "b", defaultBaseUrl, "Base API Url")
-	user    = pflag.StringP("user", "u", "", "User to clone repositories from")
-	method  = pflag.StringP("method", "m", "https", "Clone method to use (https or ssh)")
+	baseUrl     = pflag.StringP("base-url", "b", defaultBaseUrl, "Base API Url")
+	user        = pflag.StringP("user", "u", "", "User to clone repositories from")
+	method      = pflag.StringP("method", "m", "https", "Clone method to use (https or ssh)")
+	private     = pflag.BoolP("private", "p", false, "Clone private repositories (asks for password)")
+	accessToken = pflag.StringP("access-token", "t", "", "Personal access token (will be asked otherwise)")
 )
 
 func main() {
+	log.SetPrefix("hub-clone-all: ")
+
 	if err := run(); err != nil {
-		xfmt.Eprintfln("Error: %v", err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 }
 
@@ -42,10 +47,29 @@ func run() error {
 	pflag.Parse()
 
 	if *user == "" {
-		return errors.New("no user given")
+		return errors.New("no user")
 	}
 
-	resp, err := http.Get(*baseUrl + "/" + fmt.Sprintf(reposEndpoint, *user))
+	req, err := http.NewRequest(http.MethodGet, *baseUrl+"/"+fmt.Sprintf(reposEndpoint, *user), nil)
+	if err != nil {
+		return err
+	}
+
+	if *private {
+		if *accessToken == "" {
+			fmt.Print("Access Token: ")
+			token, err := terminal.ReadPassword(int(syscall.Stdin))
+			if err != nil {
+				return err
+			}
+
+			*accessToken = string(token)
+		}
+
+		req.SetBasicAuth(*user, *accessToken)
+	}
+
+	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return err
 	}
