@@ -34,3 +34,13 @@ func ParseArrayReader(r io.Reader) (value []map[string]interface{}, err error) {
 	err = json.NewDecoder(r).Decode(&value)
 	return value, err
 }
+
+func StringMarshal(v interface{}) (s string, err error) {
+	b, err := json.Marshal(v)
+	return string(b), err
+}
+
+func StringUnmarshal(s string) (i interface{}, err error) {
+	err = json.Unmarshal([]byte(s), &i)
+	return i, err
+}
