@@ -2,6 +2,7 @@ package filepath
 
 import (
 	"path/filepath"
+	"strings"
 )
 
 const (
@@ -117,4 +118,13 @@ func NewList(list string) List {
 	}
 
 	return v
+}
+
+func (l List) String() string {
+	elems := make([]string, len(l))
+	for i, fpath := range l {
+		elems[i] = fpath.inner
+	}
+
+	return strings.Join(elems, ":")
 }

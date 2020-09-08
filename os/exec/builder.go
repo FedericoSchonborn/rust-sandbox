@@ -23,7 +23,7 @@ func (b *Builder) Arg(arg string) *Builder {
 	return b
 }
 
-func (b *Builder) Args(args []string) *Builder {
+func (b *Builder) Args(args ...string) *Builder {
 	b.inner.Args = append(b.inner.Args, args...)
 	return b
 }
