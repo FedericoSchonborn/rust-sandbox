@@ -1,6 +1,8 @@
 package is
 
 import (
+	"math"
+
 	"github.com/fdschonborn/x/fmt"
 )
 
@@ -26,6 +28,10 @@ func Even(i interface{}) bool {
 		return v%2 == 0
 	case uint64:
 		return v%2 == 0
+	case float32:
+		return math.Mod(float64(v), 2) == 0
+	case float64:
+		return math.Mod(v, 2) == 0
 	default:
 		fmt.Panicf("Expected numerical value, got %T", v)
 		return false

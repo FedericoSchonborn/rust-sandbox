@@ -1,11 +1,11 @@
 package color
 
-type Color int32
+type Color uint32
 
 func RGB(red, green, blue uint8) Color {
-	return ARGB(255, red, green, blue)
+	return RGBA(red, green, blue, 255) // TODO
 }
 
-func ARGB(alpha, red, green, blue uint8) Color {
-	return Color(0) // TODO
+func RGBA(red, green, blue, alpha uint8) Color {
+	return Color(0x000000FF) // TODO
 }

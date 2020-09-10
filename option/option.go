@@ -1,16 +1,16 @@
 package option
 
 type Option struct {
-	value interface{}
 	ok    bool
+	value interface{}
 }
 
 func Some(value interface{}) Option {
-	return Option{value: value, ok: true}
+	return Option{ok: true, value: value}
 }
 
 func None() Option {
-	return Option{value: nil, ok: false}
+	return Option{ok: false, value: nil}
 }
 
 func (o Option) IsSome() bool {
@@ -18,7 +18,7 @@ func (o Option) IsSome() bool {
 }
 
 func (o Option) IsNone() bool {
-	return o.ok
+	return !o.ok
 }
 
 func (o Option) MapSome(fn func(value interface{}) Option) Option {

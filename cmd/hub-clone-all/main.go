@@ -95,7 +95,7 @@ func run() error {
 			Stderr(os.Stderr).
 			Stdout(os.Stdout).
 			Stdin(os.Stdin).
-			Build().
+			Finish().
 			Run()
 		if err != nil {
 			return err
