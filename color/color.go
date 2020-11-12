@@ -19,3 +19,7 @@ func RGBA(red, green, blue, alpha uint8) Color {
 		A: alpha,
 	}
 }
+
+func (c Color) Uint32() uint32 {
+	return uint32(c.R)<<24 | uint32(c.G)<<16 | uint32(c.B)<<8 | uint32(c.A)
+}
