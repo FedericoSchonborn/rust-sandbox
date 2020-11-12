@@ -9,7 +9,7 @@ import (
 	"os"
 	"syscall"
 
-	xexec "github.com/fdschonborn/x/os/exec"
+	xexec "github.com/fdschonborn/x/go/os/exec"
 	"github.com/spf13/pflag"
 	"golang.org/x/crypto/ssh/terminal"
 )

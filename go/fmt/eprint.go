@@ -16,7 +16,3 @@ func Eprintf(format string, a ...interface{}) (n int, err error) {
 func Eprintln(a ...interface{}) (n int, err error) {
 	return fmt.Fprintln(os.Stderr, a...)
 }
-
-func Eprintfln(format string, a ...interface{}) (n int, err error) {
-	return Fprintfln(os.Stderr, format, a...)
-}

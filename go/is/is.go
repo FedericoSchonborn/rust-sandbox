@@ -3,7 +3,7 @@ package is
 import (
 	"math"
 
-	"github.com/fdschonborn/x/fmt"
+	"github.com/fdschonborn/x/go/typeof"
 )
 
 func Even(i interface{}) bool {
@@ -33,8 +33,7 @@ func Even(i interface{}) bool {
 	case float64:
 		return math.Mod(v, 2) == 0
 	default:
-		fmt.Panicf("Expected numerical value, got %T", v)
-		return false
+		panic("Expected numerical value, got " + typeof.TypeOf(i) + " instead")
 	}
 }
 
