@@ -9,6 +9,7 @@ func Some(value interface{}) Option {
 	return Option{ok: true, value: value}
 }
 
+// None and Option{} are equivalent.
 func None() Option {
 	return Option{ok: false, value: nil}
 }
@@ -21,20 +22,12 @@ func (o Option) IsNone() bool {
 	return !o.ok
 }
 
-func (o Option) MapSome(fn func(value interface{}) Option) Option {
+func (o Option) Map(fn func(value interface{}) Option) Option {
 	if !o.ok {
 		return None()
 	}
 
 	return fn(o.value)
-}
-
-func (o Option) MapNone(fn func() Option) Option {
-	if o.ok {
-		return None()
-	}
-
-	return fn()
 }
 
 func (o Option) Or(value interface{}) interface{} {

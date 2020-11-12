@@ -1,5 +1,7 @@
 package html
 
+import "strconv"
+
 type Header struct {
 	Rank HeaderRank
 	Text string
@@ -19,5 +21,10 @@ const (
 var _ Element = (*Header)(nil)
 
 func (h *Header) Render(ctx *Context) error {
+	tag := "h" + strconv.Itoa(int(h.Rank))
+	if _, err := ctx.WriteString("<" + tag + ">" + h.Text + "</" + tag + ">"); err != nil {
+		return err
+	}
+
 	return nil
 }

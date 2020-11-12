@@ -25,7 +25,3 @@ func (s String) Bytes() []Byte {
 func (s String) Runes() []Rune {
 	return []Rune(s)
 }
-
-func (s String) String() string {
-	return string(s)
-}
