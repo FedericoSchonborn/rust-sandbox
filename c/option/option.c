@@ -9,7 +9,7 @@ struct Option
     const void *value;
 };
 
-Option Some(const void *value)
+Option option_some(const void *value)
 {
     return (Option){
         .ok = true,
@@ -17,7 +17,7 @@ Option Some(const void *value)
     };
 }
 
-Option None()
+Option option_none()
 {
     return (Option){
         .ok = false,
@@ -25,11 +25,11 @@ Option None()
     };
 }
 
-Option Map(Option self, OptionMapFunc func)
+Option option_map(Option self, OptionMapFunc func)
 {
     if (!self.ok)
     {
-        return None();
+        return option_none();
     }
 
     return func(self);

@@ -2,9 +2,9 @@
 
 typedef struct Option Option;
 
-Option Some(const void *value);
-Option None();
+Option option_some(const void *value);
+Option option_none();
 
 typedef Option (*OptionMapFunc)(Option);
 
-Option Map(Option self, OptionMapFunc func);
+Option option_map(Option self, OptionMapFunc func);
