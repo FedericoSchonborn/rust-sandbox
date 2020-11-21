@@ -1,5 +1,9 @@
 package html
 
+import (
+	"io"
+)
+
 type Element interface {
-	Render(*Context) error
+	Render(io.Writer) error
 }

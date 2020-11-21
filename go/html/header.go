@@ -1,10 +1,29 @@
 package html
 
-import "strconv"
+import (
+	"fmt"
+	"io"
+	"strconv"
+)
+
+var _ Element = (*Header)(nil)
 
 type Header struct {
 	Rank HeaderRank
 	Text string
+}
+
+func (h *Header) Render(w io.Writer) error {
+	if !h.Rank.IsValid() {
+		return fmt.Errorf("header rank should be a number between 1 and 6, have %d", h.Rank)
+	}
+
+	tag := "h" + strconv.Itoa(int(h.Rank))
+	if _, err := io.WriteString(w, "<"+tag+">"+h.Text+"</"+tag+">"); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 type HeaderRank int
@@ -18,13 +37,6 @@ const (
 	HeaderRank6
 )
 
-var _ Element = (*Header)(nil)
-
-func (h *Header) Render(ctx *Context) error {
-	tag := "h" + strconv.Itoa(int(h.Rank))
-	if _, err := ctx.WriteString("<" + tag + ">" + h.Text + "</" + tag + ">"); err != nil {
-		return err
-	}
-
-	return nil
+func (hr HeaderRank) IsValid() bool {
+	return HeaderRank1 >= hr && hr <= HeaderRank6
 }
