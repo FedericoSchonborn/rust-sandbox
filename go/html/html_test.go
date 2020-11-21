@@ -1,21 +1,26 @@
 package html_test
 
 import (
+	"bytes"
 	"testing"
 
-	"github.com/fdschonborn/x/go/html"
+	. "github.com/fdschonborn/x/go/html"
 )
 
 func TestDocument(t *testing.T) {
-	elem := html.Document{
-		Body: html.Body{
-			Content: []html.Element{
-				&html.Header{
-					Text: "Hello, world!",
-					Rank: 1,
-				},
-			},
-		},
+	doc := New(
+		Head(),
+		Body(
+			Div(
+				H(1, "Hello, world!"),
+			).Class("title"),
+		),
+	)
+	t.Logf("%#v", doc)
+
+	buffer := bytes.NewBuffer(nil)
+	if err := doc.Render(buffer); err != nil {
+		t.Fatal(err)
 	}
-	t.Logf("%#v", elem)
+	t.Logf("%s", buffer)
 }

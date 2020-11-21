@@ -6,37 +6,29 @@ import (
 	"strconv"
 )
 
-var _ Element = (*Header)(nil)
+var _ BodyChild = (*HeaderElement)(nil)
 
-type Header struct {
-	Rank HeaderRank
-	Text string
+type HeaderElement struct {
+	rank int
+	text string
 }
 
-func (h *Header) Render(w io.Writer) error {
-	if !h.Rank.IsValid() {
-		return fmt.Errorf("header rank should be a number between 1 and 6, have %d", h.Rank)
+func H(rank int, text string) *HeaderElement {
+	return &HeaderElement{
+		rank: rank,
+		text: text,
+	}
+}
+
+func (h *HeaderElement) Render(body *BodyElement, w io.Writer) error {
+	if h.rank < 1 || h.rank > 6 {
+		return fmt.Errorf("header rank should be a number between 1 and 6, have %d", h.rank)
 	}
 
-	tag := "h" + strconv.Itoa(int(h.Rank))
-	if _, err := io.WriteString(w, "<"+tag+">"+h.Text+"</"+tag+">"); err != nil {
+	tag := "h" + strconv.Itoa(h.rank)
+	if _, err := io.WriteString(w, "<"+tag+">"+h.text+"</"+tag+">"); err != nil {
 		return err
 	}
 
 	return nil
-}
-
-type HeaderRank int
-
-const (
-	HeaderRank1 HeaderRank = iota + 1
-	HeaderRank2
-	HeaderRank3
-	HeaderRank4
-	HeaderRank5
-	HeaderRank6
-)
-
-func (hr HeaderRank) IsValid() bool {
-	return HeaderRank1 >= hr && hr <= HeaderRank6
 }

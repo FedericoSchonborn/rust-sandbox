@@ -2,19 +2,37 @@ package html
 
 import "io"
 
-type Div struct {
-	Content []Element
+var _ BodyChild = (*DivElement)(nil)
+
+type DivElement struct {
+	content []BodyChild
+	class   string
 }
 
-var _ Element = (*Div)(nil)
+func Div(content ...BodyChild) *DivElement {
+	return &DivElement{
+		content: content,
+	}
+}
 
-func (div *Div) Render(w io.Writer) error {
-	if _, err := io.WriteString(w, "<div>"); err != nil {
+func (div *DivElement) Class(class string) *DivElement {
+	div.class = class
+	return div
+}
+
+func (div *DivElement) Render(body *BodyElement, w io.Writer) error {
+	openTag := "<div"
+	if div.class != "" {
+		openTag += " class=\"" + div.class + "\""
+	}
+	openTag += ">"
+
+	if _, err := io.WriteString(w, openTag); err != nil {
 		return err
 	}
 
-	for _, elem := range div.Content {
-		if err := elem.Render(w); err != nil {
+	for _, elem := range div.content {
+		if err := elem.Render(body, w); err != nil {
 			return err
 		}
 	}
