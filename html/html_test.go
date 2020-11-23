@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	. "github.com/fdschonborn/x/go/html"
+	. "github.com/fdschonborn/x/html"
 )
 
 func TestDocument(t *testing.T) {
@@ -12,8 +12,11 @@ func TestDocument(t *testing.T) {
 		Head(),
 		Body(
 			Div(
-				H(1, "Hello, world!"),
-			).Class("title"),
+				H1("Hello, world!"),
+			),
+			Div(
+				P("This is a test"),
+			),
 		),
 	)
 	t.Logf("%#v", doc)

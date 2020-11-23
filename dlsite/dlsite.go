@@ -1,6 +1,14 @@
 // Package dlsite implements a parser for golang.org/dl.
 package dlsite
 
+import (
+	"io"
+)
+
+func Parse(r io.Reader) (*Index, error) {
+	panic("Unimplemented")
+}
+
 type Index struct {
 	Stable  *Version
 	Archive []*Version
@@ -24,18 +32,18 @@ func (fs Files) Source() *File {
 }
 
 func (fs Files) Archives() Files {
-	return fs.filter(func(f *File) bool {
+	return fs.Filter(func(f *File) bool {
 		return f.Kind == FileKindArchive
 	})
 }
 
 func (fs Files) Installers() Files {
-	return fs.filter(func(f *File) bool {
+	return fs.Filter(func(f *File) bool {
 		return f.Kind == FileKindInstaller
 	})
 }
 
-func (fs Files) filter(fn func(*File) bool) Files {
+func (fs Files) Filter(fn func(*File) bool) Files {
 	var nfs Files
 	for _, file := range fs {
 		if fn(file) {
@@ -58,7 +66,7 @@ type File struct {
 
 type OS string
 
-// Operating systems as displayed on the site, may be extended.
+// Operating systems as shown on the site, may be extended.
 const (
 	OS4       OS = "4" // Used by Go 1.4
 	OSMacOS   OS = "macOS"
@@ -73,7 +81,7 @@ func (os OS) String() string {
 	return string(os)
 }
 
-// Architectures as displayed on the site, may be extended.
+// Architectures as shown on the site, may be extended.
 type Arch string
 
 const (
@@ -92,7 +100,7 @@ func (a Arch) String() string {
 
 type FileKind string
 
-// File kinds as displayed on the site, may be extended.
+// File kinds as shown on the site, may be extended.
 const (
 	FileKindSource    FileKind = "Source"
 	FileKindArchive   FileKind = "Archive"

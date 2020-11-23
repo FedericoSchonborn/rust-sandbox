@@ -9,7 +9,7 @@ import (
 	"os"
 	"syscall"
 
-	xexec "github.com/fdschonborn/x/go/os/exec"
+	xexec "github.com/fdschonborn/x/os/exec"
 	"github.com/spf13/pflag"
 	"golang.org/x/crypto/ssh/terminal"
 )
@@ -95,7 +95,7 @@ func run() error {
 			Stderr(os.Stderr).
 			Stdout(os.Stdout).
 			Stdin(os.Stdin).
-			Finish().
+			Build().
 			Run()
 		if err != nil {
 			return err

@@ -60,6 +60,6 @@ func (b *Builder) Stdin(r io.Reader) *Builder {
 	return b
 }
 
-func (b *Builder) Finish() *exec.Cmd {
+func (b *Builder) Build() *exec.Cmd {
 	return b.inner
 }

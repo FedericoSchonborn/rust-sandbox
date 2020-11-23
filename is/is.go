@@ -3,7 +3,7 @@ package is
 import (
 	"math"
 
-	"github.com/fdschonborn/x/go/typeof"
+	"github.com/fdschonborn/x/typeof"
 )
 
 func Even(i interface{}) bool {
