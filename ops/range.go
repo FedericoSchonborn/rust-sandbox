@@ -1,97 +1,29 @@
 package ops
 
-type BoundType int
-
-const (
-	BoundTypeIncluded  BoundType = 1
-	BoundTypeExcluded  BoundType = 2
-	BoundTypeUnbounded BoundType = 3
-)
-
-type BoundValue interface {
-	boundValue()
-}
-
-type BoundIncluded struct {
-	Value int
-}
-
-func (bi BoundIncluded) boundValue() {}
-
-type BoundExcluded struct {
-	Value int
-}
-
-func (be BoundExcluded) boundValue() {}
-
-type BoundUnbounded struct{}
-
-func (bu BoundUnbounded) boundValue() {}
-
-type Bound struct {
-	t BoundType
-	v BoundValue
-}
-
-func NewBoundIncluded(value int) Bound {
-	return Bound{
-		t: BoundTypeIncluded,
-		v: BoundIncluded{
-			Value: value,
-		},
-	}
-}
-
-func NewBoundExcluded(value int) Bound {
-	return Bound{
-		t: BoundTypeExcluded,
-		v: BoundExcluded{
-			Value: value,
-		},
-	}
-}
-
-func NewBoundUnbounded() Bound {
-	return Bound{
-		t: BoundTypeUnbounded,
-		v: BoundUnbounded{},
-	}
-}
-
-func (b Bound) Type() BoundType {
-	return b.t
-}
-
-func (b Bound) Value() BoundValue {
-	return b.v
-}
-
 type RangeBounds interface {
 	StartBound() Bound
 	EndBound() Bound
 	Contains(item int) bool
 }
 
-func DefaultRangeBoundsContains(rb RangeBounds, item int) bool {
+func defaultRangeBoundsContains(rb RangeBounds, item int) bool {
 	var start bool
-	startBound := rb.StartBound()
-	switch v := startBound.Value().(type) {
-	case BoundIncluded:
-		start = v.Value <= item
-	case BoundExcluded:
-		start = v.Value < item
-	case BoundUnbounded:
+	switch v := rb.StartBound().Value().(type) {
+	case BoundIncludedValue:
+		start = int(v) <= item
+	case BoundExcludedValue:
+		start = int(v) < item
+	case BoundUnboundedValue:
 		start = true
 	}
 
 	var end bool
-	endBound := rb.EndBound()
-	switch v := endBound.Value().(type) {
-	case BoundIncluded:
-		end = item <= v.Value
-	case BoundExcluded:
-		end = item < v.Value
-	case BoundUnbounded:
+	switch v := rb.EndBound().Value().(type) {
+	case BoundIncludedValue:
+		end = item <= int(v)
+	case BoundExcludedValue:
+		end = item < int(v)
+	case BoundUnboundedValue:
 		end = true
 	}
 
@@ -113,15 +45,15 @@ func NewRange(start, end int) Range {
 }
 
 func (r Range) StartBound() Bound {
-	return NewBoundIncluded(r.Start)
+	return BoundIncluded(r.Start)
 }
 
 func (r Range) EndBound() Bound {
-	return NewBoundExcluded(r.End)
+	return BoundExcluded(r.End)
 }
 
 func (r Range) Contains(item int) bool {
-	return DefaultRangeBoundsContains(r, item)
+	return defaultRangeBoundsContains(r, item)
 }
 
 var _ RangeBounds = InclusiveRange{}
@@ -139,13 +71,13 @@ func NewInclusiveRange(start, end int) InclusiveRange {
 }
 
 func (ir InclusiveRange) StartBound() Bound {
-	return NewBoundIncluded(ir.Start)
+	return BoundIncluded(ir.Start)
 }
 
 func (ir InclusiveRange) EndBound() Bound {
-	return NewBoundIncluded(ir.End)
+	return BoundIncluded(ir.End)
 }
 
 func (ir InclusiveRange) Contains(item int) bool {
-	return DefaultRangeBoundsContains(ir, item)
+	return defaultRangeBoundsContains(ir, item)
 }
