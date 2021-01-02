@@ -1,56 +1,56 @@
 package ops
 
-type BoundType int
+type BoundTag int
 
 const (
-	BoundIncludedType  BoundType = 1
-	BoundExcludedType  BoundType = 2
-	BoundUnboundedType BoundType = 3
+	BoundTagIncluded  BoundTag = 1
+	BoundTagExcluded  BoundTag = 2
+	BoundTagUnbounded BoundTag = 3
 )
 
 type BoundValue interface {
 	boundValue()
 }
 
-type BoundIncludedValue int
+type BoundValueIncluded int
 
-func (BoundIncludedValue) boundValue() {}
+func (BoundValueIncluded) boundValue() {}
 
-type BoundExcludedValue int
+type BoundValueExcluded int
 
-func (BoundExcludedValue) boundValue() {}
+func (BoundValueExcluded) boundValue() {}
 
-type BoundUnboundedValue struct{}
+type BoundValueUnbounded struct{}
 
-func (BoundUnboundedValue) boundValue() {}
+func (BoundValueUnbounded) boundValue() {}
 
 type Bound struct {
-	t BoundType
+	t BoundTag
 	v BoundValue
 }
 
 func BoundIncluded(value int) Bound {
 	return Bound{
-		t: BoundIncludedType,
-		v: BoundIncludedValue(value),
+		t: BoundTagIncluded,
+		v: BoundValueIncluded(value),
 	}
 }
 
 func BoundExcluded(value int) Bound {
 	return Bound{
-		t: BoundExcludedType,
-		v: BoundExcludedValue(value),
+		t: BoundTagExcluded,
+		v: BoundValueExcluded(value),
 	}
 }
 
 func BoundUnbounded() Bound {
 	return Bound{
-		t: BoundUnboundedType,
-		v: BoundUnboundedValue{},
+		t: BoundTagUnbounded,
+		v: BoundValueUnbounded{},
 	}
 }
 
-func (b Bound) Type() BoundType {
+func (b Bound) Tag() BoundTag {
 	return b.t
 }
 
