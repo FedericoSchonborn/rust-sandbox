@@ -7,6 +7,71 @@ type String struct {
 	cap int
 }
 
+func From(s String) String {
+	return s
+}
+
+func FromString(s string) String {
+	return FromBytes([]byte(s))
+}
+
+func FromBytes(buf []byte) String {
+	return String{
+		buf: buf,
+		len: len(buf),
+		cap: cap(buf),
+	}
+}
+
+func Empty() String {
+	return String{
+		buf: make([]byte, 0),
+		len: 0,
+		cap: 0,
+	}
+}
+
+func Make(size int) String {
+	return String{
+		buf: make([]byte, size),
+		len: 0,
+		cap: size,
+	}
+}
+
+func (s String) Append(sb String) String {
+	totalLen := len(s.buf) + len(sb.buf)
+	sr := Make(totalLen)
+	sr.len = totalLen
+	if len(s.buf) > 0 {
+		for i, c := range s.buf {
+			sr.buf[i] = c
+		}
+	}
+
+	if len(sb.buf) > 0 {
+		for i, c := range sb.buf {
+			sr.buf[len(s.buf)+i] = c
+		}
+	}
+
+	return sr
+}
+
+func (s String) Equals(sb String) bool {
+	for i, c := range sb.buf {
+		if s.buf[i] != c {
+			return false
+		}
+	}
+
+	return true
+}
+
+func (s String) Bytes() []byte {
+	return s.buf
+}
+
 func (s String) Len() int {
 	return s.len
 }

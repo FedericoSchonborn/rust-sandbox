@@ -6,36 +6,76 @@ const (
 
 // <ctype.h>
 
-func IsAlnum(c byte) bool
+func IsAlnum(c byte) bool {
+	return IsAlpha(c) || IsDigit(c)
+}
 
-func IsAlpha(c byte) bool
+func IsAlpha(c byte) bool {
+	return IsUpper(c) || IsLower(c)
+}
 
-func IsBlank(c byte) bool
+func IsBlank(c byte) bool {
+	return c == ' ' || c == '\t'
+}
 
-func IsCntrl(c byte) bool
+func IsCntrl(c byte) bool {
+	return c == 0x7F || (c >= 0x00 && c <= 0x1F)
+}
 
-func IsDigit(c byte) bool
+func IsDigit(c byte) bool {
+	return c >= '0' && c <= '9'
+}
 
-func IsGraph(c byte) bool
+func IsGraph(c byte) bool {
+	return c != ' ' && IsPrint(c)
+}
 
-func IsLower(c byte) bool
+func IsLower(c byte) bool {
+	return c >= 'a' && c <= 'z'
+}
 
-func IsPrint(c byte) bool
+func IsPrint(c byte) bool {
+	return c != 0x7F && c >= 0x1F
+}
 
-func IsPunct(c byte) bool
+func IsPunct(c byte) bool {
+	return !IsAlnum(c) && IsGraph(c)
+}
 
-func IsSpace(c byte) bool
+func IsSpace(c byte) bool {
+	return IsBlank(c) || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+}
 
-func IsUpper(c byte) bool
+func IsUpper(c byte) bool {
+	return c >= 'A' && c <= 'Z'
+}
 
-func IsXdigit(c byte) bool
+func IsXdigit(c byte) bool {
+	return IsDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F')
+}
 
-func ToLower(c byte) byte
+func ToLower(c byte) byte {
+	if !IsAlpha(c) {
+		return c
+	}
 
-func ToUpper(c byte) byte
+	return c + 0x20
+}
+
+func ToUpper(c byte) byte {
+	if !IsAlpha(c) {
+		return c
+	}
+
+	return c - 0x20
+}
 
 // POSIX
 
-func IsAscii(r rune) bool
+func IsAscii(r rune) bool {
+	return r >= 0 && r <= 255
+}
 
-func ToAscii(r rune) byte
+func ToAscii(r rune) byte {
+	panic("Unimplemented")
+}
