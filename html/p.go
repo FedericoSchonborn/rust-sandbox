@@ -11,7 +11,7 @@ func P(text string) *PElement {
 }
 
 func (p *PElement) Render(ctx *Context) error {
-	if _, err := ctx.WriteString("<p>" + p.text + "</p>"); err != nil {
+	if err := ctx.WriteString("<p>" + p.text + "</p>"); err != nil {
 		return err
 	}
 

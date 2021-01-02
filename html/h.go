@@ -49,7 +49,7 @@ func (h *HElement) Render(ctx *Context) error {
 	}
 
 	tag := "h" + strconv.Itoa(h.rank)
-	if _, err := ctx.WriteString("<" + tag + ">" + h.text + "</" + tag + ">"); err != nil {
+	if err := ctx.WriteString("<" + tag + ">" + h.text + "</" + tag + ">"); err != nil {
 		return err
 	}
 
