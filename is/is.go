@@ -2,38 +2,28 @@ package is
 
 import (
 	"math"
-
-	"github.com/fdschonborn/x/typeof"
+	"reflect"
 )
 
 func Even(i interface{}) bool {
-	switch v := i.(type) {
-	case int:
-		return v%2 == 0
-	case uint:
-		return v%2 == 0
-	case int8:
-		return v%2 == 0
-	case uint8:
-		return v%2 == 0
-	case int16:
-		return v%2 == 0
-	case uint16:
-		return v%2 == 0
-	case int32:
-		return v%2 == 0
-	case uint32:
-		return v%2 == 0
-	case int64:
-		return v%2 == 0
-	case uint64:
-		return v%2 == 0
-	case float32:
-		return math.Mod(float64(v), 2) == 0
-	case float64:
-		return math.Mod(v, 2) == 0
+	v := reflect.ValueOf(i)
+	switch kind := v.Kind(); kind {
+	case reflect.Int,
+		reflect.Int8,
+		reflect.Int16,
+		reflect.Int32,
+		reflect.Int64,
+		reflect.Uint,
+		reflect.Uint8,
+		reflect.Uint16,
+		reflect.Uint32,
+		reflect.Uint64:
+		return v.Int()%2 == 0
+	case reflect.Float32,
+		reflect.Float64:
+		return math.Mod(v.Float(), 2) == 0
 	default:
-		panic("Expected numerical value, got " + typeof.TypeOf(i) + " instead")
+		return false
 	}
 }
 

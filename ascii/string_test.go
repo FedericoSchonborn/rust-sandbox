@@ -18,6 +18,8 @@ func TestStringAppend(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.Result.String(), func(t *testing.T) {
+			t.Parallel()
+
 			result := tc.Start.Append(tc.End)
 			if !result.Equals(tc.Result) {
 				t.Errorf("Expected %q got %q", tc.Result, result)
