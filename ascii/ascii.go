@@ -76,6 +76,10 @@ func IsAscii(r rune) bool {
 	return r >= 0 && r <= 255
 }
 
-func ToAscii(r rune) byte {
-	panic("Unimplemented")
+func ToAscii(r rune) (byte, bool) {
+	if !IsAscii(r) {
+		return 0, false
+	}
+
+	return byte(r), true
 }

@@ -20,6 +20,10 @@ func RGBA(red, green, blue, alpha uint8) Color {
 	}
 }
 
+func (c Color) EqualsRGB(other Color) bool {
+	return c.R == other.R && c.G == other.G && c.B == other.B
+}
+
 func (c Color) Uint32() uint32 {
 	return uint32(c.R)<<24 | uint32(c.G)<<16 | uint32(c.B)<<8 | uint32(c.A)
 }

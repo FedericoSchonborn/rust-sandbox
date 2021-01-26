@@ -1,19 +1,19 @@
-package ascii_test
+package strings_test
 
 import (
 	"testing"
 
-	"github.com/fdschonborn/x/ascii"
+	"github.com/fdschonborn/x/ascii/strings"
 )
 
 func TestStringAppend(t *testing.T) {
 	tt := []struct {
-		Start  ascii.String
-		End    ascii.String
-		Result ascii.String
+		Start  strings.String
+		End    strings.String
+		Result strings.String
 	}{
-		{ascii.Empty(), ascii.Empty(), ascii.Empty()},
-		{ascii.Empty(), ascii.FromString("banana"), ascii.FromString("banana")},
+		{strings.Empty(), strings.Empty(), strings.Empty()},
+		{strings.Empty(), strings.FromString("banana"), strings.FromString("banana")},
 	}
 
 	for _, tc := range tt {
