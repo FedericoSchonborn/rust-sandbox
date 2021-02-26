@@ -1,5 +1,10 @@
 package option
 
+type T = interface{}
+type U = interface{}
+type OptionT = Option
+type OptionU = Option
+
 type Option struct {
 	ok    bool
 	value interface{}
@@ -22,26 +27,26 @@ func (o Option) IsNone() bool {
 	return !o.ok
 }
 
-func (o Option) Map(fn func(value interface{}) Option) Option {
+func (o Option) Map(fn func(value T) U) OptionU {
 	if !o.ok {
 		return None()
 	}
 
-	return fn(o.value)
+	return Some(fn(o.value))
 }
 
-func (o Option) Or(value interface{}) interface{} {
-	if o.ok {
-		return o.value
+func (o Option) Or(ob OptionT) OptionT {
+	if !o.ok {
+		return ob
 	}
 
-	return value
+	return o
 }
 
-func (o Option) OrElse(fn func() interface{}) interface{} {
-	if o.ok {
-		return o.value
+func (o Option) OrElse(fn func() OptionT) OptionT {
+	if !o.ok {
+		return fn()
 	}
 
-	return fn()
+	return o
 }
