@@ -12,8 +12,8 @@ func TestStringAppend(t *testing.T) {
 		End    strings.String
 		Result strings.String
 	}{
-		{strings.Empty(), strings.Empty(), strings.Empty()},
-		{strings.Empty(), strings.FromString("banana"), strings.FromString("banana")},
+		{strings.New(), strings.New(), strings.New()},
+		{strings.New(), strings.From("banana"), strings.From("banana")},
 	}
 
 	for _, tc := range tt {

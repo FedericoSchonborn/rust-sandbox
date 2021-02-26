@@ -7,23 +7,7 @@ type String struct {
 	cap int
 }
 
-func From(s String) String {
-	return s
-}
-
-func FromString(s string) String {
-	return FromBytes([]byte(s))
-}
-
-func FromBytes(buf []byte) String {
-	return String{
-		buf: buf,
-		len: len(buf),
-		cap: cap(buf),
-	}
-}
-
-func Empty() String {
+func New() String {
 	return String{
 		buf: make([]byte, 0),
 		len: 0,
@@ -43,9 +27,21 @@ func Make(size, cap int) String {
 	}
 }
 
+func From(s string) String {
+	return FromBytes([]byte(s))
+}
+
+func FromBytes(buf []byte) String {
+	return String{
+		buf: buf,
+		len: len(buf),
+		cap: cap(buf),
+	}
+}
+
 func (s String) Append(sb String) String {
 	totalLen := len(s.buf) + len(sb.buf)
-	sr := Make(totalLen, 0)
+	sr := Make(totalLen, totalLen)
 	sr.len = totalLen
 	if len(s.buf) > 0 {
 		for i, c := range s.buf {
@@ -70,6 +66,14 @@ func (s String) Equals(sb String) bool {
 	}
 
 	return true
+}
+
+func (s String) Clone() String {
+	return String{
+		s.buf,
+		s.len,
+		s.cap,
+	}
 }
 
 func (s String) Bytes() []byte {
