@@ -7,27 +7,51 @@ type OptionU = Option
 
 type Option struct {
 	ok    bool
-	value interface{}
+	value T
 }
 
-func Some(value interface{}) Option {
-	return Option{ok: true, value: value}
+func Some(value T) OptionT {
+	return OptionT{ok: true, value: value}
 }
 
 // None and Option{} are equivalent.
-func None() Option {
-	return Option{ok: false, value: nil}
+func None() OptionT {
+	return OptionT{ok: false, value: nil}
 }
 
-func (o Option) IsSome() bool {
+func (o OptionT) IsSome() bool {
 	return o.ok
 }
 
-func (o Option) IsNone() bool {
+func (o OptionT) IsNone() bool {
 	return !o.ok
 }
 
-func (o Option) Map(fn func(value T) U) OptionU {
+func (o OptionT) Unwrap() T {
+	if !o.ok {
+		panic("Called OptionT.Unwrap on None value")
+	}
+
+	return o.value
+}
+
+func (o OptionT) UnwrapOr(def T) T {
+	if !o.ok {
+		return def
+	}
+
+	return o.value
+}
+
+func (o OptionT) UnwrapOrElse(fn func() T) T {
+	if !o.ok {
+		return fn()
+	}
+
+	return o.value
+}
+
+func (o OptionT) Map(fn func(value T) U) OptionU {
 	if !o.ok {
 		return None()
 	}
@@ -35,7 +59,35 @@ func (o Option) Map(fn func(value T) U) OptionU {
 	return Some(fn(o.value))
 }
 
-func (o Option) Or(ob OptionT) OptionT {
+func (o OptionT) OkOr(err error) (T, error) {
+	if !o.ok {
+		return nil, err
+	}
+
+	return o.value, nil
+}
+
+func (o OptionT) OkOrElse(fn func() error) (T, error) {
+	if !o.ok {
+		return nil, fn()
+	}
+
+	return o.value, nil
+}
+
+func (o OptionT) Filter(pred func(T) bool) OptionT {
+	if !o.ok {
+		return None()
+	}
+
+	if !pred(o.value) {
+		return None()
+	}
+
+	return Some(o.value)
+}
+
+func (o OptionT) Or(ob OptionT) OptionT {
 	if !o.ok {
 		return ob
 	}
@@ -43,7 +95,7 @@ func (o Option) Or(ob OptionT) OptionT {
 	return o
 }
 
-func (o Option) OrElse(fn func() OptionT) OptionT {
+func (o OptionT) OrElse(fn func() OptionT) OptionT {
 	if !o.ok {
 		return fn()
 	}
