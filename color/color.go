@@ -7,6 +7,13 @@ type Color struct {
 	A uint8
 }
 
+var (
+	Red   = RGB(255, 0, 0)
+	Green = RGB(0, 255, 0)
+	Blue  = RGB(0, 0, 255)
+	None  = RGBA(0, 0, 0, 0)
+)
+
 func RGB(red, green, blue uint8) Color {
 	return RGBA(red, green, blue, 255)
 }
