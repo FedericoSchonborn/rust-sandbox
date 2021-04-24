@@ -1,3 +1,3 @@
 # X
 
-Code dumpster.
+Terrible code dumpster.
