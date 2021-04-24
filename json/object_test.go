@@ -3,7 +3,7 @@ package json_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/x/encoding/json"
+	"github.com/fdschonborn/x/json"
 )
 
 func TestObject_Get(t *testing.T) {
