@@ -8,52 +8,30 @@ const (
 	BoundTagUnbounded BoundTag = 3
 )
 
-type BoundValue interface {
-	boundValue()
+type Bound interface {
+	boundTag() BoundTag
 }
 
-type BoundValueIncluded int
+type BoundIncluded int
 
-func (BoundValueIncluded) boundValue() {}
-
-type BoundValueExcluded int
-
-func (BoundValueExcluded) boundValue() {}
-
-type BoundValueUnbounded struct{}
-
-func (BoundValueUnbounded) boundValue() {}
-
-type Bound struct {
-	t BoundTag
-	v BoundValue
+func NewBoundIncluded(value int) Bound {
+	return BoundIncluded(value)
 }
 
-func BoundIncluded(value int) Bound {
-	return Bound{
-		t: BoundTagIncluded,
-		v: BoundValueIncluded(value),
-	}
+func (BoundIncluded) boundTag() BoundTag { return BoundTagIncluded }
+
+type BoundExcluded int
+
+func NewBoundExcluded(value int) Bound {
+	return BoundExcluded(value)
 }
 
-func BoundExcluded(value int) Bound {
-	return Bound{
-		t: BoundTagExcluded,
-		v: BoundValueExcluded(value),
-	}
+func (BoundExcluded) boundTag() BoundTag { return BoundTagExcluded }
+
+type BoundUnbounded struct{}
+
+func NewBoundUnbounded() Bound {
+	return BoundUnbounded{}
 }
 
-func BoundUnbounded() Bound {
-	return Bound{
-		t: BoundTagUnbounded,
-		v: BoundValueUnbounded{},
-	}
-}
-
-func (b Bound) Tag() BoundTag {
-	return b.t
-}
-
-func (b Bound) Value() BoundValue {
-	return b.v
-}
+func (BoundUnbounded) boundTag() BoundTag { return BoundTagUnbounded }

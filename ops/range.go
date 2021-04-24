@@ -8,22 +8,22 @@ type RangeBounds interface {
 
 func defaultRangeBoundsContains(rb RangeBounds, item int) bool {
 	var start bool
-	switch v := rb.StartBound().Value().(type) {
-	case BoundValueIncluded:
+	switch v := rb.StartBound().(type) {
+	case BoundIncluded:
 		start = int(v) <= item
-	case BoundValueExcluded:
+	case BoundExcluded:
 		start = int(v) < item
-	case BoundValueUnbounded:
+	case BoundUnbounded:
 		start = true
 	}
 
 	var end bool
-	switch v := rb.EndBound().Value().(type) {
-	case BoundValueIncluded:
+	switch v := rb.EndBound().(type) {
+	case BoundIncluded:
 		end = item <= int(v)
-	case BoundValueExcluded:
+	case BoundExcluded:
 		end = item < int(v)
-	case BoundValueUnbounded:
+	case BoundUnbounded:
 		end = true
 	}
 
