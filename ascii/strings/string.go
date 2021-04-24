@@ -9,20 +9,13 @@ type String struct {
 
 func New() String {
 	return String{
-		buf: make([]byte, 0),
-		len: 0,
-		cap: 0,
+		buf: []byte{},
 	}
 }
 
-func Make(size, cap int) String {
-	if cap < size {
-		cap = size
-	}
-
+func Make(cap int) String {
 	return String{
-		buf: make([]byte, size, cap),
-		len: 0,
+		buf: make([]byte, 0, cap),
 		cap: cap,
 	}
 }
@@ -41,7 +34,7 @@ func FromBytes(buf []byte) String {
 
 func (s String) Append(sb String) String {
 	totalLen := len(s.buf) + len(sb.buf)
-	sr := Make(totalLen, totalLen)
+	sr := Make(totalLen)
 	sr.len = totalLen
 	if len(s.buf) > 0 {
 		for i, c := range s.buf {
