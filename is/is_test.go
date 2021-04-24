@@ -7,7 +7,7 @@ import (
 	"github.com/fdschonborn/x/is"
 )
 
-func TestIsEvenOdd(t *testing.T) {
+func TestIsEven(t *testing.T) {
 	tt := []struct {
 		Value interface{}
 		Even  bool
