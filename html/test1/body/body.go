@@ -3,13 +3,13 @@ package body
 import (
 	"io"
 
-	"github.com/fdschonborn/x/html2"
+	"github.com/fdschonborn/x/html/test1"
 )
 
-var _ html2.Element = (*Body)(nil)
+var _ test1.Element = (*Body)(nil)
 
 type Body struct {
-	children []html2.Element
+	children []test1.Element
 }
 
 func New(opts ...Option) *Body {
@@ -27,7 +27,7 @@ func (*Body) Render(_ io.Writer) error {
 
 type Option func(*Body)
 
-func Children(elems ...html2.Element) Option {
+func Children(elems ...test1.Element) Option {
 	return func(body *Body) {
 		body.children = append(body.children, elems...)
 	}

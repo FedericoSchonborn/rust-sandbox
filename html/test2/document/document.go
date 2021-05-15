@@ -3,11 +3,11 @@ package document
 import (
 	"io"
 
-	"github.com/fdschonborn/x/html3"
-	"github.com/fdschonborn/x/html3/body"
+	"github.com/fdschonborn/x/html/test2"
+	"github.com/fdschonborn/x/html/test2/body"
 )
 
-var _ html3.Element = (*Document)(nil)
+var _ test2.Element = (*Document)(nil)
 
 type Document struct {
 	body *body.Body

@@ -3,20 +3,20 @@ package body
 import (
 	"io"
 
-	"github.com/fdschonborn/x/html3"
+	"github.com/fdschonborn/x/html/test2"
 )
 
-var _ html3.Element = (*Body)(nil)
+var _ test2.Element = (*Body)(nil)
 
 type Body struct {
-	children []html3.Element
+	children []test2.Element
 }
 
 func New() *Body {
 	return new(Body)
 }
 
-func (body *Body) Children(elems ...html3.Element) *Body {
+func (body *Body) Children(elems ...test2.Element) *Body {
 	body.children = append(body.children, elems...)
 	return body
 }

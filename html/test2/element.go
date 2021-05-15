@@ -1,4 +1,4 @@
-package html3
+package test2
 
 import "io"
 
