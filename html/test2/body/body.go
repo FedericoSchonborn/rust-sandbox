@@ -3,7 +3,7 @@ package body
 import (
 	"io"
 
-	"github.com/fdschonborn/x/html/test2"
+	"github.com/fdschonborn/sandbox/html/test2"
 )
 
 var _ test2.Element = (*Body)(nil)

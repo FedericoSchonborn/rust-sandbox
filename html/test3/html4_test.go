@@ -1,7 +1,7 @@
 package test3_test
 
 import (
-	. "github.com/fdschonborn/x/html/test3"
+	. "github.com/fdschonborn/sandbox/html/test3"
 )
 
 func Example() {

@@ -3,8 +3,8 @@ package document
 import (
 	"io"
 
-	"github.com/fdschonborn/x/html/test2"
-	"github.com/fdschonborn/x/html/test2/body"
+	"github.com/fdschonborn/sandbox/html/test2"
+	"github.com/fdschonborn/sandbox/html/test2/body"
 )
 
 var _ test2.Element = (*Document)(nil)

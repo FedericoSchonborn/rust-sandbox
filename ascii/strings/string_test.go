@@ -3,7 +3,7 @@ package strings_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/x/ascii/strings"
+	"github.com/fdschonborn/sandbox/ascii/strings"
 )
 
 func TestStringAppend(t *testing.T) {

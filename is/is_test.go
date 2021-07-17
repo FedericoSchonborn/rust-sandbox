@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/fdschonborn/x/is"
+	"github.com/fdschonborn/sandbox/is"
 )
 
 func TestIsEven(t *testing.T) {

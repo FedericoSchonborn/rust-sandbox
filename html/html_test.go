@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	. "github.com/fdschonborn/x/html"
+	. "github.com/fdschonborn/sandbox/html"
 )
 
 func TestDocument(t *testing.T) {

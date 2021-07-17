@@ -1,9 +1,9 @@
 package test1_test
 
 import (
-	"github.com/fdschonborn/x/html/test1/body"
-	"github.com/fdschonborn/x/html/test1/document"
-	"github.com/fdschonborn/x/html/test1/p"
+	"github.com/fdschonborn/sandbox/html/test1/body"
+	"github.com/fdschonborn/sandbox/html/test1/document"
+	"github.com/fdschonborn/sandbox/html/test1/p"
 )
 
 func Example() {
