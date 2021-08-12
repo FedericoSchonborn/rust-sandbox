@@ -1,7 +1,7 @@
-use measure::{Kilometers, Measure};
+use measure::{Measure, Meters};
 
 fn main() {
-    let m = 5.m();
-    let km: Kilometers = m.into();
-    println!("{} meters are {} kilometers", m.get(), km.get())
+    let km = 5.km();
+    let m: Meters = km.into();
+    println!("there are {} meters in {} kilometers", m.get(), km.get());
 }

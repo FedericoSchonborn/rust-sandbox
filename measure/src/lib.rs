@@ -1,29 +1,30 @@
-use std::ops::Div;
-
 #[derive(Debug, Clone, Copy, Default, PartialEq, PartialOrd)]
-pub struct Meters(f64);
+pub struct Meters(f32);
 
 impl Meters {
-    pub fn get(self) -> f64 {
+    pub fn get(self) -> f32 {
         self.0
     }
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, PartialOrd)]
-pub struct Kilometers(f64);
+pub struct Kilometers(f32);
 
 impl Kilometers {
-    pub fn get(self) -> f64 {
+    pub fn get(self) -> f32 {
         self.0
     }
 }
 
-impl Into<Kilometers> for Meters
-where
-    f64: Div,
-{
+impl Into<Meters> for Kilometers {
+    fn into(self) -> Meters {
+        Meters(self.0 * 1000_f32)
+    }
+}
+
+impl Into<Kilometers> for Meters {
     fn into(self) -> Kilometers {
-        Kilometers(self.0 / 100_f64)
+        Kilometers(self.0 / 1000_f32)
     }
 }
 
@@ -34,15 +35,15 @@ pub trait Measure: Sized {
 
 impl Measure for usize {
     fn m(self) -> Meters {
-        Meters(self as f64)
+        Meters(self as f32)
     }
 
     fn km(self) -> Kilometers {
-        Kilometers(self as f64)
+        Kilometers(self as f32)
     }
 }
 
-impl Measure for f64 {
+impl Measure for f32 {
     fn m(self) -> Meters {
         Meters(self)
     }
