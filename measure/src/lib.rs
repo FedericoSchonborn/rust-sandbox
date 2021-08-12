@@ -1,18 +1,36 @@
+use std::ops::{Deref, DerefMut};
+
 #[derive(Debug, Clone, Copy, Default, PartialEq, PartialOrd)]
 pub struct Meters(f32);
 
-impl Meters {
-    pub fn get(self) -> f32 {
-        self.0
+impl Deref for Meters {
+    type Target = f32;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for Meters {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, PartialOrd)]
 pub struct Kilometers(f32);
 
-impl Kilometers {
-    pub fn get(self) -> f32 {
-        self.0
+impl Deref for Kilometers {
+    type Target = f32;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for Kilometers {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
 
