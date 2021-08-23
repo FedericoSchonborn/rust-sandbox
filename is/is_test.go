@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/fdschonborn/sandbox/is"
+	"github.com/fdschonborn/go-sandbox/is"
 )
 
 func TestIsEven(t *testing.T) {

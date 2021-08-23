@@ -1,3 +1,3 @@
-module github.com/fdschonborn/sandbox
+module github.com/fdschonborn/go-sandbox
 
 go 1.16

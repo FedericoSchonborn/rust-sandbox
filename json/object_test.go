@@ -3,7 +3,7 @@ package json_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/sandbox/json"
+	"github.com/fdschonborn/go-sandbox/json"
 )
 
 func TestObject_Get(t *testing.T) {

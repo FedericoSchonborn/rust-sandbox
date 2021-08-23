@@ -3,7 +3,7 @@ package or_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/sandbox/or"
+	"github.com/fdschonborn/go-sandbox/or"
 )
 
 func TestOr(t *testing.T) {
