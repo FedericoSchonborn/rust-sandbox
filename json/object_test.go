@@ -7,7 +7,7 @@ import (
 )
 
 func TestObject_Get(t *testing.T) {
-	o := json.Object{"result": true}
+	o := json.Object[bool]{"result": true}
 	t.Log(o)
 
 	var result bool

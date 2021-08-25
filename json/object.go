@@ -5,10 +5,10 @@ import (
 	"reflect"
 )
 
-type Object map[string]interface{}
+type Object[T any] map[string]T
 
 // TODO: Support composite types.
-func (o Object) Get(field string, out interface{}) error {
+func (o Object[T]) Get(field string, out *T) error {
 	outValue := reflect.ValueOf(out)
 	if outValue.Kind() != reflect.Ptr {
 		return errors.New("pointer required")
