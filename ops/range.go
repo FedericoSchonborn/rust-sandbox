@@ -1,83 +1,55 @@
 package ops
 
-type RangeBounds interface {
+import "github.com/fdschonborn/go-sandbox/ints"
+
+type Integer = ints.Int
+
+type RangeBounds[T Integer] interface {
 	StartBound() Bound
 	EndBound() Bound
-	Contains(item int) bool
+	Contains(item T) bool
 }
 
-func defaultRangeBoundsContains(rb RangeBounds, item int) bool {
-	var start bool
-	switch v := rb.StartBound().(type) {
-	case BoundIncluded:
-		start = int(v) <= item
-	case BoundExcluded:
-		start = int(v) < item
-	case BoundUnbounded:
-		start = true
-	}
+var _ RangeBounds[int] = Range[int]{}
 
-	var end bool
-	switch v := rb.EndBound().(type) {
-	case BoundIncluded:
-		end = item <= int(v)
-	case BoundExcluded:
-		end = item < int(v)
-	case BoundUnbounded:
-		end = true
-	}
-
-	return start && end
+type Range[T Integer] struct {
+	Start, End T
 }
 
-var _ RangeBounds = Range{}
-
-type Range struct {
-	Start int
-	End   int
+func NewRange[T Integer](start, end T) Range[T] {
+	return Range[T]{Start: start, End: end}
 }
 
-func NewRange(start, end int) Range {
-	return Range{
-		Start: start,
-		End:   end,
-	}
-}
-
-func (r Range) StartBound() Bound {
+func (r Range[T]) StartBound() Bound {
 	return BoundIncluded(r.Start)
 }
 
-func (r Range) EndBound() Bound {
+func (r Range[T]) EndBound() Bound {
 	return BoundExcluded(r.End)
 }
 
-func (r Range) Contains(item int) bool {
-	return defaultRangeBoundsContains(r, item)
+func (r Range[T]) Contains(item T) bool {
+	return (r.Start <= item) && (item < r.End)
 }
 
-var _ RangeBounds = InclusiveRange{}
+var _ RangeBounds[int] = InclusiveRange[int]{}
 
-type InclusiveRange struct {
-	Start int
-	End   int
+type InclusiveRange[T Integer] struct {
+	Start, End T
 }
 
-func NewInclusiveRange(start, end int) InclusiveRange {
-	return InclusiveRange{
-		Start: start,
-		End:   end,
-	}
+func NewInclusiveRange[T Integer](start, end T) InclusiveRange[T] {
+	return InclusiveRange[T]{Start: start, End: end}
 }
 
-func (ir InclusiveRange) StartBound() Bound {
+func (ir InclusiveRange[T]) StartBound() Bound {
 	return BoundIncluded(ir.Start)
 }
 
-func (ir InclusiveRange) EndBound() Bound {
+func (ir InclusiveRange[T]) EndBound() Bound {
 	return BoundIncluded(ir.End)
 }
 
-func (ir InclusiveRange) Contains(item int) bool {
-	return defaultRangeBoundsContains(ir, item)
+func (ir InclusiveRange[T]) Contains(item T) bool {
+	return (ir.Start <= item) && (item <= ir.End)
 }
