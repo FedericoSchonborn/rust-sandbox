@@ -56,6 +56,15 @@ func (o Option[T]) UnwrapOrElse(fn func() T) T {
 	return *o.value
 }
 
+// UnwrapOrZero is unwrap_or_default but more gopher-ish.
+func (o Option[T]) UnwrapOrZero() T {
+	if o.value == nil {
+		return zero.Zero[T]()
+	}
+
+	return *o.value
+}
+
 func Map[T, U any](o Option[T], fn func(T) U) Option[U] {
 	if o.value == nil {
 		return None[U]()
