@@ -4,52 +4,52 @@ import "github.com/fdschonborn/go-sandbox/ints"
 
 type Integer = ints.Int
 
-type RangeBounds[T Integer] interface {
-	StartBound() Bound
-	EndBound() Bound
-	Contains(item T) bool
+type RangeBounds[Index Integer, Start Bound, End Bound] interface {
+	StartBound() Start
+	EndBound() End
+	Contains(index Index) bool
 }
 
-var _ RangeBounds[int] = Range[int]{}
+var _ RangeBounds[int, BoundIncluded, BoundExcluded] = Range[int]{}
 
-type Range[T Integer] struct {
-	Start, End T
+type Range[Index Integer] struct {
+	Start, End Index
 }
 
-func NewRange[T Integer](start, end T) Range[T] {
-	return Range[T]{Start: start, End: end}
+func NewRange[Index Integer](start, end Index) Range[Index] {
+	return Range[Index]{Start: start, End: end}
 }
 
-func (r Range[T]) StartBound() Bound {
+func (r Range[Index]) StartBound() BoundIncluded {
 	return BoundIncluded(r.Start)
 }
 
-func (r Range[T]) EndBound() Bound {
+func (r Range[Index]) EndBound() BoundExcluded {
 	return BoundExcluded(r.End)
 }
 
-func (r Range[T]) Contains(item T) bool {
-	return (r.Start <= item) && (item < r.End)
+func (r Range[Index]) Contains(index Index) bool {
+	return (r.Start <= index) && (index < r.End)
 }
 
-var _ RangeBounds[int] = InclusiveRange[int]{}
+var _ RangeBounds[int, BoundIncluded, BoundIncluded] = InclusiveRange[int]{}
 
-type InclusiveRange[T Integer] struct {
-	Start, End T
+type InclusiveRange[Index Integer] struct {
+	Start, End Index
 }
 
-func NewInclusiveRange[T Integer](start, end T) InclusiveRange[T] {
-	return InclusiveRange[T]{Start: start, End: end}
+func NewInclusiveRange[Index Integer](start, end Index) InclusiveRange[Index] {
+	return InclusiveRange[Index]{Start: start, End: end}
 }
 
-func (ir InclusiveRange[T]) StartBound() Bound {
+func (ir InclusiveRange[Index]) StartBound() BoundIncluded {
 	return BoundIncluded(ir.Start)
 }
 
-func (ir InclusiveRange[T]) EndBound() Bound {
+func (ir InclusiveRange[Index]) EndBound() BoundIncluded {
 	return BoundIncluded(ir.End)
 }
 
-func (ir InclusiveRange[T]) Contains(item T) bool {
-	return (ir.Start <= item) && (item <= ir.End)
+func (ir InclusiveRange[Index]) Contains(index Index) bool {
+	return (ir.Start <= index) && (index <= ir.End)
 }
