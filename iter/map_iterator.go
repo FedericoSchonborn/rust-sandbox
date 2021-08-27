@@ -34,5 +34,5 @@ func (mi *MapIterator[K, V]) Next() option.Option[tuple.Tuple2[K, V]] {
 
 	key := mi.keys[mi.index]
 	value := mi.inner[key]
-	return option.Some(tuple.Tuple2[K, V]{A: key, B: value})
+	return option.Some(tuple.NewTuple2[K, V](key, value))
 }
