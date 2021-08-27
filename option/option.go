@@ -34,6 +34,12 @@ func (o Option[T]) Unwrap() T {
 	return *o.value
 }
 
+// UnwrapUnchecked unwraps the Option without checking if it is Some, this may
+// result on unexpected behavior or a panic.
+func (o Option[T]) UnwrapUnchecked() T {
+	return *o.value
+}
+
 func (o Option[T]) UnwrapOr(def T) T {
 	if o.value == nil {
 		return def
