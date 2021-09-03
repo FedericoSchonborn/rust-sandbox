@@ -18,7 +18,8 @@ func (si *sliceIterator[T]) Next() option.Option[T] {
 	if si.index >= len(si.inner) {
 		return option.None[T]()
 	}
-	si.index++
 
-	return option.Some[T](si.inner[si.index])
+	value := si.inner[si.index]
+	si.index++
+	return option.Some[T](value)
 }
