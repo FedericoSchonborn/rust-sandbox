@@ -38,11 +38,11 @@ func main() {
 		var assign string
 		for index, name := range names {
 			if index == len(names)-1 {
-				fields += string(name) + " " + string(name) + ""
+				fields += string(name) + " " + string(name)
 				generics += string(name) + " any"
-				params += string(name) + ""
+				params += string(name)
 				args += string(downNames[index]) + " " + string(name)
-				assign += string(name) + ": " + string(downNames[index])
+				assign += "\n" + string(name) + ": " + string(downNames[index]) + ",\n"
 				break
 			}
 
@@ -50,7 +50,7 @@ func main() {
 			generics += string(name) + ","
 			params += string(name) + ","
 			args += string(downNames[index]) + " " + string(name) + ", "
-			assign += string(name) + ": " + string(downNames[index]) + ", "
+			assign += "\n" + string(name) + ": " + string(downNames[index]) + ","
 		}
 
 		if _, err := fmt.Fprintf(file, `

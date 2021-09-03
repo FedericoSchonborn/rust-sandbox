@@ -7,7 +7,9 @@ type Tuple1[A any] struct {
 }
 
 func NewTuple1[A any](a A) Tuple1[A] {
-	return Tuple1[A]{A: a}
+	return Tuple1[A]{
+		A: a,
+	}
 }
 
 type Tuple2[A, B any] struct {
@@ -16,7 +18,10 @@ type Tuple2[A, B any] struct {
 }
 
 func NewTuple2[A, B any](a A, b B) Tuple2[A, B] {
-	return Tuple2[A, B]{A: a, B: b}
+	return Tuple2[A, B]{
+		A: a,
+		B: b,
+	}
 }
 
 type Tuple3[A, B, C any] struct {
@@ -26,7 +31,11 @@ type Tuple3[A, B, C any] struct {
 }
 
 func NewTuple3[A, B, C any](a A, b B, c C) Tuple3[A, B, C] {
-	return Tuple3[A, B, C]{A: a, B: b, C: c}
+	return Tuple3[A, B, C]{
+		A: a,
+		B: b,
+		C: c,
+	}
 }
 
 type Tuple4[A, B, C, D any] struct {
@@ -37,7 +46,12 @@ type Tuple4[A, B, C, D any] struct {
 }
 
 func NewTuple4[A, B, C, D any](a A, b B, c C, d D) Tuple4[A, B, C, D] {
-	return Tuple4[A, B, C, D]{A: a, B: b, C: c, D: d}
+	return Tuple4[A, B, C, D]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+	}
 }
 
 type Tuple5[A, B, C, D, E any] struct {
@@ -49,7 +63,13 @@ type Tuple5[A, B, C, D, E any] struct {
 }
 
 func NewTuple5[A, B, C, D, E any](a A, b B, c C, d D, e E) Tuple5[A, B, C, D, E] {
-	return Tuple5[A, B, C, D, E]{A: a, B: b, C: c, D: d, E: e}
+	return Tuple5[A, B, C, D, E]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+	}
 }
 
 type Tuple6[A, B, C, D, E, F any] struct {
@@ -62,7 +82,14 @@ type Tuple6[A, B, C, D, E, F any] struct {
 }
 
 func NewTuple6[A, B, C, D, E, F any](a A, b B, c C, d D, e E, f F) Tuple6[A, B, C, D, E, F] {
-	return Tuple6[A, B, C, D, E, F]{A: a, B: b, C: c, D: d, E: e, F: f}
+	return Tuple6[A, B, C, D, E, F]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+	}
 }
 
 type Tuple7[A, B, C, D, E, F, G any] struct {
@@ -76,7 +103,15 @@ type Tuple7[A, B, C, D, E, F, G any] struct {
 }
 
 func NewTuple7[A, B, C, D, E, F, G any](a A, b B, c C, d D, e E, f F, g G) Tuple7[A, B, C, D, E, F, G] {
-	return Tuple7[A, B, C, D, E, F, G]{A: a, B: b, C: c, D: d, E: e, F: f, G: g}
+	return Tuple7[A, B, C, D, E, F, G]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+	}
 }
 
 type Tuple8[A, B, C, D, E, F, G, H any] struct {
@@ -91,7 +126,16 @@ type Tuple8[A, B, C, D, E, F, G, H any] struct {
 }
 
 func NewTuple8[A, B, C, D, E, F, G, H any](a A, b B, c C, d D, e E, f F, g G, h H) Tuple8[A, B, C, D, E, F, G, H] {
-	return Tuple8[A, B, C, D, E, F, G, H]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h}
+	return Tuple8[A, B, C, D, E, F, G, H]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+	}
 }
 
 type Tuple9[A, B, C, D, E, F, G, H, I any] struct {
@@ -107,7 +151,17 @@ type Tuple9[A, B, C, D, E, F, G, H, I any] struct {
 }
 
 func NewTuple9[A, B, C, D, E, F, G, H, I any](a A, b B, c C, d D, e E, f F, g G, h H, i I) Tuple9[A, B, C, D, E, F, G, H, I] {
-	return Tuple9[A, B, C, D, E, F, G, H, I]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i}
+	return Tuple9[A, B, C, D, E, F, G, H, I]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+	}
 }
 
 type Tuple10[A, B, C, D, E, F, G, H, I, J any] struct {
@@ -124,7 +178,18 @@ type Tuple10[A, B, C, D, E, F, G, H, I, J any] struct {
 }
 
 func NewTuple10[A, B, C, D, E, F, G, H, I, J any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J) Tuple10[A, B, C, D, E, F, G, H, I, J] {
-	return Tuple10[A, B, C, D, E, F, G, H, I, J]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j}
+	return Tuple10[A, B, C, D, E, F, G, H, I, J]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+	}
 }
 
 type Tuple11[A, B, C, D, E, F, G, H, I, J, K any] struct {
@@ -142,7 +207,19 @@ type Tuple11[A, B, C, D, E, F, G, H, I, J, K any] struct {
 }
 
 func NewTuple11[A, B, C, D, E, F, G, H, I, J, K any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K) Tuple11[A, B, C, D, E, F, G, H, I, J, K] {
-	return Tuple11[A, B, C, D, E, F, G, H, I, J, K]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k}
+	return Tuple11[A, B, C, D, E, F, G, H, I, J, K]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+	}
 }
 
 type Tuple12[A, B, C, D, E, F, G, H, I, J, K, L any] struct {
@@ -161,7 +238,20 @@ type Tuple12[A, B, C, D, E, F, G, H, I, J, K, L any] struct {
 }
 
 func NewTuple12[A, B, C, D, E, F, G, H, I, J, K, L any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L) Tuple12[A, B, C, D, E, F, G, H, I, J, K, L] {
-	return Tuple12[A, B, C, D, E, F, G, H, I, J, K, L]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l}
+	return Tuple12[A, B, C, D, E, F, G, H, I, J, K, L]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+	}
 }
 
 type Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M any] struct {
@@ -181,7 +271,21 @@ type Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M any] struct {
 }
 
 func NewTuple13[A, B, C, D, E, F, G, H, I, J, K, L, M any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M) Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M] {
-	return Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m}
+	return Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+	}
 }
 
 type Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N any] struct {
@@ -202,7 +306,22 @@ type Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N any] struct {
 }
 
 func NewTuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N) Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N] {
-	return Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n}
+	return Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+	}
 }
 
 type Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O any] struct {
@@ -224,7 +343,23 @@ type Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O any] struct {
 }
 
 func NewTuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O) Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] {
-	return Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o}
+	return Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+	}
 }
 
 type Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P any] struct {
@@ -247,7 +382,24 @@ type Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P any] struct {
 }
 
 func NewTuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P) Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] {
-	return Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p}
+	return Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+	}
 }
 
 type Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q any] struct {
@@ -271,7 +423,25 @@ type Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q any] struct {
 }
 
 func NewTuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q) Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q] {
-	return Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q}
+	return Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+	}
 }
 
 type Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R any] struct {
@@ -296,7 +466,26 @@ type Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R any] struct {
 }
 
 func NewTuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R) Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R] {
-	return Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r}
+	return Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+	}
 }
 
 type Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S any] struct {
@@ -322,7 +511,27 @@ type Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S any] struct
 }
 
 func NewTuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S) Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S] {
-	return Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s}
+	return Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+	}
 }
 
 type Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T any] struct {
@@ -349,7 +558,28 @@ type Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T any] str
 }
 
 func NewTuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T) Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T] {
-	return Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t}
+	return Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+	}
 }
 
 type Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U any] struct {
@@ -377,7 +607,29 @@ type Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U any] 
 }
 
 func NewTuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U) Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U] {
-	return Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u}
+	return Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+	}
 }
 
 type Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V any] struct {
@@ -406,7 +658,30 @@ type Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V an
 }
 
 func NewTuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V) Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V] {
-	return Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u, V: v}
+	return Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+		V: v,
+	}
 }
 
 type Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W any] struct {
@@ -436,7 +711,31 @@ type Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W
 }
 
 func NewTuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W) Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W] {
-	return Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u, V: v, W: w}
+	return Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+		V: v,
+		W: w,
+	}
 }
 
 type Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X any] struct {
@@ -467,7 +766,32 @@ type Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W
 }
 
 func NewTuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X) Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X] {
-	return Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u, V: v, W: w, X: x}
+	return Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+		V: v,
+		W: w,
+		X: x,
+	}
 }
 
 type Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y any] struct {
@@ -499,7 +823,33 @@ type Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W
 }
 
 func NewTuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X, y Y) Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y] {
-	return Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u, V: v, W: w, X: x, Y: y}
+	return Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+		V: v,
+		W: w,
+		X: x,
+		Y: y,
+	}
 }
 
 type Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z any] struct {
@@ -532,5 +882,32 @@ type Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W
 }
 
 func NewTuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X, y Y, z Z) Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z] {
-	return Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]{A: a, B: b, C: c, D: d, E: e, F: f, G: g, H: h, I: i, J: j, K: k, L: l, M: m, N: n, O: o, P: p, Q: q, R: r, S: s, T: t, U: u, V: v, W: w, X: x, Y: y, Z: z}
+	return Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]{
+		A: a,
+		B: b,
+		C: c,
+		D: d,
+		E: e,
+		F: f,
+		G: g,
+		H: h,
+		I: i,
+		J: j,
+		K: k,
+		L: l,
+		M: m,
+		N: n,
+		O: o,
+		P: p,
+		Q: q,
+		R: r,
+		S: s,
+		T: t,
+		U: u,
+		V: v,
+		W: w,
+		X: x,
+		Y: y,
+		Z: z,
+	}
 }
