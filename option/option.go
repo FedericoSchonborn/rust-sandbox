@@ -122,15 +122,15 @@ func (o Option[T]) OrElse(fn func() Option[T]) Option[T] {
 	return fn()
 }
 
-func Zip[A, B any](a Option[A], b Option[B]) Option[tuple.Tuple2[A, B]] {
-	if a.some && b.some {
-		return Some(tuple.Tuple2[A, B]{
-			V0: a.value,
-			V1: b.value,
+func Zip[Lhs, Rhs any](lhs Option[Lhs], rhs Option[Rhs]) Option[tuple.Tuple2[Lhs, Rhs]] {
+	if lhs.some && rhs.some {
+		return Some(tuple.Tuple2[Lhs, Rhs]{
+			V0: lhs.value,
+			V1: rhs.value,
 		})
 	}
 
-	return None[tuple.Tuple2[A, B]]()
+	return None[tuple.Tuple2[Lhs, Rhs]]()
 }
 
 // TODO: Flatten
