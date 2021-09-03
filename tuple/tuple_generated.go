@@ -2,912 +2,1314 @@
 
 package tuple
 
-type Tuple1[A any] struct {
-	A A
+type Tuple1[T0 any] struct {
+	V0 T0
 }
 
-func NewTuple1[A any](a A) Tuple1[A] {
-	return Tuple1[A]{
-		A: a,
+func NewTuple1[T0 any](v0 T0) Tuple1[T0] {
+	return Tuple1[T0]{
+		V0: v0,
 	}
 }
 
-type Tuple2[A, B any] struct {
-	A A
-	B B
+type Tuple2[T0, T1 any] struct {
+	V0 T0
+	V1 T1
 }
 
-func NewTuple2[A, B any](a A, b B) Tuple2[A, B] {
-	return Tuple2[A, B]{
-		A: a,
-		B: b,
+func NewTuple2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
+	return Tuple2[T0, T1]{
+		V0: v0,
+		V1: v1,
 	}
 }
 
-type Tuple3[A, B, C any] struct {
-	A A
-	B B
-	C C
+type Tuple3[T0, T1, T2 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
 }
 
-func NewTuple3[A, B, C any](a A, b B, c C) Tuple3[A, B, C] {
-	return Tuple3[A, B, C]{
-		A: a,
-		B: b,
-		C: c,
+func NewTuple3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
+	return Tuple3[T0, T1, T2]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
 	}
 }
 
-type Tuple4[A, B, C, D any] struct {
-	A A
-	B B
-	C C
-	D D
+type Tuple4[T0, T1, T2, T3 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
 }
 
-func NewTuple4[A, B, C, D any](a A, b B, c C, d D) Tuple4[A, B, C, D] {
-	return Tuple4[A, B, C, D]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
+func NewTuple4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2, T3] {
+	return Tuple4[T0, T1, T2, T3]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
 	}
 }
 
-type Tuple5[A, B, C, D, E any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
+type Tuple5[T0, T1, T2, T3, T4 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
 }
 
-func NewTuple5[A, B, C, D, E any](a A, b B, c C, d D, e E) Tuple5[A, B, C, D, E] {
-	return Tuple5[A, B, C, D, E]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
+func NewTuple5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5[T0, T1, T2, T3, T4] {
+	return Tuple5[T0, T1, T2, T3, T4]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
 	}
 }
 
-type Tuple6[A, B, C, D, E, F any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
+type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
+	V5 T5
 }
 
-func NewTuple6[A, B, C, D, E, F any](a A, b B, c C, d D, e E, f F) Tuple6[A, B, C, D, E, F] {
-	return Tuple6[A, B, C, D, E, F]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
+func NewTuple6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) Tuple6[T0, T1, T2, T3, T4, T5] {
+	return Tuple6[T0, T1, T2, T3, T4, T5]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
+		V5: v5,
 	}
 }
 
-type Tuple7[A, B, C, D, E, F, G any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
+type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
+	V5 T5
+	V6 T6
 }
 
-func NewTuple7[A, B, C, D, E, F, G any](a A, b B, c C, d D, e E, f F, g G) Tuple7[A, B, C, D, E, F, G] {
-	return Tuple7[A, B, C, D, E, F, G]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
+func NewTuple7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) Tuple7[T0, T1, T2, T3, T4, T5, T6] {
+	return Tuple7[T0, T1, T2, T3, T4, T5, T6]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
+		V5: v5,
+		V6: v6,
 	}
 }
 
-type Tuple8[A, B, C, D, E, F, G, H any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
+type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
+	V5 T5
+	V6 T6
+	V7 T7
 }
 
-func NewTuple8[A, B, C, D, E, F, G, H any](a A, b B, c C, d D, e E, f F, g G, h H) Tuple8[A, B, C, D, E, F, G, H] {
-	return Tuple8[A, B, C, D, E, F, G, H]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
+func NewTuple8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
+	return Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
+		V5: v5,
+		V6: v6,
+		V7: v7,
 	}
 }
 
-type Tuple9[A, B, C, D, E, F, G, H, I any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
+type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
+	V5 T5
+	V6 T6
+	V7 T7
+	V8 T8
 }
 
-func NewTuple9[A, B, C, D, E, F, G, H, I any](a A, b B, c C, d D, e E, f F, g G, h H, i I) Tuple9[A, B, C, D, E, F, G, H, I] {
-	return Tuple9[A, B, C, D, E, F, G, H, I]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
+func NewTuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
+	return Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
+		V5: v5,
+		V6: v6,
+		V7: v7,
+		V8: v8,
 	}
 }
 
-type Tuple10[A, B, C, D, E, F, G, H, I, J any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
+type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
+	V0 T0
+	V1 T1
+	V2 T2
+	V3 T3
+	V4 T4
+	V5 T5
+	V6 T6
+	V7 T7
+	V8 T8
+	V9 T9
 }
 
-func NewTuple10[A, B, C, D, E, F, G, H, I, J any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J) Tuple10[A, B, C, D, E, F, G, H, I, J] {
-	return Tuple10[A, B, C, D, E, F, G, H, I, J]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
+func NewTuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
+	return Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{
+		V0: v0,
+		V1: v1,
+		V2: v2,
+		V3: v3,
+		V4: v4,
+		V5: v5,
+		V6: v6,
+		V7: v7,
+		V8: v8,
+		V9: v9,
 	}
 }
 
-type Tuple11[A, B, C, D, E, F, G, H, I, J, K any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
+type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
 }
 
-func NewTuple11[A, B, C, D, E, F, G, H, I, J, K any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K) Tuple11[A, B, C, D, E, F, G, H, I, J, K] {
-	return Tuple11[A, B, C, D, E, F, G, H, I, J, K]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
+func NewTuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
+	return Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
 	}
 }
 
-type Tuple12[A, B, C, D, E, F, G, H, I, J, K, L any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
+type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
 }
 
-func NewTuple12[A, B, C, D, E, F, G, H, I, J, K, L any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L) Tuple12[A, B, C, D, E, F, G, H, I, J, K, L] {
-	return Tuple12[A, B, C, D, E, F, G, H, I, J, K, L]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
+func NewTuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
+	return Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
 	}
 }
 
-type Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
+type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
 }
 
-func NewTuple13[A, B, C, D, E, F, G, H, I, J, K, L, M any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M) Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M] {
-	return Tuple13[A, B, C, D, E, F, G, H, I, J, K, L, M]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
+func NewTuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
+	return Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
 	}
 }
 
-type Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
+type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
 }
 
-func NewTuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N) Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N] {
-	return Tuple14[A, B, C, D, E, F, G, H, I, J, K, L, M, N]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
+func NewTuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
+	return Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
 	}
 }
 
-type Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
+type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
 }
 
-func NewTuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O) Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O] {
-	return Tuple15[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
+func NewTuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
+	return Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
 	}
 }
 
-type Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
+type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
 }
 
-func NewTuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P) Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P] {
-	return Tuple16[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
+func NewTuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
+	return Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
 	}
 }
 
-type Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
+type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
 }
 
-func NewTuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q) Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q] {
-	return Tuple17[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
+func NewTuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
+	return Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
 	}
 }
 
-type Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
+type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
 }
 
-func NewTuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R) Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R] {
-	return Tuple18[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
+func NewTuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
+	return Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
 	}
 }
 
-type Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
+type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
 }
 
-func NewTuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S) Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S] {
-	return Tuple19[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
+func NewTuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
+	return Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
 	}
 }
 
-type Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
+type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
 }
 
-func NewTuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T) Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T] {
-	return Tuple20[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
+func NewTuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
+	return Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
 	}
 }
 
-type Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
+type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
 }
 
-func NewTuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U) Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U] {
-	return Tuple21[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
+func NewTuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
+	return Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
 	}
 }
 
-type Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
-	V V
+type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
 }
 
-func NewTuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V) Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V] {
-	return Tuple22[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
-		V: v,
+func NewTuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
+	return Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
 	}
 }
 
-type Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
-	V V
-	W W
+type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
 }
 
-func NewTuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W) Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W] {
-	return Tuple23[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
-		V: v,
-		W: w,
+func NewTuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
+	return Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
 	}
 }
 
-type Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
-	V V
-	W W
-	X X
+type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
 }
 
-func NewTuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X) Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X] {
-	return Tuple24[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
-		V: v,
-		W: w,
-		X: x,
+func NewTuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
+	return Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
 	}
 }
 
-type Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
-	V V
-	W W
-	X X
-	Y Y
+type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
 }
 
-func NewTuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X, y Y) Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y] {
-	return Tuple25[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
-		V: v,
-		W: w,
-		X: x,
-		Y: y,
+func NewTuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
+	return Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
 	}
 }
 
-type Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z any] struct {
-	A A
-	B B
-	C C
-	D D
-	E E
-	F F
-	G G
-	H H
-	I I
-	J J
-	K K
-	L L
-	M M
-	N N
-	O O
-	P P
-	Q Q
-	R R
-	S S
-	T T
-	U U
-	V V
-	W W
-	X X
-	Y Y
-	Z Z
+type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
 }
 
-func NewTuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z any](a A, b B, c C, d D, e E, f F, g G, h H, i I, j J, k K, l L, m M, n N, o O, p P, q Q, r R, s S, t T, u U, v V, w W, x X, y Y, z Z) Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z] {
-	return Tuple26[A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]{
-		A: a,
-		B: b,
-		C: c,
-		D: d,
-		E: e,
-		F: f,
-		G: g,
-		H: h,
-		I: i,
-		J: j,
-		K: k,
-		L: l,
-		M: m,
-		N: n,
-		O: o,
-		P: p,
-		Q: q,
-		R: r,
-		S: s,
-		T: t,
-		U: u,
-		V: v,
-		W: w,
-		X: x,
-		Y: y,
-		Z: z,
+func NewTuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
+	return Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+	}
+}
+
+type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+}
+
+func NewTuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
+	return Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+	}
+}
+
+type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+}
+
+func NewTuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
+	return Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+		V27: v27,
+	}
+}
+
+type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+}
+
+func NewTuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
+	return Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+		V27: v27,
+		V28: v28,
+	}
+}
+
+type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+}
+
+func NewTuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
+	return Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+		V27: v27,
+		V28: v28,
+		V29: v29,
+	}
+}
+
+type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+}
+
+func NewTuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
+	return Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+		V27: v27,
+		V28: v28,
+		V29: v29,
+		V30: v30,
+	}
+}
+
+type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+}
+
+func NewTuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
+	return Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{
+		V0:  v0,
+		V1:  v1,
+		V2:  v2,
+		V3:  v3,
+		V4:  v4,
+		V5:  v5,
+		V6:  v6,
+		V7:  v7,
+		V8:  v8,
+		V9:  v9,
+		V10: v10,
+		V11: v11,
+		V12: v12,
+		V13: v13,
+		V14: v14,
+		V15: v15,
+		V16: v16,
+		V17: v17,
+		V18: v18,
+		V19: v19,
+		V20: v20,
+		V21: v21,
+		V22: v22,
+		V23: v23,
+		V24: v24,
+		V25: v25,
+		V26: v26,
+		V27: v27,
+		V28: v28,
+		V29: v29,
+		V30: v30,
+		V31: v31,
 	}
 }

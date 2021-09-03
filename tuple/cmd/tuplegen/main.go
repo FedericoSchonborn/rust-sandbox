@@ -10,9 +10,6 @@ import (
 	"strconv"
 )
 
-var upNames = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-var downNames = []byte("abcdefghijklmnopqrstuvwxyz")
-
 func main() {
 	file, err := os.Create("tuple/tuple_generated.go")
 	if err != nil {
@@ -23,34 +20,36 @@ func main() {
 		panic(err)
 	}
 
-	for n := 1; n < 27; n++ {
-		typeName := "Tuple"
-		if n > 0 {
-			typeName += strconv.Itoa(n)
+	for n := 0; n < 32; n++ {
+		typeName := "Tuple1"
+		if n != 0 {
+			typeName = "Tuple" + strconv.Itoa(n+1)
 		}
-
-		names := upNames[0:n]
 
 		var fields string
 		var generics string
 		var params string
 		var args string
 		var assign string
-		for index, name := range names {
-			if index == len(names)-1 {
-				fields += string(name) + " " + string(name)
-				generics += string(name) + " any"
-				params += string(name)
-				args += string(downNames[index]) + " " + string(name)
-				assign += "\n" + string(name) + ": " + string(downNames[index]) + ",\n"
+		for index := 0; index < n+1; index++ {
+			upTName := "T" + strconv.Itoa(index)
+			upVName := "V" + strconv.Itoa(index)
+			downVName := "v" + strconv.Itoa(index)
+
+			if index == n {
+				fields += string(upVName) + " " + string(upTName)
+				generics += string(upTName) + " any"
+				params += string(upTName)
+				args += string(downVName) + " " + string(upTName)
+				assign += "\n" + string(upVName) + ": " + string(downVName) + ",\n"
 				break
 			}
 
-			fields += string(name) + " " + string(name) + ";"
-			generics += string(name) + ","
-			params += string(name) + ","
-			args += string(downNames[index]) + " " + string(name) + ", "
-			assign += "\n" + string(name) + ": " + string(downNames[index]) + ","
+			fields += string(upVName) + " " + string(upTName) + ";"
+			generics += string(upTName) + ","
+			params += string(upTName) + ","
+			args += string(downVName) + " " + string(upTName) + ", "
+			assign += "\n" + string(upVName) + ": " + string(downVName) + ","
 		}
 
 		if _, err := fmt.Fprintf(file, `

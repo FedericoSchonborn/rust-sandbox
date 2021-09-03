@@ -125,8 +125,8 @@ func (o Option[T]) OrElse(fn func() Option[T]) Option[T] {
 func Zip[A, B any](a Option[A], b Option[B]) Option[tuple.Tuple2[A, B]] {
 	if a.some && b.some {
 		return Some(tuple.Tuple2[A, B]{
-			A: a.value,
-			B: b.value,
+			V0: a.value,
+			V1: b.value,
 		})
 	}
 
