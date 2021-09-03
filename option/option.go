@@ -1,6 +1,9 @@
 package option
 
 import (
+	"fmt"
+	"io"
+
 	"github.com/fdschonborn/go-sandbox/tuple"
 	"github.com/fdschonborn/go-sandbox/zero"
 )
@@ -131,3 +134,12 @@ func Zip[A, B any](a Option[A], b Option[B]) Option[tuple.Tuple2[A, B]] {
 }
 
 // TODO: Flatten
+
+func (o Option[T]) Format(f fmt.State, verb rune) {
+	if o.some {
+		io.WriteString(f, "Some("+fmt.Sprintf("%#v", o.value)+")")
+		return
+	}
+
+	io.WriteString(f, "None")
+}
