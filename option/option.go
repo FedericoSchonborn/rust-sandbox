@@ -6,133 +6,128 @@ import (
 )
 
 type Option[T any] struct {
-	value *T
+	some  bool
+	value T
 }
 
 func Some[T any](value T) Option[T] {
-	return Option[T]{value: &value}
+	return Option[T]{
+		some:  true,
+		value: value,
+	}
 }
 
 // None and Option{} are equivalent.
 func None[T any]() Option[T] {
-	return Option[T]{value: nil}
+	return Option[T]{
+		some: false,
+	}
 }
 
 func (o Option[T]) IsSome() bool {
-	return o.value != nil
+	return o.some
 }
 
 func (o Option[T]) IsNone() bool {
-	return o.value == nil
+	return !o.some
 }
 
 func (o Option[T]) Unwrap() T {
-	if o.value == nil {
-		panic("Called Option.Unwrap on None value")
+	if o.some {
+		return o.value
 	}
 
-	return *o.value
+	panic("Called Option.Unwrap on None value")
 }
 
 // UnwrapUnchecked unwraps the Option without checking if it is Some, this may
 // result on unexpected behavior or a panic.
 func (o Option[T]) UnwrapUnchecked() T {
-	return *o.value
+	return o.value
 }
 
 func (o Option[T]) UnwrapOr(def T) T {
-	if o.value == nil {
-		return def
+	if o.some {
+		return o.value
 	}
 
-	return *o.value
+	return def
 }
 
 func (o Option[T]) UnwrapOrElse(fn func() T) T {
-	if o.value == nil {
-		return fn()
+	if o.some {
+		return o.value
 	}
 
-	return *o.value
+	return fn()
 }
 
 // UnwrapOrZero is unwrap_or_default but more gopher-ish.
 func (o Option[T]) UnwrapOrZero() T {
-	if o.value == nil {
-		return zero.Zero[T]()
+	if o.some {
+		return o.value
 	}
 
-	return *o.value
+	return zero.Zero[T]()
 }
 
 func Map[T, U any](o Option[T], fn func(T) U) Option[U] {
-	if o.value == nil {
-		return None[U]()
+	if o.some {
+		return Some(fn(o.value))
 	}
 
-	return Some(fn(*o.value))
-
+	return None[U]()
 }
 
 func (o Option[T]) OkOr(err error) (T, error) {
-	if o.value == nil {
-		return zero.Zero[T](), err
+	if o.some {
+		return o.value, nil
 	}
 
-	return *o.value, nil
+	return zero.Zero[T](), err
 }
 
-func (o Option[T]) OkOrElse(fn func() error) (T, error) {
-	if o.value == nil {
-		return zero.Zero[T](), fn()
+func (o Option[T]) OkOrElse(err func() error) (T, error) {
+	if o.some {
+		return o.value, nil
 	}
 
-	return *o.value, nil
+	return zero.Zero[T](), err()
 }
 
 func (o Option[T]) Filter(pred func(T) bool) Option[T] {
-	if o.value == nil {
-		return None[T]()
+	if o.some && pred(o.value) {
+		return Some(o.value)
 	}
 
-	if !pred(*o.value) {
-		return None[T]()
-	}
-
-	return Some(*o.value)
+	return None[T]()
 }
 
 func (o Option[T]) Or(ob Option[T]) Option[T] {
-	if o.value == nil {
-		return ob
+	if o.some {
+		return o
 	}
 
-	return o
+	return ob
 }
 
 func (o Option[T]) OrElse(fn func() Option[T]) Option[T] {
-	if o.value == nil {
-		return fn()
+	if o.some {
+		return o
 	}
 
-	return o
+	return fn()
 }
 
 func Zip[A, B any](a Option[A], b Option[B]) Option[tuple.Tuple2[A, B]] {
-	if a.value != nil && b.value != nil {
+	if a.some && b.some {
 		return Some(tuple.Tuple2[A, B]{
-			A: *a.value,
-			B: *b.value,
+			A: a.value,
+			B: b.value,
 		})
 	}
 
 	return None[tuple.Tuple2[A, B]]()
 }
 
-func Flatten[T any](o Option[Option[T]]) Option[T] {
-	if o.value == nil || *o.value == None[T]() {
-		return None[T]()
-	}
-
-	return *o.value
-}
+// TODO: Flatten
