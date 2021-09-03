@@ -13,6 +13,19 @@ func Next[Item any, Iter Iterator[Item]](iter Iter) (item Item, ok bool) {
 	return next.UnwrapOrZero(), next.IsSome()
 }
 
+func Find[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) option.Option[Item] {
+	for {
+		item, ok := Next[Item, Iter](iter)
+		if !ok {
+			return option.None[Item]()
+		}
+
+		if f(item) {
+			return option.Some(item)
+		}
+	}
+}
+
 func All[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) bool {
 	for {
 		item, ok := Next[Item, Iter](iter)
@@ -71,6 +84,7 @@ func ForEach[Item any, Iter Iterator[Item]](iter Iter, f func(Item)) {
 
 func Last[Item any, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 	last := option.None[Item]()
+
 	for {
 		item, ok := Next[Item, Iter](iter)
 		if !ok {
@@ -78,5 +92,18 @@ func Last[Item any, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 		}
 
 		last = option.Some(item)
+	}
+}
+
+func Fold[Item, Acc any, Iter Iterator[Item]](iter Iter, init Acc, f func(Acc, Item) Acc) Acc {
+	acc := init
+
+	for {
+		item, ok := Next[Item, Iter](iter)
+		if !ok {
+			return acc
+		}
+
+		acc = f(acc, item)
 	}
 }
