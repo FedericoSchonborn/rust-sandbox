@@ -2,9 +2,7 @@ package ops
 
 import "github.com/fdschonborn/go-sandbox/ints"
 
-type Integer = ints.Int
-
-type RangeBounds[Index Integer, Start Bound, End Bound] interface {
+type RangeBounds[Index ints.Int, Start Bound, End Bound] interface {
 	StartBound() Start
 	EndBound() End
 	Contains(index Index) bool
@@ -12,11 +10,11 @@ type RangeBounds[Index Integer, Start Bound, End Bound] interface {
 
 var _ RangeBounds[int, BoundIncluded, BoundExcluded] = Range[int]{}
 
-type Range[Index Integer] struct {
+type Range[Index ints.Int] struct {
 	Start, End Index
 }
 
-func NewRange[Index Integer](start, end Index) Range[Index] {
+func NewRange[Index ints.Int](start, end Index) Range[Index] {
 	return Range[Index]{Start: start, End: end}
 }
 
@@ -34,11 +32,11 @@ func (r Range[Index]) Contains(index Index) bool {
 
 var _ RangeBounds[int, BoundIncluded, BoundIncluded] = InclusiveRange[int]{}
 
-type InclusiveRange[Index Integer] struct {
+type InclusiveRange[Index ints.Int] struct {
 	Start, End Index
 }
 
-func NewInclusiveRange[Index Integer](start, end Index) InclusiveRange[Index] {
+func NewInclusiveRange[Index ints.Int](start, end Index) InclusiveRange[Index] {
 	return InclusiveRange[Index]{Start: start, End: end}
 }
 
