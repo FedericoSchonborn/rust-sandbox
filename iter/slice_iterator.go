@@ -2,19 +2,19 @@ package iter
 
 import "github.com/fdschonborn/go-sandbox/option"
 
-type SliceIterator[T any] struct {
+type sliceIterator[T any] struct {
 	inner []T
 	index int
 }
 
-func NewSliceIterator[T any](inner []T) *SliceIterator[T] {
-	return &SliceIterator[T]{
+func SliceIterator[T any](inner []T) Iterator[T] {
+	return &sliceIterator[T]{
 		inner: inner,
 		index: 0,
 	}
 }
 
-func (si *SliceIterator[T]) Next() option.Option[T] {
+func (si *sliceIterator[T]) Next() option.Option[T] {
 	if si.index >= len(si.inner) {
 		return option.None[T]()
 	}

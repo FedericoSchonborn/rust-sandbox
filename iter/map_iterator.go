@@ -5,13 +5,13 @@ import (
 	"github.com/fdschonborn/go-sandbox/tuple"
 )
 
-type MapIterator[K comparable, V any] struct {
+type mapIterator[K comparable, V any] struct {
 	inner map[K]V
 	keys  []K
 	index int
 }
 
-func NewMapIterator[K comparable, V any](inner map[K]V) *MapIterator[K, V] {
+func MapIterator[K comparable, V any](inner map[K]V) Iterator[tuple.Tuple2[K, V]] {
 	keys := make([]K, len(inner))
 	index := 0
 	for key := range inner {
@@ -19,20 +19,20 @@ func NewMapIterator[K comparable, V any](inner map[K]V) *MapIterator[K, V] {
 		index++
 	}
 
-	return &MapIterator[K, V]{
+	return &mapIterator[K, V]{
 		inner: inner,
 		keys:  keys,
 		index: 0,
 	}
 }
 
-func (mi *MapIterator[K, V]) Next() option.Option[tuple.Tuple2[K, V]] {
+func (mi *mapIterator[K, V]) Next() option.Option[tuple.Tuple2[K, V]] {
 	if mi.index >= len(mi.keys) {
 		return option.None[tuple.Tuple2[K, V]]()
 	}
-	mi.index++
 
 	key := mi.keys[mi.index]
 	value := mi.inner[key]
+	mi.index++
 	return option.Some(tuple.NewTuple2[K, V](key, value))
 }
