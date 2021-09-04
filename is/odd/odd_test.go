@@ -1,28 +1,24 @@
-package is_test
+package odd_test
 
 import (
 	"fmt"
 	"testing"
 
-	"github.com/fdschonborn/go-sandbox/is"
+	"github.com/fdschonborn/go-sandbox/is/odd"
 )
 
-func TestIsEven(t *testing.T) {
+func TestIsOdd(t *testing.T) {
 	tt := []struct {
-		Value interface{}
+		Value int
 		Even  bool
 	}{
-		{2, true},
-		{5, false},
-		{2.0, true},
-		{5.0, false},
+		{2, false},
+		{5, true},
 	}
 
 	for _, tc := range tt {
 		t.Run(fmt.Sprintf("%v", tc.Value), func(t *testing.T) {
-			t.Parallel()
-
-			result := is.Even(tc.Value)
+			result := odd.IsOdd(tc.Value)
 			if result != tc.Even {
 				t.Errorf("Expected %t, got %t", tc.Even, result)
 			}

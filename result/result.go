@@ -2,8 +2,6 @@ package result
 
 import "github.com/fdschonborn/go-sandbox/zero"
 
-type tag uint8
-
 type Result[T any, E error] struct {
 	ok   bool
 	data interface{}
