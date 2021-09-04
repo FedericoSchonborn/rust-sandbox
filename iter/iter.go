@@ -26,6 +26,10 @@ func Find[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) option.Op
 	}
 }
 
+func FindMap[Item, Result any, Iter Iterator[Item]](iter Iter, f func(Item) option.Option[Result]) option.Option[Result] {
+	return FilterMap[Item, Result, Iter](iter, f).Next()
+}
+
 func All[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) bool {
 	for {
 		item, ok := Next[Item, Iter](iter)

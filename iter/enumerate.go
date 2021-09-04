@@ -24,6 +24,6 @@ func (e *enumerate[Item, Iter]) Next() option.Option[tuple.Tuple2[int, Item]] {
 	}
 
 	result := tuple.NewTuple2(e.n, item)
-	e.n += 1
+	e.n++
 	return option.Some(result)
 }
