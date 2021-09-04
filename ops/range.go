@@ -2,13 +2,13 @@ package ops
 
 import "github.com/fdschonborn/go-sandbox/ints"
 
-type RangeBounds[Index ints.Int, Start Bound, End Bound] interface {
-	StartBound() Start
-	EndBound() End
+type RangeBounds[Index ints.Int] interface {
+	StartBound() Bound
+	EndBound() Bound
 	Contains(index Index) bool
 }
 
-var _ RangeBounds[int, BoundIncluded, BoundExcluded] = Range[int]{}
+var _ RangeBounds[int] = Range[int]{}
 
 type Range[Index ints.Int] struct {
 	Start, End Index
@@ -18,11 +18,11 @@ func NewRange[Index ints.Int](start, end Index) Range[Index] {
 	return Range[Index]{Start: start, End: end}
 }
 
-func (r Range[Index]) StartBound() BoundIncluded {
+func (r Range[Index]) StartBound() Bound {
 	return BoundIncluded(r.Start)
 }
 
-func (r Range[Index]) EndBound() BoundExcluded {
+func (r Range[Index]) EndBound() Bound {
 	return BoundExcluded(r.End)
 }
 
@@ -30,7 +30,7 @@ func (r Range[Index]) Contains(index Index) bool {
 	return (r.Start <= index) && (index < r.End)
 }
 
-var _ RangeBounds[int, BoundIncluded, BoundIncluded] = InclusiveRange[int]{}
+var _ RangeBounds[int] = InclusiveRange[int]{}
 
 type InclusiveRange[Index ints.Int] struct {
 	Start, End Index
@@ -40,11 +40,11 @@ func NewInclusiveRange[Index ints.Int](start, end Index) InclusiveRange[Index] {
 	return InclusiveRange[Index]{Start: start, End: end}
 }
 
-func (ir InclusiveRange[Index]) StartBound() BoundIncluded {
+func (ir InclusiveRange[Index]) StartBound() Bound {
 	return BoundIncluded(ir.Start)
 }
 
-func (ir InclusiveRange[Index]) EndBound() BoundIncluded {
+func (ir InclusiveRange[Index]) EndBound() Bound {
 	return BoundIncluded(ir.End)
 }
 
