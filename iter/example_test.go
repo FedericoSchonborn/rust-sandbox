@@ -6,6 +6,7 @@ import (
 
 	"github.com/fdschonborn/go-sandbox/iter"
 	"github.com/fdschonborn/go-sandbox/option"
+	"github.com/fdschonborn/go-sandbox/slices"
 )
 
 func ExampleFind() {
@@ -17,8 +18,8 @@ func ExampleFind() {
 		}
 	}
 
-	fmt.Println(iter.Find(iter.FromSlice(a), equals(2)))
-	fmt.Println(iter.Find(iter.FromSlice(a), equals(5)))
+	fmt.Println(iter.Find(slices.Iter(a), equals(2)))
+	fmt.Println(iter.Find(slices.Iter(a), equals(5)))
 	// Output:
 	// Some(2)
 	// None
@@ -26,7 +27,7 @@ func ExampleFind() {
 
 func ExampleFold() {
 	a := []int{1, 2, 3}
-	sum := iter.Fold(iter.FromSlice(a), 0, func(acc int, item int) int {
+	sum := iter.Fold(slices.Iter(a), 0, func(acc int, item int) int {
 		return acc + item
 	})
 
@@ -56,7 +57,7 @@ func ExampleMap() {
 
 func ExampleFilter() {
 	a := []int{0, 1, 2}
-	iter := iter.Filter(iter.FromSlice(a), func(item int) bool {
+	iter := iter.Filter(slices.Iter(a), func(item int) bool {
 		return item > 0
 	})
 
@@ -71,7 +72,7 @@ func ExampleFilter() {
 
 func ExampleFilterMap() {
 	a := []string{"1", "two", "NaN", "four", "5"}
-	iter := iter.FilterMap(iter.FromSlice(a), func(item string) option.Option[int] {
+	iter := iter.FilterMap(slices.Iter(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
 			return option.None[int]()
@@ -91,7 +92,7 @@ func ExampleFilterMap() {
 
 func ExampleFindMap() {
 	a := []string{"lol", "NaN", "2", "5"}
-	firstNumber := iter.FindMap(iter.FromSlice(a), func(item string) option.Option[int] {
+	firstNumber := iter.FindMap(slices.Iter(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
 			return option.None[int]()
@@ -103,4 +104,26 @@ func ExampleFindMap() {
 	fmt.Println(firstNumber)
 	// Output:
 	// Some(2)
+}
+
+func ExampleMax() {
+	a := []int{1, 2, 3}
+	b := []int{}
+
+	fmt.Println(iter.Max[int](slices.Iter(a)))
+	fmt.Println(iter.Max[int](slices.Iter(b)))
+	// Output:
+	// Some(3)
+	// None
+}
+
+func ExampleMin() {
+	a := []int{1, 2, 3}
+	b := []int{}
+
+	fmt.Println(iter.Min[int](slices.Iter(a)))
+	fmt.Println(iter.Min[int](slices.Iter(b)))
+	// Output:
+	// Some(1)
+	// None
 }

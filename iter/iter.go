@@ -1,6 +1,7 @@
 package iter
 
 import (
+	"github.com/fdschonborn/go-sandbox/cmp"
 	"github.com/fdschonborn/go-sandbox/option"
 )
 
@@ -109,5 +110,33 @@ func Fold[Item, Acc any, Iter Iterator[Item]](iter Iter, init Acc, f func(Acc, I
 		}
 
 		acc = f(acc, item)
+	}
+}
+
+func Max[Item cmp.Ordered, Iter Iterator[Item]](iter Iter) option.Option[Item] {
+	max := option.None[Item]()
+	for {
+		item, ok := Next[Item, Iter](iter)
+		if !ok {
+			return max
+		}
+
+		if max.IsNone() || item > max.UnwrapUnchecked() {
+			max = option.Some(item)
+		}
+	}
+}
+
+func Min[Item cmp.Ordered, Iter Iterator[Item]](iter Iter) option.Option[Item] {
+	min := option.None[Item]()
+	for {
+		item, ok := Next[Item, Iter](iter)
+		if !ok {
+			return min
+		}
+
+		if min.IsNone() || item < min.UnwrapUnchecked() {
+			min = option.Some(item)
+		}
 	}
 }
