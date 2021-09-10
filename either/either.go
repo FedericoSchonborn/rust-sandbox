@@ -2,47 +2,37 @@ package either
 
 import "github.com/fdschonborn/go-sandbox/zero"
 
-type tag uint8
-
-const (
-	tagLeft tag = iota + 1
-	tagRight
-)
-
 type Either[L, R any] struct {
-	tag  tag
+	left bool
 	data interface{}
 }
 
 func Left[L, R any](value L) Either[L, R] {
 	return Either[L, R]{
-		tag:  tagLeft,
+		left: true,
 		data: value,
 	}
 }
 
 func Right[L, R any](value R) Either[L, R] {
 	return Either[L, R]{
-		tag:  tagRight,
+		left: false,
 		data: value,
 	}
 }
 
 func (e Either[L, R]) IsLeft() bool {
-	return e.tag == tagLeft
+	return e.left
 }
 
 func (e Either[L, R]) IsRight() bool {
-	return e.tag == tagRight
+	return !e.left
 }
 
 func (e Either[L, R]) Unpack() (L, R) {
-	switch e.tag {
-	case tagLeft:
+	if e.left {
 		return e.data.(L), zero.Zero[R]()
-	case tagRight:
-		return zero.Zero[L](), e.data.(R)
-	default:
-		panic("Either contains invalid tag")
 	}
+
+	return zero.Zero[L](), e.data.(R)
 }
