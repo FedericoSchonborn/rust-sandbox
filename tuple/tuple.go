@@ -12,6 +12,10 @@ func NewTuple1[T0 any](v0 T0) Tuple1[T0] {
 	}
 }
 
+func (t Tuple1[T0]) Unpack() T0 {
+	return t.V0
+}
+
 type Tuple2[T0, T1 any] struct {
 	V0 T0
 	V1 T1
@@ -22,6 +26,10 @@ func NewTuple2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
 		V0: v0,
 		V1: v1,
 	}
+}
+
+func (t Tuple2[T0, T1]) Unpack() (T0, T1) {
+	return t.V0, t.V1
 }
 
 type Tuple3[T0, T1, T2 any] struct {
@@ -38,6 +46,10 @@ func NewTuple3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
 	}
 }
 
+func (t Tuple3[T0, T1, T2]) Unpack() (T0, T1, T2) {
+	return t.V0, t.V1, t.V2
+}
+
 type Tuple4[T0, T1, T2, T3 any] struct {
 	V0 T0
 	V1 T1
@@ -52,6 +64,10 @@ func NewTuple4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2
 		V2: v2,
 		V3: v3,
 	}
+}
+
+func (t Tuple4[T0, T1, T2, T3]) Unpack() (T0, T1, T2, T3) {
+	return t.V0, t.V1, t.V2, t.V3
 }
 
 type Tuple5[T0, T1, T2, T3, T4 any] struct {
@@ -72,6 +88,10 @@ func NewTuple5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5
 	}
 }
 
+func (t Tuple5[T0, T1, T2, T3, T4]) Unpack() (T0, T1, T2, T3, T4) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4
+}
+
 type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
 	V0 T0
 	V1 T1
@@ -90,6 +110,10 @@ func NewTuple6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5
 		V4: v4,
 		V5: v5,
 	}
+}
+
+func (t Tuple6[T0, T1, T2, T3, T4, T5]) Unpack() (T0, T1, T2, T3, T4, T5) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5
 }
 
 type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
@@ -114,6 +138,10 @@ func NewTuple7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4
 	}
 }
 
+func (t Tuple7[T0, T1, T2, T3, T4, T5, T6]) Unpack() (T0, T1, T2, T3, T4, T5, T6) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6
+}
+
 type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
 	V0 T0
 	V1 T1
@@ -136,6 +164,10 @@ func NewTuple8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v
 		V6: v6,
 		V7: v7,
 	}
+}
+
+func (t Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7
 }
 
 type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
@@ -164,6 +196,10 @@ func NewTuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T
 	}
 }
 
+func (t Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8
+}
+
 type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
 	V0 T0
 	V1 T1
@@ -190,6 +226,10 @@ func NewTuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2,
 		V8: v8,
 		V9: v9,
 	}
+}
+
+func (t Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9
 }
 
 type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
@@ -222,6 +262,10 @@ func NewTuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v
 	}
 }
 
+func (t Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10
+}
+
 type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
 	V0  T0
 	V1  T1
@@ -252,6 +296,10 @@ func NewTuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 
 		V10: v10,
 		V11: v11,
 	}
+}
+
+func (t Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11
 }
 
 type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
@@ -288,6 +336,10 @@ func NewTuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0
 	}
 }
 
+func (t Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12
+}
+
 type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] struct {
 	V0  T0
 	V1  T1
@@ -322,6 +374,10 @@ func NewTuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](
 		V12: v12,
 		V13: v13,
 	}
+}
+
+func (t Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13
 }
 
 type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any] struct {
@@ -362,6 +418,10 @@ func NewTuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 
 	}
 }
 
+func (t Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14
+}
+
 type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any] struct {
 	V0  T0
 	V1  T1
@@ -400,6 +460,10 @@ func NewTuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V14: v14,
 		V15: v15,
 	}
+}
+
+func (t Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15
 }
 
 type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any] struct {
@@ -444,6 +508,10 @@ func NewTuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16
+}
+
 type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any] struct {
 	V0  T0
 	V1  T1
@@ -486,6 +554,10 @@ func NewTuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V16: v16,
 		V17: v17,
 	}
+}
+
+func (t Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17
 }
 
 type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any] struct {
@@ -534,6 +606,10 @@ func NewTuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18
+}
+
 type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any] struct {
 	V0  T0
 	V1  T1
@@ -580,6 +656,10 @@ func NewTuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V18: v18,
 		V19: v19,
 	}
+}
+
+func (t Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19
 }
 
 type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any] struct {
@@ -632,6 +712,10 @@ func NewTuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20
+}
+
 type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any] struct {
 	V0  T0
 	V1  T1
@@ -682,6 +766,10 @@ func NewTuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V20: v20,
 		V21: v21,
 	}
+}
+
+func (t Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21
 }
 
 type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any] struct {
@@ -738,6 +826,10 @@ func NewTuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22
+}
+
 type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any] struct {
 	V0  T0
 	V1  T1
@@ -792,6 +884,10 @@ func NewTuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V22: v22,
 		V23: v23,
 	}
+}
+
+func (t Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23
 }
 
 type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any] struct {
@@ -852,6 +948,10 @@ func NewTuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24
+}
+
 type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any] struct {
 	V0  T0
 	V1  T1
@@ -910,6 +1010,10 @@ func NewTuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V24: v24,
 		V25: v25,
 	}
+}
+
+func (t Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25
 }
 
 type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any] struct {
@@ -974,6 +1078,10 @@ func NewTuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26
+}
+
 type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any] struct {
 	V0  T0
 	V1  T1
@@ -1036,6 +1144,10 @@ func NewTuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V26: v26,
 		V27: v27,
 	}
+}
+
+func (t Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27
 }
 
 type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any] struct {
@@ -1104,6 +1216,10 @@ func NewTuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28
+}
+
 type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any] struct {
 	V0  T0
 	V1  T1
@@ -1170,6 +1286,10 @@ func NewTuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V28: v28,
 		V29: v29,
 	}
+}
+
+func (t Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29
 }
 
 type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any] struct {
@@ -1242,6 +1362,10 @@ func NewTuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 	}
 }
 
+func (t Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30
+}
+
 type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any] struct {
 	V0  T0
 	V1  T1
@@ -1312,4 +1436,8 @@ func NewTuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14,
 		V30: v30,
 		V31: v31,
 	}
+}
+
+func (t Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31
 }

@@ -33,25 +33,34 @@ func main() {
 		var params string
 		var args string
 		var assign string
+		var accesses string
+		var returns string
 		for index := 0; index < n+1; index++ {
 			upTName := "T" + strconv.Itoa(index)
 			upVName := "V" + strconv.Itoa(index)
 			downVName := "v" + strconv.Itoa(index)
 
-			if index == n {
-				fields += string(upVName) + " " + string(upTName)
-				generics += string(upTName) + " any"
-				params += string(upTName)
-				args += string(downVName) + " " + string(upTName)
-				assign += "\n" + string(upVName) + ": " + string(downVName) + ",\n"
-				break
+			fields += upVName + " " + upTName
+			generics += upTName
+			params += upTName
+			args += downVName + " " + upTName
+			assign += "\n" + upVName + ": " + downVName
+			accesses += "t." + upVName
+			returns += upTName
+
+			if index != n {
+				fields += ";"
+				generics += ","
+				params += ","
+				args += ", "
+				assign += ","
+				accesses += ","
+				returns += ","
 			}
 
-			fields += string(upVName) + " " + string(upTName) + ";"
-			generics += string(upTName) + ","
-			params += string(upTName) + ","
-			args += string(downVName) + " " + string(upTName) + ", "
-			assign += "\n" + string(upVName) + ": " + string(downVName) + ","
+			if index == n {
+				generics += " any"
+			}
 		}
 
 		if _, err := fmt.Fprintf(file, `
@@ -60,9 +69,13 @@ type %[1]s[%[2]s] struct {
 }
 
 func New%[1]s[%[2]s](%[5]s) %[1]s[%[4]s] {
-	return %[1]s[%[4]s]{%[6]s}
+	return %[1]s[%[4]s]{%[6]s`+",\n"+`}
 }
-`, typeName, generics, fields, params, args, assign); err != nil {
+
+func (t %[1]s[%[4]s]) Unpack() (%[7]s) {
+	return %[8]s
+}
+`, typeName, generics, fields, params, args, assign, returns, accesses); err != nil {
 			panic(err)
 		}
 	}
