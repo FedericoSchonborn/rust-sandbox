@@ -6,7 +6,7 @@ type Tuple1[T0 any] struct {
 	V0 T0
 }
 
-func NewTuple1[T0 any](v0 T0) Tuple1[T0] {
+func New1[T0 any](v0 T0) Tuple1[T0] {
 	return Tuple1[T0]{
 		V0: v0,
 	}
@@ -21,7 +21,7 @@ type Tuple2[T0, T1 any] struct {
 	V1 T1
 }
 
-func NewTuple2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
+func New2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
 	return Tuple2[T0, T1]{
 		V0: v0,
 		V1: v1,
@@ -38,7 +38,7 @@ type Tuple3[T0, T1, T2 any] struct {
 	V2 T2
 }
 
-func NewTuple3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
+func New3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
 	return Tuple3[T0, T1, T2]{
 		V0: v0,
 		V1: v1,
@@ -57,7 +57,7 @@ type Tuple4[T0, T1, T2, T3 any] struct {
 	V3 T3
 }
 
-func NewTuple4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2, T3] {
+func New4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2, T3] {
 	return Tuple4[T0, T1, T2, T3]{
 		V0: v0,
 		V1: v1,
@@ -78,7 +78,7 @@ type Tuple5[T0, T1, T2, T3, T4 any] struct {
 	V4 T4
 }
 
-func NewTuple5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5[T0, T1, T2, T3, T4] {
+func New5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5[T0, T1, T2, T3, T4] {
 	return Tuple5[T0, T1, T2, T3, T4]{
 		V0: v0,
 		V1: v1,
@@ -101,7 +101,7 @@ type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
 	V5 T5
 }
 
-func NewTuple6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) Tuple6[T0, T1, T2, T3, T4, T5] {
+func New6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) Tuple6[T0, T1, T2, T3, T4, T5] {
 	return Tuple6[T0, T1, T2, T3, T4, T5]{
 		V0: v0,
 		V1: v1,
@@ -126,7 +126,7 @@ type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
 	V6 T6
 }
 
-func NewTuple7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) Tuple7[T0, T1, T2, T3, T4, T5, T6] {
+func New7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) Tuple7[T0, T1, T2, T3, T4, T5, T6] {
 	return Tuple7[T0, T1, T2, T3, T4, T5, T6]{
 		V0: v0,
 		V1: v1,
@@ -153,7 +153,7 @@ type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
 	V7 T7
 }
 
-func NewTuple8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
+func New8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
 	return Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{
 		V0: v0,
 		V1: v1,
@@ -182,7 +182,7 @@ type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
 	V8 T8
 }
 
-func NewTuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
+func New9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
 	return Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{
 		V0: v0,
 		V1: v1,
@@ -213,7 +213,7 @@ type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
 	V9 T9
 }
 
-func NewTuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
+func New10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
 	return Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{
 		V0: v0,
 		V1: v1,
@@ -246,7 +246,7 @@ type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
 	V10 T10
 }
 
-func NewTuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
+func New11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
 	return Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{
 		V0:  v0,
 		V1:  v1,
@@ -281,7 +281,7 @@ type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
 	V11 T11
 }
 
-func NewTuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
+func New12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
 	return Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{
 		V0:  v0,
 		V1:  v1,
@@ -318,7 +318,7 @@ type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
 	V12 T12
 }
 
-func NewTuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
+func New13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
 	return Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{
 		V0:  v0,
 		V1:  v1,
@@ -357,7 +357,7 @@ type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] str
 	V13 T13
 }
 
-func NewTuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
+func New14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
 	return Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{
 		V0:  v0,
 		V1:  v1,
@@ -398,7 +398,7 @@ type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any
 	V14 T14
 }
 
-func NewTuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
+func New15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
 	return Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{
 		V0:  v0,
 		V1:  v1,
@@ -441,7 +441,7 @@ type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V15 T15
 }
 
-func NewTuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
+func New16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
 	return Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{
 		V0:  v0,
 		V1:  v1,
@@ -486,7 +486,7 @@ type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V16 T16
 }
 
-func NewTuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
+func New17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
 	return Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{
 		V0:  v0,
 		V1:  v1,
@@ -533,7 +533,7 @@ type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V17 T17
 }
 
-func NewTuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
+func New18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
 	return Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{
 		V0:  v0,
 		V1:  v1,
@@ -582,7 +582,7 @@ type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V18 T18
 }
 
-func NewTuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
+func New19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
 	return Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{
 		V0:  v0,
 		V1:  v1,
@@ -633,7 +633,7 @@ type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V19 T19
 }
 
-func NewTuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
+func New20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
 	return Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{
 		V0:  v0,
 		V1:  v1,
@@ -686,7 +686,7 @@ type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V20 T20
 }
 
-func NewTuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
+func New21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
 	return Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{
 		V0:  v0,
 		V1:  v1,
@@ -741,7 +741,7 @@ type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V21 T21
 }
 
-func NewTuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
+func New22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
 	return Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{
 		V0:  v0,
 		V1:  v1,
@@ -798,7 +798,7 @@ type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V22 T22
 }
 
-func NewTuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
+func New23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
 	return Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{
 		V0:  v0,
 		V1:  v1,
@@ -857,7 +857,7 @@ type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V23 T23
 }
 
-func NewTuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
+func New24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
 	return Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{
 		V0:  v0,
 		V1:  v1,
@@ -918,7 +918,7 @@ type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V24 T24
 }
 
-func NewTuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
+func New25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
 	return Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{
 		V0:  v0,
 		V1:  v1,
@@ -981,7 +981,7 @@ type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V25 T25
 }
 
-func NewTuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
+func New26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
 	return Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{
 		V0:  v0,
 		V1:  v1,
@@ -1046,7 +1046,7 @@ type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V26 T26
 }
 
-func NewTuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
+func New27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
 	return Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{
 		V0:  v0,
 		V1:  v1,
@@ -1113,7 +1113,7 @@ type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V27 T27
 }
 
-func NewTuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
+func New28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
 	return Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{
 		V0:  v0,
 		V1:  v1,
@@ -1182,7 +1182,7 @@ type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V28 T28
 }
 
-func NewTuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
+func New29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
 	return Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{
 		V0:  v0,
 		V1:  v1,
@@ -1253,7 +1253,7 @@ type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V29 T29
 }
 
-func NewTuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
+func New30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
 	return Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{
 		V0:  v0,
 		V1:  v1,
@@ -1326,7 +1326,7 @@ type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V30 T30
 }
 
-func NewTuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
+func New31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
 	return Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{
 		V0:  v0,
 		V1:  v1,
@@ -1401,7 +1401,7 @@ type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V31 T31
 }
 
-func NewTuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
+func New32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
 	return Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{
 		V0:  v0,
 		V1:  v1,

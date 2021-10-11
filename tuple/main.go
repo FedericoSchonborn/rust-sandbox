@@ -27,6 +27,7 @@ func main() {
 
 	for n := 0; n < 32; n++ {
 		typeName := "Tuple" + strconv.Itoa(n+1)
+		funcName := "New" + strconv.Itoa(n+1)
 
 		var fields string
 		var generics string
@@ -68,14 +69,14 @@ type %[1]s[%[2]s] struct {
 	%[3]s
 }
 
-func New%[1]s[%[2]s](%[5]s) %[1]s[%[4]s] {
+func %[9]s[%[2]s](%[5]s) %[1]s[%[4]s] {
 	return %[1]s[%[4]s]{%[6]s`+",\n"+`}
 }
 
 func (t %[1]s[%[4]s]) Unpack() (%[7]s) {
 	return %[8]s
 }
-`, typeName, generics, fields, params, args, assign, returns, accesses); err != nil {
+`, typeName, generics, fields, params, args, assign, returns, accesses, funcName); err != nil {
 			panic(err)
 		}
 	}
