@@ -1,7 +1,5 @@
 package result
 
-import "github.com/fdschonborn/go-sandbox/zero"
-
 type Result[T any, E error] struct {
 	ok   bool
 	data interface{}
@@ -27,12 +25,4 @@ func (r Result[T, E]) IsOk() bool {
 
 func (r Result[T, E]) IsErr() bool {
 	return !r.ok
-}
-
-func (r Result[T, E]) Unpack() (T, error) {
-	if r.ok {
-		return r.data.(T), nil
-	}
-
-	return zero.Zero[T](), r.data.(error)
 }
