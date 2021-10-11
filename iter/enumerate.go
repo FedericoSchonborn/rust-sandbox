@@ -23,7 +23,7 @@ func (e *enumerate[Item, Iter]) Next() option.Option[tuple.Tuple2[int, Item]] {
 		return option.None[tuple.Tuple2[int, Item]]()
 	}
 
-	result := tuple.NewTuple2(e.n, item)
+	result := tuple.New2(e.n, item)
 	e.n++
 	return option.Some(result)
 }
