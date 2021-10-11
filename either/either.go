@@ -1,7 +1,5 @@
 package either
 
-import "github.com/fdschonborn/go-sandbox/zero"
-
 type Either[L, R any] struct {
 	left bool
 	data interface{}
@@ -27,12 +25,4 @@ func (e Either[L, R]) IsLeft() bool {
 
 func (e Either[L, R]) IsRight() bool {
 	return !e.left
-}
-
-func (e Either[L, R]) Unpack() (L, R) {
-	if e.left {
-		return e.data.(L), zero.Zero[R]()
-	}
-
-	return zero.Zero[L](), e.data.(R)
 }

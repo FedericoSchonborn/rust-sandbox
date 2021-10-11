@@ -12,6 +12,7 @@ func Ok[T any, E error](value T) Result[T, E] {
 	}
 }
 
+// Result{} and Err(nil) are equivalent.
 func Err[T any, E error](err error) Result[T, E] {
 	return Result[T, E]{
 		ok:   false,
