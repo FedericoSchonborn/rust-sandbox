@@ -7,7 +7,7 @@ import (
 )
 
 func TestObject_Get(t *testing.T) {
-	result, err := json.Object[string, bool]{"result": true}.Get("result")
+	result, err := json.Object[bool]{"result": true}.Get("result")
 	if err != nil {
 		t.Fatal(err)
 	}

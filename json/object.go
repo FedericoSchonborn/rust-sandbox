@@ -3,17 +3,16 @@ package json
 import (
 	"errors"
 
-	"github.com/fdschonborn/go-sandbox/constraints"
 	"github.com/fdschonborn/go-sandbox/zero"
 )
 
-type Object[K constraints.String, V any] map[K]V
+type Object[T any] map[string]T
 
 // TODO: Support composite types.
-func (o Object[K, V]) Get(field K) (V, error) {
-	value, ok := o[field]
+func (o Object[T]) Get(key string) (T, error) {
+	value, ok := o[key]
 	if !ok {
-		return zero.Zero[V](), errors.New("not found")
+		return zero.Zero[T](), errors.New("not found")
 	}
 
 	return value, nil
