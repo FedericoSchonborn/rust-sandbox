@@ -20,7 +20,6 @@ func Example() {
 	// 1
 }
 
-
 func ExampleSleep() {
 	sleep := func() struct{} {
 		time.Sleep(5 * time.Second)
@@ -34,14 +33,14 @@ func ExampleSleep() {
 	// {}
 }
 
-func ExampleTuple() {
-	withTuple := func() tuple.Tuple4[string, int, bool, error] {
-		return tuple.New4[string, int, bool, error]("Hello, world!", 42, true, nil)
+func ExampleTryTask() {
+	withTuple := func() (tuple.Tuple3[string, int, bool], error) {
+		return tuple.New3("Hello, world!", 42, true), nil
 	}
 
-	task := task.New(withTuple)
-	fmt.Println(task.Await().Unpack())
+	task := task.Try(withTuple)
+	fmt.Println(task.Await())
 
 	// Output:
-	// Hello, world! 42 true <nil>
+	// {Hello, world! 42 true} <nil>
 }
