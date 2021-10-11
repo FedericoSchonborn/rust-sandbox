@@ -11,3 +11,11 @@ type Unsigned interface {
 type Int interface {
 	Signed | Unsigned
 }
+
+func Add[L, R, O Int](l L, r R) O {
+	return O(l) + O(r)
+}
+
+func Sub[L, R, O Int](l L, r R) O {
+	return O(l) - O(r)
+}
