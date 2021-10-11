@@ -2,29 +2,19 @@ package json
 
 import (
 	"errors"
-	"reflect"
+
+	"github.com/fdschonborn/go-sandbox/constraints"
+	"github.com/fdschonborn/go-sandbox/zero"
 )
 
-type Object[T any] map[string]T
+type Object[K constraints.String, V any] map[K]V
 
 // TODO: Support composite types.
-func (o Object[T]) Get(field string, out *T) error {
-	outValue := reflect.ValueOf(out)
-	if outValue.Kind() != reflect.Ptr {
-		return errors.New("pointer required")
-	}
-	outElem := outValue.Elem()
-
+func (o Object[K, V]) Get(field K) (V, error) {
 	value, ok := o[field]
 	if !ok {
-		return errors.New("not found")
+		return zero.Zero[V](), errors.New("not found")
 	}
 
-	valueValue := reflect.ValueOf(value)
-	if valueValue.Type() != outElem.Type() {
-		return errors.New("type mismatch")
-	}
-
-	outElem.Set(valueValue)
-	return nil
+	return value, nil
 }

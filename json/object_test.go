@@ -7,16 +7,12 @@ import (
 )
 
 func TestObject_Get(t *testing.T) {
-	o := json.Object[bool]{"result": true}
-	t.Log(o)
-
-	var result bool
-	if err := o.Get("result", &result); err != nil {
+	result, err := json.Object[string, bool]{"result": true}.Get("result")
+	if err != nil {
 		t.Fatal(err)
 	}
 
 	if !result {
 		t.Fatal("Expected result to be true")
 	}
-	t.Log(result)
 }
