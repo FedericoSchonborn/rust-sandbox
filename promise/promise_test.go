@@ -10,7 +10,7 @@ import (
 func Example() {
 	promise.Resolve("Banana").Then(func(value string) {
 		fmt.Println(value)
-	}).Catch(func (err error) {
+	}).Catch(func(err error) {
 		fmt.Fprintln(os.Stderr, err)
 	})
 
