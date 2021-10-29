@@ -36,5 +36,5 @@ func (mi *mapIter[K, V]) Next() option.Option[tuple.Tuple2[K, V]] {
 	key := mi.keys[mi.i]
 	value := mi.m[key]
 	mi.i++
-	return option.Some(tuple.New2[K, V](key, value))
+	return option.Some(tuple.New2(key, value))
 }

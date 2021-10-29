@@ -20,7 +20,7 @@ func TestRangeContains(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.Name, func(t *testing.T) {
-			r := ops.NewRange[int](tc.Start, tc.End)
+			r := ops.NewRange(tc.Start, tc.End)
 
 			result := r.Contains(tc.Item)
 			if result != tc.Expect {
