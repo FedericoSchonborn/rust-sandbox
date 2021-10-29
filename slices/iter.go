@@ -24,5 +24,5 @@ func (si *sliceIter[T]) Next() option.Option[T] {
 
 	value := si.s[si.i]
 	si.i++
-	return option.Some[T](value)
+	return option.Some(value)
 }
