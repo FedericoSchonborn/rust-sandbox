@@ -1,10 +1,10 @@
 package odd
 
 import (
-	"github.com/fdschonborn/go-sandbox/ints"
+	"github.com/fdschonborn/go-sandbox/constraints"
 	"github.com/fdschonborn/go-sandbox/is/even"
 )
 
-func IsOdd[T ints.Int](value T) bool {
+func IsOdd[T constraints.Int](value T) bool {
 	return !even.IsEven(value)
 }

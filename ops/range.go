@@ -1,8 +1,8 @@
 package ops
 
-import "github.com/fdschonborn/go-sandbox/ints"
+import "github.com/fdschonborn/go-sandbox/constraints"
 
-type RangeBounds[Index ints.Int] interface {
+type RangeBounds[Index constraints.Int] interface {
 	StartBound() Bound
 	EndBound() Bound
 	Contains(index Index) bool
@@ -10,11 +10,11 @@ type RangeBounds[Index ints.Int] interface {
 
 var _ RangeBounds[int] = Range[int]{}
 
-type Range[Index ints.Int] struct {
+type Range[Index constraints.Int] struct {
 	Start, End Index
 }
 
-func NewRange[Index ints.Int](start, end Index) Range[Index] {
+func NewRange[Index constraints.Int](start, end Index) Range[Index] {
 	return Range[Index]{Start: start, End: end}
 }
 
@@ -32,11 +32,11 @@ func (r Range[Index]) Contains(index Index) bool {
 
 var _ RangeBounds[int] = InclusiveRange[int]{}
 
-type InclusiveRange[Index ints.Int] struct {
+type InclusiveRange[Index constraints.Int] struct {
 	Start, End Index
 }
 
-func NewInclusiveRange[Index ints.Int](start, end Index) InclusiveRange[Index] {
+func NewInclusiveRange[Index constraints.Int](start, end Index) InclusiveRange[Index] {
 	return InclusiveRange[Index]{Start: start, End: end}
 }
 
