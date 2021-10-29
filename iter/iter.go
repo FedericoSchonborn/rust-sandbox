@@ -16,7 +16,7 @@ func Next[Item any, Iter Iterator[Item]](iter Iter) (item Item, ok bool) {
 
 func Find[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) option.Option[Item] {
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			return option.None[Item]()
 		}
@@ -28,12 +28,12 @@ func Find[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) option.Op
 }
 
 func FindMap[Item, Result any, Iter Iterator[Item]](iter Iter, f func(Item) option.Option[Result]) option.Option[Result] {
-	return FilterMap[Item, Result, Iter](iter, f).Next()
+	return FilterMap(iter, f).Next()
 }
 
 func All[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) bool {
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			break
 		}
@@ -48,7 +48,7 @@ func All[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) bool {
 
 func Any[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) bool {
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			break
 		}
@@ -65,7 +65,7 @@ func Collect[Item any, Iter Iterator[Item]](iter Iter) []Item {
 	var result []Item
 
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			break
 		}
@@ -78,7 +78,7 @@ func Collect[Item any, Iter Iterator[Item]](iter Iter) []Item {
 
 func ForEach[Item any, Iter Iterator[Item]](iter Iter, f func(Item)) {
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			break
 		}
@@ -91,7 +91,7 @@ func Last[Item any, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 	last := option.None[Item]()
 
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			return last
 		}
@@ -104,7 +104,7 @@ func Fold[Item, Acc any, Iter Iterator[Item]](iter Iter, init Acc, f func(Acc, I
 	acc := init
 
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			return acc
 		}
@@ -116,7 +116,7 @@ func Fold[Item, Acc any, Iter Iterator[Item]](iter Iter, init Acc, f func(Acc, I
 func Max[Item cmp.Ordered, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 	max := option.None[Item]()
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			return max
 		}
@@ -130,7 +130,7 @@ func Max[Item cmp.Ordered, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 func Min[Item cmp.Ordered, Iter Iterator[Item]](iter Iter) option.Option[Item] {
 	min := option.None[Item]()
 	for {
-		item, ok := Next[Item, Iter](iter)
+		item, ok := Next[Item](iter)
 		if !ok {
 			return min
 		}

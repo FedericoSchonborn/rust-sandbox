@@ -18,7 +18,7 @@ func Enumerate[Item any, Iter Iterator[Item]](iter Iter) Iterator[tuple.Tuple2[i
 }
 
 func (e *enumerate[Item, Iter]) Next() option.Option[tuple.Tuple2[int, Item]] {
-	item, ok := Next[Item, Iter](e.iter)
+	item, ok := Next[Item](e.iter)
 	if !ok {
 		return option.None[tuple.Tuple2[int, Item]]()
 	}

@@ -1,5 +1,3 @@
-//go:build skip
-
 package iter
 
 import "github.com/fdschonborn/go-sandbox/option"

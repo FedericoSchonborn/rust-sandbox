@@ -16,7 +16,7 @@ func FilterMap[Item, Result any, Iter Iterator[Item]](iter Iter, f func(Item) op
 
 func (fm *filterMap[Item, Result, Iter]) Next() option.Option[Result] {
 	for {
-		item, ok := Next[Item, Iter](fm.iter)
+		item, ok := Next[Item](fm.iter)
 		if !ok {
 			return option.None[Result]()
 		}

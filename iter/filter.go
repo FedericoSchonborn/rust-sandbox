@@ -16,7 +16,7 @@ func Filter[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) Iterato
 
 func (f *filter[Item, Iter]) Next() option.Option[Item] {
 	for {
-		item, ok := Next[Item, Iter](f.iter)
+		item, ok := Next[Item](f.iter)
 		if !ok {
 			return option.None[Item]()
 		}
