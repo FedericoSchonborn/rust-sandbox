@@ -1,6 +1,8 @@
 package or
 
-import "github.com/fdschonborn/go-sandbox/zero"
+import (
+	"github.com/fdschonborn/go-sandbox/zero"
+)
 
 func Or[T comparable](value T, defaults ...T) T {
 	zero := zero.Zero[T]()
