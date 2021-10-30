@@ -4,7 +4,7 @@ const (
 	MaxByte byte = 255
 )
 
-// <ctype.h>
+// ISO C
 
 func IsAlnum(c byte) bool {
 	return IsAlpha(c) || IsDigit(c)
@@ -70,7 +70,7 @@ func ToUpper(c byte) byte {
 	return c - 0x20
 }
 
-// POSIX
+// POSIX C
 
 func IsAscii(r rune) bool {
 	return r >= 0 && r <= 255
