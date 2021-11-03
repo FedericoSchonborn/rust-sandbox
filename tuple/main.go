@@ -25,7 +25,7 @@ func main() {
 		panic(err)
 	}
 
-	for n := 0; n < 32; n++ {
+	for n := 0; n < 64; n++ {
 		typeName := "Tuple" + strconv.Itoa(n+1)
 		funcName := "New" + strconv.Itoa(n+1)
 
@@ -45,7 +45,7 @@ func main() {
 			generics += upTName
 			params += upTName
 			args += downVName + " " + upTName
-			assign += "\n" + upVName + ": " + downVName
+			assign += downVName
 			accesses += "t." + upVName
 			returns += upTName
 
@@ -70,7 +70,7 @@ type %[1]s[%[2]s] struct {
 }
 
 func %[9]s[%[2]s](%[5]s) %[1]s[%[4]s] {
-	return %[1]s[%[4]s]{%[6]s`+",\n"+`}
+	return %[1]s[%[4]s]{%[6]s`+", "+`}
 }
 
 func (t %[1]s[%[4]s]) Unpack() (%[7]s) {

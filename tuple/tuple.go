@@ -7,9 +7,7 @@ type Tuple1[T0 any] struct {
 }
 
 func New1[T0 any](v0 T0) Tuple1[T0] {
-	return Tuple1[T0]{
-		V0: v0,
-	}
+	return Tuple1[T0]{v0}
 }
 
 func (t Tuple1[T0]) Unpack() T0 {
@@ -22,10 +20,7 @@ type Tuple2[T0, T1 any] struct {
 }
 
 func New2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
-	return Tuple2[T0, T1]{
-		V0: v0,
-		V1: v1,
-	}
+	return Tuple2[T0, T1]{v0, v1}
 }
 
 func (t Tuple2[T0, T1]) Unpack() (T0, T1) {
@@ -39,11 +34,7 @@ type Tuple3[T0, T1, T2 any] struct {
 }
 
 func New3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
-	return Tuple3[T0, T1, T2]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-	}
+	return Tuple3[T0, T1, T2]{v0, v1, v2}
 }
 
 func (t Tuple3[T0, T1, T2]) Unpack() (T0, T1, T2) {
@@ -58,12 +49,7 @@ type Tuple4[T0, T1, T2, T3 any] struct {
 }
 
 func New4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2, T3] {
-	return Tuple4[T0, T1, T2, T3]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-	}
+	return Tuple4[T0, T1, T2, T3]{v0, v1, v2, v3}
 }
 
 func (t Tuple4[T0, T1, T2, T3]) Unpack() (T0, T1, T2, T3) {
@@ -79,13 +65,7 @@ type Tuple5[T0, T1, T2, T3, T4 any] struct {
 }
 
 func New5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5[T0, T1, T2, T3, T4] {
-	return Tuple5[T0, T1, T2, T3, T4]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-	}
+	return Tuple5[T0, T1, T2, T3, T4]{v0, v1, v2, v3, v4}
 }
 
 func (t Tuple5[T0, T1, T2, T3, T4]) Unpack() (T0, T1, T2, T3, T4) {
@@ -102,14 +82,7 @@ type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
 }
 
 func New6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) Tuple6[T0, T1, T2, T3, T4, T5] {
-	return Tuple6[T0, T1, T2, T3, T4, T5]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-		V5: v5,
-	}
+	return Tuple6[T0, T1, T2, T3, T4, T5]{v0, v1, v2, v3, v4, v5}
 }
 
 func (t Tuple6[T0, T1, T2, T3, T4, T5]) Unpack() (T0, T1, T2, T3, T4, T5) {
@@ -127,15 +100,7 @@ type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
 }
 
 func New7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) Tuple7[T0, T1, T2, T3, T4, T5, T6] {
-	return Tuple7[T0, T1, T2, T3, T4, T5, T6]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-		V5: v5,
-		V6: v6,
-	}
+	return Tuple7[T0, T1, T2, T3, T4, T5, T6]{v0, v1, v2, v3, v4, v5, v6}
 }
 
 func (t Tuple7[T0, T1, T2, T3, T4, T5, T6]) Unpack() (T0, T1, T2, T3, T4, T5, T6) {
@@ -154,16 +119,7 @@ type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
 }
 
 func New8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
-	return Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-		V5: v5,
-		V6: v6,
-		V7: v7,
-	}
+	return Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{v0, v1, v2, v3, v4, v5, v6, v7}
 }
 
 func (t Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7) {
@@ -183,17 +139,7 @@ type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
 }
 
 func New9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
-	return Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-		V5: v5,
-		V6: v6,
-		V7: v7,
-		V8: v8,
-	}
+	return Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{v0, v1, v2, v3, v4, v5, v6, v7, v8}
 }
 
 func (t Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8) {
@@ -214,18 +160,7 @@ type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
 }
 
 func New10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
-	return Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{
-		V0: v0,
-		V1: v1,
-		V2: v2,
-		V3: v3,
-		V4: v4,
-		V5: v5,
-		V6: v6,
-		V7: v7,
-		V8: v8,
-		V9: v9,
-	}
+	return Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9}
 }
 
 func (t Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) {
@@ -247,19 +182,7 @@ type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
 }
 
 func New11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
-	return Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-	}
+	return Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10}
 }
 
 func (t Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) {
@@ -282,20 +205,7 @@ type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
 }
 
 func New12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
-	return Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-	}
+	return Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11}
 }
 
 func (t Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) {
@@ -319,21 +229,7 @@ type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
 }
 
 func New13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
-	return Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-	}
+	return Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12}
 }
 
 func (t Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) {
@@ -358,22 +254,7 @@ type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] str
 }
 
 func New14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
-	return Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-	}
+	return Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13}
 }
 
 func (t Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) {
@@ -399,23 +280,7 @@ type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any
 }
 
 func New15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
-	return Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-	}
+	return Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14}
 }
 
 func (t Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) {
@@ -442,24 +307,7 @@ type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
-	return Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-	}
+	return Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15}
 }
 
 func (t Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) {
@@ -487,25 +335,7 @@ type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
-	return Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-	}
+	return Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16}
 }
 
 func (t Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) {
@@ -534,26 +364,7 @@ type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
-	return Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-	}
+	return Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17}
 }
 
 func (t Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) {
@@ -583,27 +394,7 @@ type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
-	return Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-	}
+	return Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18}
 }
 
 func (t Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) {
@@ -634,28 +425,7 @@ type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
-	return Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-	}
+	return Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19}
 }
 
 func (t Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) {
@@ -687,29 +457,7 @@ type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
-	return Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-	}
+	return Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20}
 }
 
 func (t Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) {
@@ -742,30 +490,7 @@ type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
-	return Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-	}
+	return Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21}
 }
 
 func (t Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) {
@@ -799,31 +524,7 @@ type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
-	return Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-	}
+	return Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22}
 }
 
 func (t Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) {
@@ -858,32 +559,7 @@ type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
-	return Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-	}
+	return Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23}
 }
 
 func (t Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) {
@@ -919,33 +595,7 @@ type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
-	return Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-	}
+	return Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24}
 }
 
 func (t Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) {
@@ -982,34 +632,7 @@ type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
-	return Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-	}
+	return Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25}
 }
 
 func (t Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25) {
@@ -1047,35 +670,7 @@ type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
-	return Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-	}
+	return Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26}
 }
 
 func (t Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26) {
@@ -1114,36 +709,7 @@ type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
-	return Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-		V27: v27,
-	}
+	return Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27}
 }
 
 func (t Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27) {
@@ -1183,37 +749,7 @@ type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
-	return Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-		V27: v27,
-		V28: v28,
-	}
+	return Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28}
 }
 
 func (t Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28) {
@@ -1254,38 +790,7 @@ type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
-	return Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-		V27: v27,
-		V28: v28,
-		V29: v29,
-	}
+	return Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29}
 }
 
 func (t Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29) {
@@ -1327,39 +832,7 @@ type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
-	return Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-		V27: v27,
-		V28: v28,
-		V29: v29,
-		V30: v30,
-	}
+	return Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30}
 }
 
 func (t Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) {
@@ -1402,42 +875,1913 @@ type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 }
 
 func New32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
-	return Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{
-		V0:  v0,
-		V1:  v1,
-		V2:  v2,
-		V3:  v3,
-		V4:  v4,
-		V5:  v5,
-		V6:  v6,
-		V7:  v7,
-		V8:  v8,
-		V9:  v9,
-		V10: v10,
-		V11: v11,
-		V12: v12,
-		V13: v13,
-		V14: v14,
-		V15: v15,
-		V16: v16,
-		V17: v17,
-		V18: v18,
-		V19: v19,
-		V20: v20,
-		V21: v21,
-		V22: v22,
-		V23: v23,
-		V24: v24,
-		V25: v25,
-		V26: v26,
-		V27: v27,
-		V28: v28,
-		V29: v29,
-		V30: v30,
-		V31: v31,
-	}
+	return Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31}
 }
 
 func (t Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) {
 	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31
+}
+
+type Tuple33[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+}
+
+func New33[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32) Tuple33[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32] {
+	return Tuple33[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32}
+}
+
+func (t Tuple33[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32
+}
+
+type Tuple34[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+}
+
+func New34[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33) Tuple34[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33] {
+	return Tuple34[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33}
+}
+
+func (t Tuple34[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33
+}
+
+type Tuple35[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+}
+
+func New35[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34) Tuple35[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34] {
+	return Tuple35[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34}
+}
+
+func (t Tuple35[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34
+}
+
+type Tuple36[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+}
+
+func New36[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35) Tuple36[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35] {
+	return Tuple36[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35}
+}
+
+func (t Tuple36[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35
+}
+
+type Tuple37[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+}
+
+func New37[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36) Tuple37[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36] {
+	return Tuple37[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36}
+}
+
+func (t Tuple37[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36
+}
+
+type Tuple38[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+}
+
+func New38[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37) Tuple38[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37] {
+	return Tuple38[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37}
+}
+
+func (t Tuple38[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37
+}
+
+type Tuple39[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+}
+
+func New39[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38) Tuple39[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38] {
+	return Tuple39[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38}
+}
+
+func (t Tuple39[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38
+}
+
+type Tuple40[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+}
+
+func New40[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39) Tuple40[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39] {
+	return Tuple40[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39}
+}
+
+func (t Tuple40[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39
+}
+
+type Tuple41[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+}
+
+func New41[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40) Tuple41[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40] {
+	return Tuple41[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40}
+}
+
+func (t Tuple41[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40
+}
+
+type Tuple42[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+}
+
+func New42[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41) Tuple42[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41] {
+	return Tuple42[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41}
+}
+
+func (t Tuple42[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41
+}
+
+type Tuple43[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+}
+
+func New43[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42) Tuple43[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42] {
+	return Tuple43[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42}
+}
+
+func (t Tuple43[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42
+}
+
+type Tuple44[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+}
+
+func New44[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43) Tuple44[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43] {
+	return Tuple44[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43}
+}
+
+func (t Tuple44[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43
+}
+
+type Tuple45[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+}
+
+func New45[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44) Tuple45[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44] {
+	return Tuple45[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44}
+}
+
+func (t Tuple45[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44
+}
+
+type Tuple46[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+}
+
+func New46[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45) Tuple46[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45] {
+	return Tuple46[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45}
+}
+
+func (t Tuple46[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45
+}
+
+type Tuple47[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+}
+
+func New47[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46) Tuple47[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46] {
+	return Tuple47[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46}
+}
+
+func (t Tuple47[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46
+}
+
+type Tuple48[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+}
+
+func New48[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47) Tuple48[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47] {
+	return Tuple48[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47}
+}
+
+func (t Tuple48[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47
+}
+
+type Tuple49[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+}
+
+func New49[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48) Tuple49[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48] {
+	return Tuple49[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48}
+}
+
+func (t Tuple49[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48
+}
+
+type Tuple50[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+}
+
+func New50[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49) Tuple50[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49] {
+	return Tuple50[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49}
+}
+
+func (t Tuple50[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49
+}
+
+type Tuple51[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+}
+
+func New51[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50) Tuple51[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50] {
+	return Tuple51[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50}
+}
+
+func (t Tuple51[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50
+}
+
+type Tuple52[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+}
+
+func New52[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51) Tuple52[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51] {
+	return Tuple52[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51}
+}
+
+func (t Tuple52[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51
+}
+
+type Tuple53[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+}
+
+func New53[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52) Tuple53[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52] {
+	return Tuple53[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52}
+}
+
+func (t Tuple53[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52
+}
+
+type Tuple54[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+}
+
+func New54[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53) Tuple54[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53] {
+	return Tuple54[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53}
+}
+
+func (t Tuple54[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53
+}
+
+type Tuple55[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+}
+
+func New55[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54) Tuple55[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54] {
+	return Tuple55[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54}
+}
+
+func (t Tuple55[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54
+}
+
+type Tuple56[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+}
+
+func New56[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55) Tuple56[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55] {
+	return Tuple56[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55}
+}
+
+func (t Tuple56[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55
+}
+
+type Tuple57[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+}
+
+func New57[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56) Tuple57[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56] {
+	return Tuple57[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56}
+}
+
+func (t Tuple57[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56
+}
+
+type Tuple58[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+}
+
+func New58[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57) Tuple58[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57] {
+	return Tuple58[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57}
+}
+
+func (t Tuple58[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57
+}
+
+type Tuple59[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+}
+
+func New59[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58) Tuple59[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58] {
+	return Tuple59[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58}
+}
+
+func (t Tuple59[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58
+}
+
+type Tuple60[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+	V59 T59
+}
+
+func New60[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58, v59 T59) Tuple60[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59] {
+	return Tuple60[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59}
+}
+
+func (t Tuple60[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58, t.V59
+}
+
+type Tuple61[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+	V59 T59
+	V60 T60
+}
+
+func New61[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58, v59 T59, v60 T60) Tuple61[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60] {
+	return Tuple61[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60}
+}
+
+func (t Tuple61[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58, t.V59, t.V60
+}
+
+type Tuple62[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+	V59 T59
+	V60 T60
+	V61 T61
+}
+
+func New62[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58, v59 T59, v60 T60, v61 T61) Tuple62[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61] {
+	return Tuple62[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61}
+}
+
+func (t Tuple62[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58, t.V59, t.V60, t.V61
+}
+
+type Tuple63[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+	V59 T59
+	V60 T60
+	V61 T61
+	V62 T62
+}
+
+func New63[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58, v59 T59, v60 T60, v61 T61, v62 T62) Tuple63[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62] {
+	return Tuple63[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62}
+}
+
+func (t Tuple63[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58, t.V59, t.V60, t.V61, t.V62
+}
+
+type Tuple64[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63 any] struct {
+	V0  T0
+	V1  T1
+	V2  T2
+	V3  T3
+	V4  T4
+	V5  T5
+	V6  T6
+	V7  T7
+	V8  T8
+	V9  T9
+	V10 T10
+	V11 T11
+	V12 T12
+	V13 T13
+	V14 T14
+	V15 T15
+	V16 T16
+	V17 T17
+	V18 T18
+	V19 T19
+	V20 T20
+	V21 T21
+	V22 T22
+	V23 T23
+	V24 T24
+	V25 T25
+	V26 T26
+	V27 T27
+	V28 T28
+	V29 T29
+	V30 T30
+	V31 T31
+	V32 T32
+	V33 T33
+	V34 T34
+	V35 T35
+	V36 T36
+	V37 T37
+	V38 T38
+	V39 T39
+	V40 T40
+	V41 T41
+	V42 T42
+	V43 T43
+	V44 T44
+	V45 T45
+	V46 T46
+	V47 T47
+	V48 T48
+	V49 T49
+	V50 T50
+	V51 T51
+	V52 T52
+	V53 T53
+	V54 T54
+	V55 T55
+	V56 T56
+	V57 T57
+	V58 T58
+	V59 T59
+	V60 T60
+	V61 T61
+	V62 T62
+	V63 T63
+}
+
+func New64[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31, v32 T32, v33 T33, v34 T34, v35 T35, v36 T36, v37 T37, v38 T38, v39 T39, v40 T40, v41 T41, v42 T42, v43 T43, v44 T44, v45 T45, v46 T46, v47 T47, v48 T48, v49 T49, v50 T50, v51 T51, v52 T52, v53 T53, v54 T54, v55 T55, v56 T56, v57 T57, v58 T58, v59 T59, v60 T60, v61 T61, v62 T62, v63 T63) Tuple64[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63] {
+	return Tuple64[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63}
+}
+
+func (t Tuple64[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63) {
+	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31, t.V32, t.V33, t.V34, t.V35, t.V36, t.V37, t.V38, t.V39, t.V40, t.V41, t.V42, t.V43, t.V44, t.V45, t.V46, t.V47, t.V48, t.V49, t.V50, t.V51, t.V52, t.V53, t.V54, t.V55, t.V56, t.V57, t.V58, t.V59, t.V60, t.V61, t.V62, t.V63
 }
