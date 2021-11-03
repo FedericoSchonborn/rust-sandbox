@@ -25,7 +25,7 @@ func main() {
 		panic(err)
 	}
 
-	for n := 0; n < 64; n++ {
+	for n := 0; n < 256; n++ {
 		typeName := "Tuple" + strconv.Itoa(n+1)
 		funcName := "New" + strconv.Itoa(n+1)
 
@@ -65,18 +65,21 @@ func main() {
 		}
 
 		if _, err := fmt.Fprintf(file, `
+// %[1]s is a tuple that contains %[10]d value(s).
 type %[1]s[%[2]s] struct {
 	%[3]s
 }
 
+// Create a new tuple of %[10]d value(s).
 func %[9]s[%[2]s](%[5]s) %[1]s[%[4]s] {
 	return %[1]s[%[4]s]{%[6]s`+", "+`}
 }
 
+// Unpack the contents of the tuple into its %[10]d value(s).
 func (t %[1]s[%[4]s]) Unpack() (%[7]s) {
 	return %[8]s
 }
-`, typeName, generics, fields, params, args, assign, returns, accesses, funcName); err != nil {
+`, typeName, generics, fields, params, args, assign, returns, accesses, funcName, n+1); err != nil {
 			panic(err)
 		}
 	}
