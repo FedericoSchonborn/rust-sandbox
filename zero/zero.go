@@ -2,7 +2,6 @@ package zero
 
 // Zero returns the zero value of type T.
 func Zero[T any]() T {
-	// TODO: If T is interface{}, resolve to the original type.
 	var zero T
 	return zero
 }
