@@ -110,8 +110,8 @@ func ExampleMax() {
 	a := []int{1, 2, 3}
 	b := []int{}
 
-	fmt.Println(iter.Max[int](slices.Iter(a)))
-	fmt.Println(iter.Max[int](slices.Iter(b)))
+	fmt.Println(iter.Max(slices.Iter(a)))
+	fmt.Println(iter.Max(slices.Iter(b)))
 	// Output:
 	// Some(3)
 	// None
@@ -121,8 +121,8 @@ func ExampleMin() {
 	a := []int{1, 2, 3}
 	b := []int{}
 
-	fmt.Println(iter.Min[int](slices.Iter(a)))
-	fmt.Println(iter.Min[int](slices.Iter(b)))
+	fmt.Println(iter.Min(slices.Iter(a)))
+	fmt.Println(iter.Min(slices.Iter(b)))
 	// Output:
 	// Some(1)
 	// None

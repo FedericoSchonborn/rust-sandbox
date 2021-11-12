@@ -2,21 +2,21 @@ package iter
 
 import "github.com/fdschonborn/go-sandbox/option"
 
-type filter[Item any, Iter Iterator[Item]] struct {
-	iter Iter
+type filter[Item any] struct {
+	iter Iterator[Item]
 	f    func(Item) bool
 }
 
-func Filter[Item any, Iter Iterator[Item]](iter Iter, f func(Item) bool) Iterator[Item] {
-	return &filter[Item, Iter]{
+func Filter[Item any](iter Iterator[Item], f func(Item) bool) Iterator[Item] {
+	return &filter[Item]{
 		iter: iter,
 		f:    f,
 	}
 }
 
-func (f *filter[Item, Iter]) Next() option.Option[Item] {
+func (f *filter[Item]) Next() option.Option[Item] {
 	for {
-		item, ok := Next[Item](f.iter)
+		item, ok := next(f.iter)
 		if !ok {
 			return option.None[Item]()
 		}

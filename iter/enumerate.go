@@ -5,20 +5,20 @@ import (
 	"github.com/fdschonborn/go-sandbox/tuple"
 )
 
-type enumerate[Item any, Iter Iterator[Item]] struct {
-	iter Iter
+type enumerate[Item any] struct {
+	iter Iterator[Item]
 	n    int
 }
 
-func Enumerate[Item any, Iter Iterator[Item]](iter Iter) Iterator[tuple.Tuple2[int, Item]] {
-	return &enumerate[Item, Iter]{
+func Enumerate[Item any](iter Iterator[Item]) Iterator[tuple.Tuple2[int, Item]] {
+	return &enumerate[Item]{
 		iter: iter,
 		n:    0,
 	}
 }
 
-func (e *enumerate[Item, Iter]) Next() option.Option[tuple.Tuple2[int, Item]] {
-	item, ok := Next[Item](e.iter)
+func (e *enumerate[Item]) Next() option.Option[tuple.Tuple2[int, Item]] {
+	item, ok := next(e.iter)
 	if !ok {
 		return option.None[tuple.Tuple2[int, Item]]()
 	}
