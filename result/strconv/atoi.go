@@ -3,14 +3,14 @@ package strconv
 import (
 	"strconv"
 
-	"github.com/fdschonborn/go-sandbox/result"
+	. "github.com/fdschonborn/go-sandbox/result"
 )
 
-func Atoi(s string) result.Result[int, error] {
+func Atoi(s string) Result[int] {
 	v, err := strconv.Atoi(s)
 	if err != nil {
-		return result.Err[int](err)
+		return Err[int](err)
 	}
 
-	return result.Ok[int, error](v)
+	return Ok(v)
 }

@@ -1,42 +1,42 @@
 package result
 
-type Result[T, E any] struct {
+type Result[T any] struct {
 	ok    bool
 	inner interface{}
 }
 
-func Ok[T, E any](value T) Result[T, E] {
-	return Result[T, E]{
+func Ok[T any](value T) Result[T] {
+	return Result[T]{
 		ok:    true,
 		inner: value,
 	}
 }
 
 // Result{} and Err(nil) are equivalent.
-func Err[T, E any](err E) Result[T, E] {
-	return Result[T, E]{
+func Err[T any](err error) Result[T] {
+	return Result[T]{
 		ok:    false,
 		inner: err,
 	}
 }
 
-func (r Result[T, E]) IsOk() bool {
+func (r Result[T]) IsOk() bool {
 	return r.ok
 }
 
-func (r Result[T, E]) IsErr() bool {
+func (r Result[T]) IsErr() bool {
 	return !r.ok
 }
 
 // unsafe
-func (r Result[T, E]) UnwrapUnchecked() T {
+func (r Result[T]) UnwrapUnchecked() T {
 	return r.inner.(T)
 }
 
-func Map[T, E, U any](r Result[T, E], op func(T) U) Result[U, E] {
+func Map[T, U any](r Result[T], op func(T) U) Result[U] {
 	if !r.ok {
-		return Err[U](r.inner.(E))
+		return Err[U](r.inner.(error))
 	}
 
-	return Ok[U, E](op(r.inner.(T)))
+	return Ok(op(r.inner.(T)))
 }
