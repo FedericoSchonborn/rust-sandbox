@@ -6,6 +6,36 @@ type Bounds interface {
 	Contains(int) bool
 }
 
+type boundTag byte
+
+const (
+	boundIncluded  boundTag = 1
+	boundExcluded  boundTag = 2
+	boundUnbounded boundTag = 3
+)
+
+type Bound interface {
+	boundTag() boundTag
+}
+
+type BoundIncluded int
+
+func (bi BoundIncluded) boundTag() boundTag {
+	return boundIncluded
+}
+
+type BoundExcluded int
+
+func (be BoundExcluded) boundTag() boundTag {
+	return boundExcluded
+}
+
+type BoundUnbounded struct{}
+
+func (bu BoundUnbounded) boundTag() boundTag {
+	return boundUnbounded
+}
+
 var _ Bounds = Range{}
 
 type Range struct {
@@ -34,8 +64,8 @@ type Inclusive struct {
 	Start, End int
 }
 
-func NewInclusive(start, end int) InclusiveRange {
-	return InclusiveRange{Start: start, End: end}
+func NewInclusive(start, end int) Inclusive {
+	return Inclusive{Start: start, End: end}
 }
 
 func (ir Inclusive) StartBound() Bound {
