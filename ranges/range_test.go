@@ -1,9 +1,9 @@
-package ops_test
+package ranges_test
 
 import (
 	"testing"
 
-	"github.com/fdschonborn/go-sandbox/ops"
+	"github.com/fdschonborn/go-sandbox/ranges"
 )
 
 func TestRangeContains(t *testing.T) {
@@ -20,7 +20,7 @@ func TestRangeContains(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(tc.Name, func(t *testing.T) {
-			r := ops.NewRange(tc.Start, tc.End)
+			r := ranges.New(tc.Start, tc.End)
 
 			result := r.Contains(tc.Item)
 			if result != tc.Expect {

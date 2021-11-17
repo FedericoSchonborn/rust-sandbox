@@ -1,18 +1,18 @@
-package ops
+package ranges
 
-type RangeBounds interface {
+type Bounds interface {
 	StartBound() Bound
 	EndBound() Bound
 	Contains(int) bool
 }
 
-var _ RangeBounds = Range{}
+var _ Bounds = Range{}
 
 type Range struct {
 	Start, End int
 }
 
-func NewRange(start, end int) Range {
+func New(start, end int) Range {
 	return Range{Start: start, End: end}
 }
 
@@ -28,24 +28,24 @@ func (r Range) Contains(index int) bool {
 	return (r.Start <= index) && (index < r.End)
 }
 
-var _ RangeBounds = InclusiveRange{}
+var _ Bounds = Inclusive{}
 
-type InclusiveRange struct {
+type Inclusive struct {
 	Start, End int
 }
 
-func NewInclusiveRange(start, end int) InclusiveRange {
+func NewInclusive(start, end int) InclusiveRange {
 	return InclusiveRange{Start: start, End: end}
 }
 
-func (ir InclusiveRange) StartBound() Bound {
+func (ir Inclusive) StartBound() Bound {
 	return BoundIncluded(ir.Start)
 }
 
-func (ir InclusiveRange) EndBound() Bound {
+func (ir Inclusive) EndBound() Bound {
 	return BoundIncluded(ir.End)
 }
 
-func (ir InclusiveRange) Contains(index int) bool {
+func (ir Inclusive) Contains(index int) bool {
 	return (ir.Start <= index) && (index <= ir.End)
 }

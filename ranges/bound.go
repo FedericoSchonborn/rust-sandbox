@@ -1,4 +1,4 @@
-package ops
+package ranges
 
 type boundTag byte
 
