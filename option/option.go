@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/fdschonborn/go-sandbox/tuple"
 	"github.com/fdschonborn/go-sandbox/zero"
 )
 
@@ -122,15 +121,20 @@ func (o Option[T]) OrElse(fn func() Option[T]) Option[T] {
 	return fn()
 }
 
-func Zip[Lhs, Rhs any](lhs Option[Lhs], rhs Option[Rhs]) Option[tuple.Tuple2[Lhs, Rhs]] {
+type Zipped[L, R any] struct {
+	L L
+	R R
+}
+
+func Zip[L, R any](lhs Option[L], rhs Option[R]) Option[Zipped[L, R]] {
 	if lhs.some && rhs.some {
-		return Some(tuple.Tuple2[Lhs, Rhs]{
-			V0: lhs.value,
-			V1: rhs.value,
+		return Some(Zipped[L, R]{
+			L: lhs.value,
+			R: rhs.value,
 		})
 	}
 
-	return None[tuple.Tuple2[Lhs, Rhs]]()
+	return None[Zipped[L, R]]()
 }
 
 // TODO: Flatten

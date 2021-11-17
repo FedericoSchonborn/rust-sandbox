@@ -3,7 +3,6 @@ package maps
 import (
 	"github.com/fdschonborn/go-sandbox/iter"
 	"github.com/fdschonborn/go-sandbox/option"
-	"github.com/fdschonborn/go-sandbox/tuple"
 )
 
 type mapIter[K comparable, V any] struct {
@@ -12,7 +11,12 @@ type mapIter[K comparable, V any] struct {
 	keys []K
 }
 
-func Iter[K comparable, V any](inner map[K]V) iter.Iterator[tuple.Tuple2[K, V]] {
+type Item[K comparable, V any] struct {
+	Key   K
+	Value V
+}
+
+func Iter[K comparable, V any](inner map[K]V) iter.Iterator[Item[K, V]] {
 	keys := make([]K, len(inner))
 
 	var i int
@@ -28,13 +32,11 @@ func Iter[K comparable, V any](inner map[K]V) iter.Iterator[tuple.Tuple2[K, V]] 
 	}
 }
 
-func (mi *mapIter[K, V]) Next() option.Option[tuple.Tuple2[K, V]] {
+func (mi *mapIter[K, V]) Next() option.Option[Item[K, V]] {
 	if mi.i >= len(mi.keys) {
-		return option.None[tuple.Tuple2[K, V]]()
+		return option.None[Item[K, V]]()
 	}
+	defer func() { mi.i++ }()
 
-	key := mi.keys[mi.i]
-	value := mi.m[key]
-	mi.i++
-	return option.Some(tuple.New2(key, value))
+	return option.Some(Item[K, V]{Key: mi.keys[mi.i], Value: mi.m[mi.keys[mi.i]]})
 }

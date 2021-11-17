@@ -6,7 +6,7 @@ import (
 	"github.com/fdschonborn/go-sandbox/zero"
 )
 
-type Object[T any] map[string]T
+type Object[V any] map[string]V
 
 // TODO: Support composite types.
 func (o Object[T]) Get(key string) (T, error) {

@@ -2,7 +2,6 @@ package iter
 
 import (
 	"github.com/fdschonborn/go-sandbox/option"
-	"github.com/fdschonborn/go-sandbox/tuple"
 )
 
 type enumerate[Item any] struct {
@@ -10,20 +9,24 @@ type enumerate[Item any] struct {
 	n    int
 }
 
-func Enumerate[Item any](iter Iterator[Item]) Iterator[tuple.Tuple2[int, Item]] {
+type EnumerateItem[Item any] struct {
+	N    int
+	Item Item
+}
+
+func Enumerate[Item any](iter Iterator[Item]) Iterator[EnumerateItem[Item]] {
 	return &enumerate[Item]{
 		iter: iter,
 		n:    0,
 	}
 }
 
-func (e *enumerate[Item]) Next() option.Option[tuple.Tuple2[int, Item]] {
+func (e *enumerate[Item]) Next() option.Option[EnumerateItem[Item]] {
 	item, ok := next(e.iter)
 	if !ok {
-		return option.None[tuple.Tuple2[int, Item]]()
+		return option.None[EnumerateItem[Item]]()
 	}
+	defer func() { e.n++ }()
 
-	result := tuple.New2(e.n, item)
-	e.n++
-	return option.Some(result)
+	return option.Some(EnumerateItem[Item]{N: e.n, Item: item})
 }
