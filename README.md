@@ -1,6 +1,7 @@
 # Go Sandbox
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/fdschonborn/go-sandbox.svg)](https://pkg.go.dev/github.com/fdschonborn/go-sandbox)
+[![Go](https://github.com/fdschonborn/go-sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/fdschonborn/go-sandbox/actions/workflows/go.yml)
 
 Sandbox for code written in Go.
 
