@@ -21,7 +21,7 @@ jobs:
     - name: Set up Go tip
       run: |
         go install -v golang.org/dl/gotip@latest
-        gotip download -v
+        gotip download
 
     - name: Build
       run: gotip build -v ./...
