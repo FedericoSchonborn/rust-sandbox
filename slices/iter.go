@@ -2,7 +2,7 @@ package slices
 
 import (
 	"github.com/fdschonborn/go-sandbox/iter"
-	"github.com/fdschonborn/go-sandbox/option"
+	"github.com/fdschonborn/go-sandbox/zero"
 )
 
 type sliceIter[T any] struct {
@@ -17,12 +17,12 @@ func Iter[T any](s []T) iter.Iterator[T] {
 	}
 }
 
-func (si *sliceIter[T]) Next() option.Option[T] {
+func (si *sliceIter[T]) Next() (_ T, ok bool) {
 	if si.i >= len(si.s) {
-		return option.None[T]()
+		return zero.Zero[T](), false
 	}
 
 	value := si.s[si.i]
 	si.i++
-	return option.Some(value)
+	return value, true
 }

@@ -1,6 +1,6 @@
 package iter
 
-import "github.com/fdschonborn/go-sandbox/option"
+import "github.com/fdschonborn/go-sandbox/zero"
 
 type filter[Item any] struct {
 	iter Iterator[Item]
@@ -14,15 +14,15 @@ func Filter[Item any](iter Iterator[Item], f func(Item) bool) Iterator[Item] {
 	}
 }
 
-func (f *filter[Item]) Next() option.Option[Item] {
+func (f *filter[Item]) Next() (_ Item, ok bool) {
 	for {
-		item, ok := next(f.iter)
+		item, ok := f.iter.Next()
 		if !ok {
-			return option.None[Item]()
+			return zero.Zero[Item](), false
 		}
 
 		if f.f(item) {
-			return option.Some(item)
+			return item, true
 		}
 	}
 }

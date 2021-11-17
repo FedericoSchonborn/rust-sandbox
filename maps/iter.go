@@ -2,7 +2,6 @@ package maps
 
 import (
 	"github.com/fdschonborn/go-sandbox/iter"
-	"github.com/fdschonborn/go-sandbox/option"
 )
 
 type mapIter[K comparable, V any] struct {
@@ -11,12 +10,12 @@ type mapIter[K comparable, V any] struct {
 	keys []K
 }
 
-type Item[K comparable, V any] struct {
+type Pair[K comparable, V any] struct {
 	Key   K
 	Value V
 }
 
-func Iter[K comparable, V any](inner map[K]V) iter.Iterator[Item[K, V]] {
+func Iter[K comparable, V any](inner map[K]V) iter.Iterator[Pair[K, V]] {
 	keys := make([]K, len(inner))
 
 	var i int
@@ -32,11 +31,14 @@ func Iter[K comparable, V any](inner map[K]V) iter.Iterator[Item[K, V]] {
 	}
 }
 
-func (mi *mapIter[K, V]) Next() option.Option[Item[K, V]] {
+func (mi *mapIter[K, V]) Next() (_ Pair[K, V], ok bool) {
 	if mi.i >= len(mi.keys) {
-		return option.None[Item[K, V]]()
+		return Pair[K, V]{}, false
 	}
 	defer func() { mi.i++ }()
 
-	return option.Some(Item[K, V]{Key: mi.keys[mi.i], Value: mi.m[mi.keys[mi.i]]})
+	return Pair[K, V]{
+		Key:   mi.keys[mi.i],
+		Value: mi.m[mi.keys[mi.i]],
+	}, true
 }

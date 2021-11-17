@@ -2,43 +2,33 @@ package iter
 
 import (
 	"github.com/fdschonborn/go-sandbox/cmp"
-	"github.com/fdschonborn/go-sandbox/option"
 	"github.com/fdschonborn/go-sandbox/zero"
 )
 
 type Iterator[Item any] interface {
-	Next() option.Option[Item]
+	Next() (item Item, ok bool)
 }
 
-func next[Item any](iter Iterator[Item]) (item Item, ok bool) {
-	if iter == nil {
-		return zero.Zero[Item](), false
-	}
-
-	next := iter.Next()
-	return next.UnwrapOrZero(), next.IsSome()
-}
-
-func Find[Item any](iter Iterator[Item], f func(Item) bool) option.Option[Item] {
+func Find[Item any](iter Iterator[Item], f func(Item) bool) (_ Item, ok bool) {
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
-			return option.None[Item]()
+			return zero.Zero[Item](), false
 		}
 
 		if f(item) {
-			return option.Some(item)
+			return item, true
 		}
 	}
 }
 
-func FindMap[Item, Result any](iter Iterator[Item], f func(Item) option.Option[Result]) option.Option[Result] {
+func FindMap[Item, Result any](iter Iterator[Item], f func(Item) (Result, bool)) (_ Result, ok bool) {
 	return FilterMap(iter, f).Next()
 }
 
 func All[Item any](iter Iterator[Item], f func(Item) bool) bool {
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
 			break
 		}
@@ -53,7 +43,7 @@ func All[Item any](iter Iterator[Item], f func(Item) bool) bool {
 
 func Any[Item any](iter Iterator[Item], f func(Item) bool) bool {
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
 			break
 		}
@@ -70,7 +60,7 @@ func Collect[Item any](iter Iterator[Item]) []Item {
 	var result []Item
 
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
 			break
 		}
@@ -83,7 +73,7 @@ func Collect[Item any](iter Iterator[Item]) []Item {
 
 func ForEach[Item any](iter Iterator[Item], f func(Item)) {
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
 			break
 		}
@@ -92,16 +82,16 @@ func ForEach[Item any](iter Iterator[Item], f func(Item)) {
 	}
 }
 
-func Last[Item any](iter Iterator[Item]) option.Option[Item] {
-	last := option.None[Item]()
+func Last[Item any](iter Iterator[Item]) (_ Item, ok bool) {
+	last, _ok := zero.Zero[Item](), false
 
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
-			return last
+			return last, _ok
 		}
 
-		last = option.Some(item)
+		last, _ok = item, true
 	}
 }
 
@@ -109,7 +99,7 @@ func Fold[Item, Acc any](iter Iterator[Item], init Acc, f func(Acc, Item) Acc) A
 	acc := init
 
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
 			return acc
 		}
@@ -118,30 +108,30 @@ func Fold[Item, Acc any](iter Iterator[Item], init Acc, f func(Acc, Item) Acc) A
 	}
 }
 
-func Max[Item cmp.Ordered](iter Iterator[Item]) option.Option[Item] {
-	max := option.None[Item]()
+func Max[Item cmp.Ordered](iter Iterator[Item]) (_ Item, ok bool) {
+	max := zero.Zero[Item]()
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
-			return max
+			return max, true
 		}
 
-		if max.IsNone() || item > max.UnwrapUnchecked() {
-			max = option.Some(item)
+		if !ok || item > max {
+			max = item
 		}
 	}
 }
 
-func Min[Item cmp.Ordered](iter Iterator[Item]) option.Option[Item] {
-	min := option.None[Item]()
+func Min[Item cmp.Ordered](iter Iterator[Item]) (_ Item, ok bool) {
+	min := zero.Zero[Item]()
 	for {
-		item, ok := next(iter)
+		item, ok := iter.Next()
 		if !ok {
-			return min
+			return min, true
 		}
 
-		if min.IsNone() || item < min.UnwrapUnchecked() {
-			min = option.Some(item)
+		if !ok || item < min {
+			min = item
 		}
 	}
 }

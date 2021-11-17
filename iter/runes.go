@@ -1,7 +1,5 @@
 package iter
 
-import "github.com/fdschonborn/go-sandbox/option"
-
 type runes struct {
 	inner []rune
 	len   int
@@ -18,12 +16,11 @@ func Runes(s string) Iterator[rune] {
 	}
 }
 
-func (b *runes) Next() option.Option[rune] {
+func (b *runes) Next() (_ rune, ok bool) {
 	if b.index >= b.len {
-		return option.None[rune]()
+		return 0, false
 	}
+	defer func() { b.index++ }()
 
-	result := b.inner[b.index]
-	b.index++
-	return option.Some(result)
+	return b.inner[b.index], true
 }

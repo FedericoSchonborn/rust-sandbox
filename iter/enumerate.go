@@ -1,7 +1,7 @@
 package iter
 
 import (
-	"github.com/fdschonborn/go-sandbox/option"
+	"github.com/fdschonborn/go-sandbox/zero"
 )
 
 type enumerate[Item any] struct {
@@ -21,12 +21,12 @@ func Enumerate[Item any](iter Iterator[Item]) Iterator[EnumerateItem[Item]] {
 	}
 }
 
-func (e *enumerate[Item]) Next() option.Option[EnumerateItem[Item]] {
-	item, ok := next(e.iter)
+func (e *enumerate[Item]) Next() (_ EnumerateItem[Item], ok bool) {
+	orig, ok := e.iter.Next()
 	if !ok {
-		return option.None[EnumerateItem[Item]]()
+		return zero.Zero[EnumerateItem[Item]](), false
 	}
 	defer func() { e.n++ }()
 
-	return option.Some(EnumerateItem[Item]{N: e.n, Item: item})
+	return EnumerateItem[Item]{N: e.n, Item: orig}, true
 }
