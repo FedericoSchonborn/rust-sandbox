@@ -1,7 +1,9 @@
 package iter
 
-type Peeker[Item any] interface {
-	Iterator[Item]
+import "github.com/fdschonborn/go-sandbox/option"
 
-	Peek() (_ Item, ok bool)
+type Peeker[T any] interface {
+	Iterator[T]
+
+	Peek() option.Option[T]
 }

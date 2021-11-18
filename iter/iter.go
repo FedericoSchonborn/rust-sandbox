@@ -1,34 +1,38 @@
 package iter
 
 import (
-	"github.com/fdschonborn/go-sandbox/cmp"
-	"github.com/fdschonborn/go-sandbox/zero"
+	"constraints"
+
+	"github.com/fdschonborn/go-sandbox/option"
 )
 
-type Iterator[Item any] interface {
-	Next() (item Item, ok bool)
+type Iterator[T any] interface {
+	Next() option.Option[T]
 }
 
-func Find[Item any](iter Iterator[Item], f func(Item) bool) (_ Item, ok bool) {
+func Find[T any](iter Iterator[T], f func(T) bool) option.Option[T] {
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
-			return zero.Zero[Item](), false
+			return option.None[T]()
 		}
 
 		if f(item) {
-			return item, true
+			return option.Some(item)
 		}
 	}
 }
 
-func FindMap[Item, Result any](iter Iterator[Item], f func(Item) (Result, bool)) (_ Result, ok bool) {
-	return FilterMap(iter, f).Next()
+type FindMapFunc[T, U any] func(T) option.Option[U]
+
+func FindMap[T, U any](iter Iterator[T], f FindMapFunc[T, U]) option.Option[U] {
+	// The func is a fugly workaround because FilterMapFunc != FindMapFunc
+	return FilterMap(iter, func(item T) option.Option[U] { return f(item) }).Next()
 }
 
-func All[Item any](iter Iterator[Item], f func(Item) bool) bool {
+func All[T any](iter Iterator[T], f func(T) bool) bool {
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
 			break
 		}
@@ -41,9 +45,9 @@ func All[Item any](iter Iterator[Item], f func(Item) bool) bool {
 	return true
 }
 
-func Any[Item any](iter Iterator[Item], f func(Item) bool) bool {
+func Any[T any](iter Iterator[T], f func(T) bool) bool {
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
 			break
 		}
@@ -56,11 +60,11 @@ func Any[Item any](iter Iterator[Item], f func(Item) bool) bool {
 	return false
 }
 
-func Collect[Item any](iter Iterator[Item]) []Item {
-	var result []Item
+func Collect[T any](iter Iterator[T]) []T {
+	var result []T
 
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
 			break
 		}
@@ -71,9 +75,9 @@ func Collect[Item any](iter Iterator[Item]) []Item {
 	return result
 }
 
-func ForEach[Item any](iter Iterator[Item], f func(Item)) {
+func ForEach[T any](iter Iterator[T], f func(T)) {
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
 			break
 		}
@@ -82,24 +86,26 @@ func ForEach[Item any](iter Iterator[Item], f func(Item)) {
 	}
 }
 
-func Last[Item any](iter Iterator[Item]) (_ Item, ok bool) {
-	last, _ok := zero.Zero[Item](), false
+func Last[T any](iter Iterator[T]) option.Option[T] {
+	last := option.None[T]()
 
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
-			return last, _ok
+			return last
 		}
 
-		last, _ok = item, true
+		last = option.Some(item)
 	}
 }
 
-func Fold[Item, Acc any](iter Iterator[Item], init Acc, f func(Acc, Item) Acc) Acc {
+type FoldFunc[T, A any] func(A, T) A
+
+func Fold[T, A any](iter Iterator[T], init A, f FoldFunc[T, A]) A {
 	acc := init
 
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
 			return acc
 		}
@@ -108,30 +114,30 @@ func Fold[Item, Acc any](iter Iterator[Item], init Acc, f func(Acc, Item) Acc) A
 	}
 }
 
-func Max[Item cmp.Ordered](iter Iterator[Item]) (_ Item, ok bool) {
-	max := zero.Zero[Item]()
+func Max[T constraints.Ordered](iter Iterator[T]) option.Option[T] {
+	max := option.None[T]()
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
-			return max, true
+			return max
 		}
 
-		if !ok || item > max {
-			max = item
+		if !ok || item > max.UnwrapOrZero() {
+			max = option.Some(item)
 		}
 	}
 }
 
-func Min[Item cmp.Ordered](iter Iterator[Item]) (_ Item, ok bool) {
-	min := zero.Zero[Item]()
+func Min[T constraints.Ordered](iter Iterator[T]) option.Option[T] {
+	min := option.None[T]()
 	for {
-		item, ok := iter.Next()
+		item, ok := iter.Next().Get()
 		if !ok {
-			return min, true
+			return min
 		}
 
-		if !ok || item < min {
-			min = item
+		if !ok || item < min.UnwrapOrZero() {
+			min = option.Some(item)
 		}
 	}
 }

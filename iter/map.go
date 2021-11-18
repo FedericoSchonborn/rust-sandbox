@@ -1,26 +1,28 @@
 package iter
 
 import (
-	"github.com/fdschonborn/go-sandbox/zero"
+	"github.com/fdschonborn/go-sandbox/option"
 )
 
-type map_[Item, Result any] struct {
-	iter Iterator[Item]
-	f    func(Item) Result
+type MapFunc[T, U any] func(T) U
+
+type _map[T, U any] struct {
+	iter Iterator[T]
+	f    MapFunc[T, U]
 }
 
-func Map[Item, Result any](iter Iterator[Item], f func(Item) Result) Iterator[Result] {
-	return &map_[Item, Result]{
+func Map[T, U any](iter Iterator[T], f MapFunc[T, U]) Iterator[U] {
+	return &_map[T, U]{
 		iter: iter,
 		f:    f,
 	}
 }
 
-func (m *map_[Item, Result]) Next() (_ Result, ok bool) {
-	item, ok := m.iter.Next()
+func (m *_map[T, U]) Next() option.Option[U] {
+	item, ok := m.iter.Next().Get()
 	if !ok {
-		return zero.Zero[Result](), false
+		return option.None[U]()
 	}
 
-	return m.f(item), true
+	return option.Some(m.f(item))
 }

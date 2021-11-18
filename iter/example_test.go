@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/fdschonborn/go-sandbox/iter"
+	"github.com/fdschonborn/go-sandbox/option"
 	"github.com/fdschonborn/go-sandbox/slices"
 )
 
@@ -69,13 +70,13 @@ func ExampleFilter() {
 
 func ExampleFilterMap() {
 	a := []string{"1", "two", "NaN", "four", "5"}
-	iter := iter.FilterMap(slices.Iter(a), func(item string) (result int, ok bool) {
+	iter := iter.FilterMap(slices.Iter(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
-			return 0, false
+			return option.None[int]()
 		}
 
-		return n, true
+		return option.Some(n)
 	})
 
 	fmt.Println(iter.Next())
@@ -89,13 +90,13 @@ func ExampleFilterMap() {
 
 func ExampleFindMap() {
 	a := []string{"lol", "NaN", "2", "5"}
-	firstNumber, _ := iter.FindMap(slices.Iter(a), func(item string) (_ int, ok bool) {
+	firstNumber := iter.FindMap(slices.Iter(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
-			return 0, false
+			return option.None[int]()
 		}
 
-		return n, true
+		return option.Some(n)
 	})
 
 	fmt.Println(firstNumber)

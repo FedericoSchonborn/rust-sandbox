@@ -1,28 +1,32 @@
 package iter
 
-import "github.com/fdschonborn/go-sandbox/zero"
+import (
+	"github.com/fdschonborn/go-sandbox/option"
+)
 
-type filter[Item any] struct {
-	iter Iterator[Item]
-	f    func(Item) bool
+type FilterFunc[T any] func(T) bool
+
+type filter[T any] struct {
+	iter Iterator[T]
+	f    FilterFunc[T]
 }
 
-func Filter[Item any](iter Iterator[Item], f func(Item) bool) Iterator[Item] {
-	return &filter[Item]{
+func Filter[T any](iter Iterator[T], f FilterFunc[T]) Iterator[T] {
+	return &filter[T]{
 		iter: iter,
 		f:    f,
 	}
 }
 
-func (f *filter[Item]) Next() (_ Item, ok bool) {
+func (f *filter[T]) Next() option.Option[T] {
 	for {
-		item, ok := f.iter.Next()
+		item, ok := f.iter.Next().Get()
 		if !ok {
-			return zero.Zero[Item](), false
+			return option.None[T]()
 		}
 
 		if f.f(item) {
-			return item, true
+			return option.Some(item)
 		}
 	}
 }
