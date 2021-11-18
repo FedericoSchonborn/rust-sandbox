@@ -3,7 +3,6 @@ package json
 import (
 	"encoding/json"
 	"io"
-	"io/ioutil"
 
 	"github.com/fdschonborn/go-sandbox/zero"
 )
@@ -14,7 +13,7 @@ func Unmarshal[T any](data []byte) (value T, err error) {
 }
 
 func Parse[T any](r io.Reader) (value T, err error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return zero.Zero[T](), err
 	}
@@ -29,7 +28,7 @@ func UnmarshalObject[T any](data []byte) (value map[string]T, err error) {
 }
 
 func ParseObject[T any](r io.Reader) (value map[string]T, err error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}
@@ -44,7 +43,7 @@ func UnmarshalArray[T any](data []byte) (value []T, err error) {
 }
 
 func ParseArray[T any](r io.Reader) (value []T, err error) {
-	data, err := ioutil.ReadAll(r)
+	data, err := io.ReadAll(r)
 	if err != nil {
 		return nil, err
 	}

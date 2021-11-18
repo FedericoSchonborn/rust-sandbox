@@ -83,3 +83,78 @@ func ToAscii(r rune) (byte, bool) {
 
 	return byte(r), true
 }
+
+// Extension
+
+type Type uint8
+
+const (
+	TypeAlnum Type = iota << 1
+	TypeAlpha
+	TypeBlank
+	TypeCntrl
+	TypeDigit
+	TypeGraph
+	TypeLower
+	TypePrint
+	TypePunct
+	TypeSpace
+	TypeUpper
+	TypeXdigit
+
+	TypeAll = TypeAlnum | TypeAlpha | TypeBlank | TypeCntrl | TypeDigit | TypeGraph | TypeLower | TypePrint | TypePunct | TypeSpace | TypeUpper | TypeXdigit
+)
+
+func TypeOf(c byte) Type {
+	var typ Type
+
+	if IsAlnum(c) {
+		typ |= TypeAlnum
+	}
+
+	if IsAlpha(c) {
+		typ |= TypeAlpha
+	}
+
+	if IsBlank(c) {
+		typ |= TypeBlank
+	}
+
+	if IsCntrl(c) {
+		typ |= TypeCntrl
+	}
+
+	if IsDigit(c) {
+		typ |= TypeDigit
+	}
+
+	if IsGraph(c) {
+		typ |= TypeGraph
+	}
+
+	if IsLower(c) {
+		typ |= TypeLower
+	}
+
+	if IsPrint(c) {
+		typ |= TypePrint
+	}
+
+	if IsPunct(c) {
+		typ |= TypePunct
+	}
+
+	if IsSpace(c) {
+		typ |= TypeSpace
+	}
+
+	if IsUpper(c) {
+		typ |= TypeUpper
+	}
+
+	if IsXdigit(c) {
+		typ |= TypeXdigit
+	}
+
+	return typ
+}
