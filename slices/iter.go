@@ -1,3 +1,5 @@
+//go:build broken
+
 package slices
 
 import (
@@ -5,19 +7,19 @@ import (
 	"github.com/fdschonborn/go-sandbox/option"
 )
 
-type sliceIter[T any] struct {
-	s []T
+type sliceIter[S ~[]T, T any] struct {
+	s S
 	i int
 }
 
-func Iter[T any](slice []T) iter.Iterator[T] {
-	return &sliceIter[T]{
+func Iter[S ~[]T, T any](slice S) iter.Iterator[T] {
+	return &sliceIter[S, T]{
 		s: slice,
 		i: 0,
 	}
 }
 
-func (si *sliceIter[T]) Next() option.Option[T] {
+func (si *sliceIter[S, T]) Next() option.Option[T] {
 	if si.i >= len(si.s) {
 		return option.None[T]()
 	}

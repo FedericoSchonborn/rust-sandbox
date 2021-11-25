@@ -1,3 +1,5 @@
+//go:build broken
+
 package iter_test
 
 import (
