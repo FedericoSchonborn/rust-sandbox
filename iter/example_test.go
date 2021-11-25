@@ -8,7 +8,6 @@ import (
 
 	"github.com/fdschonborn/go-sandbox/iter"
 	"github.com/fdschonborn/go-sandbox/option"
-	"github.com/fdschonborn/go-sandbox/slices"
 )
 
 func ExampleFind() {
@@ -20,8 +19,8 @@ func ExampleFind() {
 		}
 	}
 
-	fmt.Println(iter.Find(slices.Iter(a), equals(2)))
-	fmt.Println(iter.Find(slices.Iter(a), equals(5)))
+	fmt.Println(iter.Find(iter.Slice(a), equals(2)))
+	fmt.Println(iter.Find(iter.Slice(a), equals(5)))
 	// Output:
 	// 2 true
 	// 0 false
@@ -29,7 +28,7 @@ func ExampleFind() {
 
 func ExampleFold() {
 	a := []int{1, 2, 3}
-	sum := iter.Fold(slices.Iter(a), 0, func(acc int, item int) int {
+	sum := iter.Fold(iter.Slice(a), 0, func(acc int, item int) int {
 		return acc + item
 	})
 
@@ -40,7 +39,7 @@ func ExampleFold() {
 
 func ExampleMap() {
 	a := []int{1, 2, 3}
-	iter := iter.Map(slices.Iter(a), func(item int) int {
+	iter := iter.Map(iter.Slice(a), func(item int) int {
 		return 2 * item
 	})
 
@@ -57,7 +56,7 @@ func ExampleMap() {
 
 func ExampleFilter() {
 	a := []int{0, 1, 2}
-	iter := iter.Filter(slices.Iter(a), func(item int) bool {
+	iter := iter.Filter(iter.Slice(a), func(item int) bool {
 		return item > 0
 	})
 
@@ -72,7 +71,7 @@ func ExampleFilter() {
 
 func ExampleFilterMap() {
 	a := []string{"1", "two", "NaN", "four", "5"}
-	iter := iter.FilterMap(slices.Iter(a), func(item string) option.Option[int] {
+	iter := iter.FilterMap(iter.Slice(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
 			return option.None[int]()
@@ -92,7 +91,7 @@ func ExampleFilterMap() {
 
 func ExampleFindMap() {
 	a := []string{"lol", "NaN", "2", "5"}
-	firstNumber := iter.FindMap(slices.Iter(a), func(item string) option.Option[int] {
+	firstNumber := iter.FindMap(iter.Slice(a), func(item string) option.Option[int] {
 		n, err := strconv.Atoi(item)
 		if err != nil {
 			return option.None[int]()
@@ -111,8 +110,8 @@ func ExampleMax() {
 	a := []int{1, 2, 3}
 	b := []int{}
 
-	fmt.Println(iter.Max(slices.Iter(a)))
-	fmt.Println(iter.Max(slices.Iter(b)))
+	fmt.Println(iter.Max(iter.Slice(a)))
+	fmt.Println(iter.Max(iter.Slice(b)))
 	// Output:
 	// 3 true
 	// 0 false
@@ -122,8 +121,8 @@ func ExampleMin() {
 	a := []int{1, 2, 3}
 	b := []int{}
 
-	fmt.Println(iter.Min(slices.Iter(a)))
-	fmt.Println(iter.Min(slices.Iter(b)))
+	fmt.Println(iter.Min(iter.Slice(a)))
+	fmt.Println(iter.Min(iter.Slice(b)))
 	// Output:
 	// 1 true
 	// 0 false

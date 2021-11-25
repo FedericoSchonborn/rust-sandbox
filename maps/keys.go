@@ -4,7 +4,6 @@ package maps
 
 import (
 	"github.com/fdschonborn/go-sandbox/iter"
-	"github.com/fdschonborn/go-sandbox/slices"
 )
 
 type keysIter[K comparable] struct {
@@ -20,5 +19,5 @@ func Keys[M ~map[K]V, K comparable, V any](m M) iter.Iterator[K] {
 		i++
 	}
 
-	return slices.Iter(keys)
+	return iter.Slice(keys)
 }
