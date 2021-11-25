@@ -78,7 +78,13 @@ func (b *Builder) Stdin(r io.Reader) *Builder {
 }
 
 func (b *Builder) Build() *exec.Cmd {
-	cmd := exec.CommandContext(b.ctx, b.name, b.args...)
+	var cmd *exec.Cmd
+	if b.ctx != nil {
+		cmd = exec.CommandContext(b.ctx, b.name, b.args...)
+	} else {
+		cmd = exec.Command(b.name, b.args...)
+	}
+
 	cmd.Dir = b.dir
 	cmd.Env = b.env
 	cmd.Path = b.path

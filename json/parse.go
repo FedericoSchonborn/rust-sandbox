@@ -3,8 +3,6 @@ package json
 import (
 	"encoding/json"
 	"io"
-
-	"github.com/fdschonborn/go-sandbox/zero"
 )
 
 func Unmarshal[T any](data []byte) (value T, err error) {
@@ -15,7 +13,8 @@ func Unmarshal[T any](data []byte) (value T, err error) {
 func Parse[T any](r io.Reader) (value T, err error) {
 	data, err := io.ReadAll(r)
 	if err != nil {
-		return zero.Zero[T](), err
+		var zero T
+		return zero, err
 	}
 
 	err = json.Unmarshal(data, &value)

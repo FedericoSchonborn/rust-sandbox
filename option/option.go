@@ -5,8 +5,6 @@ import (
 	"io"
 	"strconv"
 	"strings"
-
-	"github.com/fdschonborn/go-sandbox/zero"
 )
 
 type Option[T any] struct {
@@ -39,7 +37,8 @@ func (o Option[T]) Get() (value T, ok bool) {
 		return *o.inner, true
 	}
 
-	return zero.Zero[T](), false
+	var zero T
+	return zero, false
 }
 
 func (o Option[T]) Unwrap() T {
@@ -78,7 +77,8 @@ func (o Option[T]) UnwrapOrZero() T {
 		return *o.inner
 	}
 
-	return zero.Zero[T]()
+	var zero T
+	return zero
 }
 
 func Map[T, U any](o Option[T], fn func(T) U) Option[U] {
@@ -94,7 +94,8 @@ func (o Option[T]) OkOr(err error) (T, error) {
 		return *o.inner, nil
 	}
 
-	return zero.Zero[T](), err
+	var zero T
+	return zero, err
 }
 
 func (o Option[T]) OkOrElse(err func() error) (T, error) {
@@ -102,7 +103,8 @@ func (o Option[T]) OkOrElse(err func() error) (T, error) {
 		return *o.inner, nil
 	}
 
-	return zero.Zero[T](), err()
+	var zero T
+	return zero, err()
 }
 
 func (o Option[T]) Filter(pred func(T) bool) Option[T] {
