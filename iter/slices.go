@@ -9,7 +9,7 @@ type sliceIterator[T any, S ~[]T] struct {
 	i int
 }
 
-func Slice[T any, S ~[]T](slice S) Iterator[T] {
+func FromSlice[T any, S ~[]T](slice S) Iterator[T] {
 	return &sliceIterator[T, S]{
 		s: slice,
 		i: 0,
