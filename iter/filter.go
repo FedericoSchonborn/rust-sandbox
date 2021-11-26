@@ -20,7 +20,7 @@ func Filter[T any](iter Iterator[T], f FilterFunc[T]) Iterator[T] {
 
 func (f *filter[T]) Next() option.Option[T] {
 	for {
-		item, ok := f.iter.Next().Get()
+		item, ok := f.iter.Next().UnwrapOrZero()
 		if !ok {
 			return option.None[T]()
 		}

@@ -32,15 +32,6 @@ func (o Option[T]) IsNone() bool {
 	return o.inner == nil
 }
 
-func (o Option[T]) Get() (value T, ok bool) {
-	if o.inner != nil {
-		return *o.inner, true
-	}
-
-	var zero T
-	return zero, false
-}
-
 func (o Option[T]) Unwrap() T {
 	if o.inner != nil {
 		return *o.inner
@@ -72,13 +63,13 @@ func (o Option[T]) UnwrapOrElse(fn func() T) T {
 }
 
 // UnwrapOrZero is unwrap_or_default but more gopher-ish.
-func (o Option[T]) UnwrapOrZero() T {
+func (o Option[T]) UnwrapOrZero() (value T, ok bool) {
 	if o.inner != nil {
-		return *o.inner
+		return *o.inner, true
 	}
 
 	var zero T
-	return zero
+	return zero, false
 }
 
 func Map[T, U any](o Option[T], fn func(T) U) Option[U] {

@@ -19,7 +19,7 @@ func Map[T, U any](iter Iterator[T], f MapFunc[T, U]) Iterator[U] {
 }
 
 func (m *_map[T, U]) Next() option.Option[U] {
-	item, ok := m.iter.Next().Get()
+	item, ok := m.iter.Next().UnwrapOrZero()
 	if !ok {
 		return option.None[U]()
 	}

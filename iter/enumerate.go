@@ -22,7 +22,7 @@ func Enumerate[T any](iter Iterator[T]) Iterator[Enumerated[T]] {
 }
 
 func (e *enumerate[T]) Next() option.Option[Enumerated[T]] {
-	orig, ok := e.iter.Next().Get()
+	orig, ok := e.iter.Next().UnwrapOrZero()
 	if !ok {
 		return option.None[Enumerated[T]]()
 	}

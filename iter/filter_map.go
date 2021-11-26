@@ -20,12 +20,12 @@ func FilterMap[T, U any](iter Iterator[T], f FilterMapFunc[T, U]) Iterator[U] {
 
 func (fm *filterMap[T, U]) Next() option.Option[U] {
 	for {
-		item, ok := fm.iter.Next().Get()
+		item, ok := fm.iter.Next().UnwrapOrZero()
 		if !ok {
 			return option.None[U]()
 		}
 
-		result, ok := fm.f(item).Get()
+		result, ok := fm.f(item).UnwrapOrZero()
 		if !ok {
 			continue
 		}
