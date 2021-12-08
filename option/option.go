@@ -3,38 +3,41 @@ package option
 import (
 	"fmt"
 	"io"
-	"strconv"
-	"strings"
+
+	xfmt "github.com/fdschonborn/go-sandbox/fmt"
+	"github.com/fdschonborn/go-sandbox/result"
 )
 
 type Option[T any] struct {
-	inner *T
+	some  bool
+	inner T
 }
 
 func Some[T any](value T) Option[T] {
 	return Option[T]{
-		inner: &value,
+		some:  true,
+		inner: value,
 	}
 }
 
 // None and Option{} are equivalent.
 func None[T any]() Option[T] {
 	return Option[T]{
-		inner: nil,
+		some: false,
 	}
 }
 
 func (o Option[T]) IsSome() bool {
-	return o.inner != nil
+	return o.some
 }
 
 func (o Option[T]) IsNone() bool {
-	return o.inner == nil
+	return !o.some
 }
 
 func (o Option[T]) Unwrap() T {
-	if o.inner != nil {
-		return *o.inner
+	if o.some {
+		return o.inner
 	}
 
 	panic("Called Option.Unwrap on None value")
@@ -43,20 +46,22 @@ func (o Option[T]) Unwrap() T {
 // UnwrapUnchecked unwraps the Option without checking if it is Some, this may
 // result on unexpected behavior or a panic.
 func (o Option[T]) UnwrapUnchecked() T {
-	return *o.inner
+	return o.inner
 }
 
 func (o Option[T]) UnwrapOr(def T) T {
-	if o.inner != nil {
-		return *o.inner
+	if o.some {
+		return o.inner
 	}
 
 	return def
 }
 
-func (o Option[T]) UnwrapOrElse(fn func() T) T {
-	if o.inner != nil {
-		return *o.inner
+type UnwrapOrElseFunc[T any] func() T
+
+func (o Option[T]) UnwrapOrElse(fn UnwrapOrElseFunc[T]) T {
+	if o.some {
+		return o.inner
 	}
 
 	return fn()
@@ -64,59 +69,65 @@ func (o Option[T]) UnwrapOrElse(fn func() T) T {
 
 // UnwrapOrZero is unwrap_or_default but more gopher-ish.
 func (o Option[T]) UnwrapOrZero() (value T, ok bool) {
-	if o.inner != nil {
-		return *o.inner, true
+	if o.some {
+		return o.inner, true
 	}
 
 	var zero T
 	return zero, false
 }
 
-func Map[T, U any](o Option[T], fn func(T) U) Option[U] {
-	if o.inner != nil {
-		return Some(fn(*o.inner))
+type MapFunc[T, U any] func(T) U
+
+func Map[T, U any](o Option[T], fn MapFunc[T, U]) Option[U] {
+	if o.some {
+		return Some(fn(o.inner))
 	}
 
 	return None[U]()
 }
 
-func (o Option[T]) OkOr(err error) (T, error) {
-	if o.inner != nil {
-		return *o.inner, nil
+func OkOr[T any, E error](o Option[T], err E) result.Result[T, E] {
+	if o.some {
+		return result.Ok[T, E](o.inner)
 	}
 
-	var zero T
-	return zero, err
+	return result.Err[T, E](err)
 }
 
-func (o Option[T]) OkOrElse(err func() error) (T, error) {
-	if o.inner != nil {
-		return *o.inner, nil
+type OkOrElseFunc[E error] func() E
+
+func OkOrElse[T any, E error](o Option[T], err OkOrElseFunc[E]) result.Result[T, E] {
+	if o.some {
+		return result.Ok[T, E](o.inner)
 	}
 
-	var zero T
-	return zero, err()
+	return result.Err[T, E](err())
 }
 
-func (o Option[T]) Filter(pred func(T) bool) Option[T] {
-	if o.inner != nil && pred(*o.inner) {
-		return Some(*o.inner)
+type FilterFunc[T any] func(T) bool
+
+func (o Option[T]) Filter(pred FilterFunc[T]) Option[T] {
+	if o.some && pred(o.inner) {
+		return Some(o.inner)
 	}
 
 	return None[T]()
 }
 
 func (o Option[T]) Or(ob Option[T]) Option[T] {
-	if o.inner != nil {
-		return Some(*o.inner)
+	if o.some {
+		return Some(o.inner)
 	}
 
 	return ob
 }
 
-func (o Option[T]) OrElse(fn func() Option[T]) Option[T] {
-	if o.inner != nil {
-		return Some(*o.inner)
+type OrElseFunc[T any] func() Option[T]
+
+func (o Option[T]) OrElse(fn OrElseFunc[T]) Option[T] {
+	if o.some {
+		return Some(o.inner)
 	}
 
 	return fn()
@@ -128,56 +139,21 @@ type Zipped[L, R any] struct {
 }
 
 func Zip[L, R any](l Option[L], r Option[R]) Option[Zipped[L, R]] {
-	if l.inner != nil && r.inner != nil {
+	if l.some && r.some {
 		return Some(Zipped[L, R]{
-			L: *l.inner,
-			R: *r.inner,
+			L: l.inner,
+			R: r.inner,
 		})
 	}
 
 	return None[Zipped[L, R]]()
 }
 
-// TODO: Flatten
-
 func (o Option[T]) Format(f fmt.State, verb rune) {
-	if o.inner != nil {
-		format := strings.Builder{}
-		format.WriteString("Some %")
-
-		if w, ok := f.Width(); ok {
-			format.WriteString(strconv.Itoa(w))
-		}
-
-		if p, ok := f.Precision(); ok {
-			format.WriteByte('.')
-			format.WriteString(strconv.Itoa(p))
-		}
-
-		if f.Flag('+') {
-			format.WriteByte('+')
-		}
-
-		if f.Flag('-') {
-			format.WriteByte('-')
-		}
-
-		if f.Flag('#') {
-			format.WriteByte('#')
-		}
-
-		if f.Flag(' ') {
-			format.WriteByte(' ')
-		}
-
-		if f.Flag('0') {
-			format.WriteByte('0')
-		}
-
-		format.WriteRune(verb)
-		fmt.Fprintf(f, format.String(), *o.inner)
+	if !o.some {
+		io.WriteString(f, "None")
 		return
 	}
 
-	io.WriteString(f, "None")
+	fmt.Fprintf(f, "Some "+xfmt.Format(f, verb), o.inner)
 }

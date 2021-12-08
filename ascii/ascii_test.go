@@ -34,8 +34,6 @@ func TestIs(t *testing.T) {
 
 	for _, tc := range tt {
 		t.Run(fmt.Sprintf("%s/%c", tc.FuncName, tc.Char), func(t *testing.T) {
-			t.Parallel()
-
 			result := tc.Func(tc.Char)
 			if result != tc.Result {
 				t.Errorf("Expected %t, got %t", tc.Result, result)

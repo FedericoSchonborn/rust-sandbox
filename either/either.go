@@ -1,21 +1,27 @@
 package either
 
+import (
+	"fmt"
+
+	xfmt "github.com/fdschonborn/go-sandbox/fmt"
+)
+
 type Either[L, R any] struct {
-	left bool
-	data interface{}
+	left  bool
+	inner interface{}
 }
 
 func Left[L, R any](value L) Either[L, R] {
 	return Either[L, R]{
-		left: true,
-		data: value,
+		left:  true,
+		inner: value,
 	}
 }
 
 func Right[L, R any](value R) Either[L, R] {
 	return Either[L, R]{
-		left: false,
-		data: value,
+		left:  false,
+		inner: value,
 	}
 }
 
@@ -25,4 +31,15 @@ func (e Either[L, R]) IsLeft() bool {
 
 func (e Either[L, R]) IsRight() bool {
 	return !e.left
+}
+
+func (e Either[L, R]) Format(f fmt.State, verb rune) {
+	var kind string
+	if e.left {
+		kind = "Left "
+	} else {
+		kind = "Right "
+	}
+
+	fmt.Fprintf(f, kind+xfmt.Format(f, verb), e.inner)
 }

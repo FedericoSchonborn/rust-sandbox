@@ -65,19 +65,14 @@ func main() {
 		}
 
 		if _, err := fmt.Fprintf(file, `
-// %[1]s is a tuple that contains %[10]d value(s).
+// %[1]s is a tuple containing %[10]d value(s).
 type %[1]s[%[2]s] struct {
 	%[3]s
 }
 
-// Create a new tuple of %[10]d value(s).
-func %[9]s[%[2]s](%[5]s) %[1]s[%[4]s] {
-	return %[1]s[%[4]s]{%[6]s`+", "+`}
-}
-
-// Unpack the contents of the tuple into its %[10]d value(s).
-func (t %[1]s[%[4]s]) Unpack() (%[7]s) {
-	return %[8]s
+// %[9]s creates a new tuple of %[10]d value(s).
+func %[9]s[%[2]s](%[5]s) *%[1]s[%[4]s] {
+	return &%[1]s[%[4]s]{%[6]s`+", "+`}
 }
 `, typeName, generics, fields, params, args, assign, returns, accesses, funcName, n+1); err != nil {
 			panic(err)

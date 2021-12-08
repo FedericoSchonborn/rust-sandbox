@@ -46,7 +46,7 @@ func Max[T constraints.Ordered](iter Iterator[T]) option.Option[T] {
 			return max
 		}
 
-		if n, mok := max.UnwrapOrZero(); !ok || (mok && item > n) {
+		if n, mok := max.UnwrapOrZero(); !mok || (ok && item > n) {
 			max = option.Some(item)
 		}
 	}
@@ -60,7 +60,7 @@ func Min[T constraints.Ordered](iter Iterator[T]) option.Option[T] {
 			return min
 		}
 
-		if n, mok := min.UnwrapOrZero(); !ok || (mok && item < n) {
+		if n, mok := min.UnwrapOrZero(); !mok || (ok && item < n) {
 			min = option.Some(item)
 		}
 	}

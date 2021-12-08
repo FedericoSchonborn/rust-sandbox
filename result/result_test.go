@@ -11,8 +11,8 @@ func ExampleMap() {
 	value := result.Map(strconv.Atoi("2"), func(i int) int {
 		return i * 2
 	})
-	fmt.Println(value.UnwrapUnchecked())
+	fmt.Println(value)
 
 	// Output:
-	// 4
+	// Ok 4
 }

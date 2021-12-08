@@ -6,11 +6,11 @@ import (
 	. "github.com/fdschonborn/go-sandbox/result"
 )
 
-func Atoi(s string) Result[int] {
+func Atoi(s string) Result[int, error] {
 	v, err := strconv.Atoi(s)
 	if err != nil {
-		return Err[int](err)
+		return Err[int, error](err)
 	}
 
-	return Ok(v)
+	return Ok[int, error](v)
 }

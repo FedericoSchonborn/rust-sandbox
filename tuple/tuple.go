@@ -2,55 +2,40 @@
 
 package tuple
 
-// Tuple1 is a tuple that contains 1 value(s).
+// Tuple1 is a tuple containing 1 value(s).
 type Tuple1[T0 any] struct {
 	V0 T0
 }
 
-// Create a new tuple of 1 value(s).
-func New1[T0 any](v0 T0) Tuple1[T0] {
-	return Tuple1[T0]{v0}
+// New1 creates a new tuple of 1 value(s).
+func New1[T0 any](v0 T0) *Tuple1[T0] {
+	return &Tuple1[T0]{v0}
 }
 
-// Unpack the contents of the tuple into its 1 value(s).
-func (t Tuple1[T0]) Unpack() T0 {
-	return t.V0
-}
-
-// Tuple2 is a tuple that contains 2 value(s).
+// Tuple2 is a tuple containing 2 value(s).
 type Tuple2[T0, T1 any] struct {
 	V0 T0
 	V1 T1
 }
 
-// Create a new tuple of 2 value(s).
-func New2[T0, T1 any](v0 T0, v1 T1) Tuple2[T0, T1] {
-	return Tuple2[T0, T1]{v0, v1}
+// New2 creates a new tuple of 2 value(s).
+func New2[T0, T1 any](v0 T0, v1 T1) *Tuple2[T0, T1] {
+	return &Tuple2[T0, T1]{v0, v1}
 }
 
-// Unpack the contents of the tuple into its 2 value(s).
-func (t Tuple2[T0, T1]) Unpack() (T0, T1) {
-	return t.V0, t.V1
-}
-
-// Tuple3 is a tuple that contains 3 value(s).
+// Tuple3 is a tuple containing 3 value(s).
 type Tuple3[T0, T1, T2 any] struct {
 	V0 T0
 	V1 T1
 	V2 T2
 }
 
-// Create a new tuple of 3 value(s).
-func New3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) Tuple3[T0, T1, T2] {
-	return Tuple3[T0, T1, T2]{v0, v1, v2}
+// New3 creates a new tuple of 3 value(s).
+func New3[T0, T1, T2 any](v0 T0, v1 T1, v2 T2) *Tuple3[T0, T1, T2] {
+	return &Tuple3[T0, T1, T2]{v0, v1, v2}
 }
 
-// Unpack the contents of the tuple into its 3 value(s).
-func (t Tuple3[T0, T1, T2]) Unpack() (T0, T1, T2) {
-	return t.V0, t.V1, t.V2
-}
-
-// Tuple4 is a tuple that contains 4 value(s).
+// Tuple4 is a tuple containing 4 value(s).
 type Tuple4[T0, T1, T2, T3 any] struct {
 	V0 T0
 	V1 T1
@@ -58,17 +43,12 @@ type Tuple4[T0, T1, T2, T3 any] struct {
 	V3 T3
 }
 
-// Create a new tuple of 4 value(s).
-func New4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) Tuple4[T0, T1, T2, T3] {
-	return Tuple4[T0, T1, T2, T3]{v0, v1, v2, v3}
+// New4 creates a new tuple of 4 value(s).
+func New4[T0, T1, T2, T3 any](v0 T0, v1 T1, v2 T2, v3 T3) *Tuple4[T0, T1, T2, T3] {
+	return &Tuple4[T0, T1, T2, T3]{v0, v1, v2, v3}
 }
 
-// Unpack the contents of the tuple into its 4 value(s).
-func (t Tuple4[T0, T1, T2, T3]) Unpack() (T0, T1, T2, T3) {
-	return t.V0, t.V1, t.V2, t.V3
-}
-
-// Tuple5 is a tuple that contains 5 value(s).
+// Tuple5 is a tuple containing 5 value(s).
 type Tuple5[T0, T1, T2, T3, T4 any] struct {
 	V0 T0
 	V1 T1
@@ -77,17 +57,12 @@ type Tuple5[T0, T1, T2, T3, T4 any] struct {
 	V4 T4
 }
 
-// Create a new tuple of 5 value(s).
-func New5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) Tuple5[T0, T1, T2, T3, T4] {
-	return Tuple5[T0, T1, T2, T3, T4]{v0, v1, v2, v3, v4}
+// New5 creates a new tuple of 5 value(s).
+func New5[T0, T1, T2, T3, T4 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4) *Tuple5[T0, T1, T2, T3, T4] {
+	return &Tuple5[T0, T1, T2, T3, T4]{v0, v1, v2, v3, v4}
 }
 
-// Unpack the contents of the tuple into its 5 value(s).
-func (t Tuple5[T0, T1, T2, T3, T4]) Unpack() (T0, T1, T2, T3, T4) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4
-}
-
-// Tuple6 is a tuple that contains 6 value(s).
+// Tuple6 is a tuple containing 6 value(s).
 type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
 	V0 T0
 	V1 T1
@@ -97,17 +72,12 @@ type Tuple6[T0, T1, T2, T3, T4, T5 any] struct {
 	V5 T5
 }
 
-// Create a new tuple of 6 value(s).
-func New6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) Tuple6[T0, T1, T2, T3, T4, T5] {
-	return Tuple6[T0, T1, T2, T3, T4, T5]{v0, v1, v2, v3, v4, v5}
+// New6 creates a new tuple of 6 value(s).
+func New6[T0, T1, T2, T3, T4, T5 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5) *Tuple6[T0, T1, T2, T3, T4, T5] {
+	return &Tuple6[T0, T1, T2, T3, T4, T5]{v0, v1, v2, v3, v4, v5}
 }
 
-// Unpack the contents of the tuple into its 6 value(s).
-func (t Tuple6[T0, T1, T2, T3, T4, T5]) Unpack() (T0, T1, T2, T3, T4, T5) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5
-}
-
-// Tuple7 is a tuple that contains 7 value(s).
+// Tuple7 is a tuple containing 7 value(s).
 type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
 	V0 T0
 	V1 T1
@@ -118,17 +88,12 @@ type Tuple7[T0, T1, T2, T3, T4, T5, T6 any] struct {
 	V6 T6
 }
 
-// Create a new tuple of 7 value(s).
-func New7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) Tuple7[T0, T1, T2, T3, T4, T5, T6] {
-	return Tuple7[T0, T1, T2, T3, T4, T5, T6]{v0, v1, v2, v3, v4, v5, v6}
+// New7 creates a new tuple of 7 value(s).
+func New7[T0, T1, T2, T3, T4, T5, T6 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6) *Tuple7[T0, T1, T2, T3, T4, T5, T6] {
+	return &Tuple7[T0, T1, T2, T3, T4, T5, T6]{v0, v1, v2, v3, v4, v5, v6}
 }
 
-// Unpack the contents of the tuple into its 7 value(s).
-func (t Tuple7[T0, T1, T2, T3, T4, T5, T6]) Unpack() (T0, T1, T2, T3, T4, T5, T6) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6
-}
-
-// Tuple8 is a tuple that contains 8 value(s).
+// Tuple8 is a tuple containing 8 value(s).
 type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
 	V0 T0
 	V1 T1
@@ -140,17 +105,12 @@ type Tuple8[T0, T1, T2, T3, T4, T5, T6, T7 any] struct {
 	V7 T7
 }
 
-// Create a new tuple of 8 value(s).
-func New8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
-	return Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{v0, v1, v2, v3, v4, v5, v6, v7}
+// New8 creates a new tuple of 8 value(s).
+func New8[T0, T1, T2, T3, T4, T5, T6, T7 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7) *Tuple8[T0, T1, T2, T3, T4, T5, T6, T7] {
+	return &Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]{v0, v1, v2, v3, v4, v5, v6, v7}
 }
 
-// Unpack the contents of the tuple into its 8 value(s).
-func (t Tuple8[T0, T1, T2, T3, T4, T5, T6, T7]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7
-}
-
-// Tuple9 is a tuple that contains 9 value(s).
+// Tuple9 is a tuple containing 9 value(s).
 type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
 	V0 T0
 	V1 T1
@@ -163,17 +123,12 @@ type Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any] struct {
 	V8 T8
 }
 
-// Create a new tuple of 9 value(s).
-func New9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
-	return Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{v0, v1, v2, v3, v4, v5, v6, v7, v8}
+// New9 creates a new tuple of 9 value(s).
+func New9[T0, T1, T2, T3, T4, T5, T6, T7, T8 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8) *Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8] {
+	return &Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]{v0, v1, v2, v3, v4, v5, v6, v7, v8}
 }
 
-// Unpack the contents of the tuple into its 9 value(s).
-func (t Tuple9[T0, T1, T2, T3, T4, T5, T6, T7, T8]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8
-}
-
-// Tuple10 is a tuple that contains 10 value(s).
+// Tuple10 is a tuple containing 10 value(s).
 type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
 	V0 T0
 	V1 T1
@@ -187,17 +142,12 @@ type Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any] struct {
 	V9 T9
 }
 
-// Create a new tuple of 10 value(s).
-func New10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
-	return Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9}
+// New10 creates a new tuple of 10 value(s).
+func New10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9) *Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9] {
+	return &Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9}
 }
 
-// Unpack the contents of the tuple into its 10 value(s).
-func (t Tuple10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9
-}
-
-// Tuple11 is a tuple that contains 11 value(s).
+// Tuple11 is a tuple containing 11 value(s).
 type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
 	V0  T0
 	V1  T1
@@ -212,17 +162,12 @@ type Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any] struct {
 	V10 T10
 }
 
-// Create a new tuple of 11 value(s).
-func New11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
-	return Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10}
+// New11 creates a new tuple of 11 value(s).
+func New11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10) *Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10] {
+	return &Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10}
 }
 
-// Unpack the contents of the tuple into its 11 value(s).
-func (t Tuple11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10
-}
-
-// Tuple12 is a tuple that contains 12 value(s).
+// Tuple12 is a tuple containing 12 value(s).
 type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
 	V0  T0
 	V1  T1
@@ -238,17 +183,12 @@ type Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any] struct {
 	V11 T11
 }
 
-// Create a new tuple of 12 value(s).
-func New12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
-	return Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11}
+// New12 creates a new tuple of 12 value(s).
+func New12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11) *Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11] {
+	return &Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11}
 }
 
-// Unpack the contents of the tuple into its 12 value(s).
-func (t Tuple12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11
-}
-
-// Tuple13 is a tuple that contains 13 value(s).
+// Tuple13 is a tuple containing 13 value(s).
 type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
 	V0  T0
 	V1  T1
@@ -265,17 +205,12 @@ type Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any] struct {
 	V12 T12
 }
 
-// Create a new tuple of 13 value(s).
-func New13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
-	return Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12}
+// New13 creates a new tuple of 13 value(s).
+func New13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12) *Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12] {
+	return &Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12}
 }
 
-// Unpack the contents of the tuple into its 13 value(s).
-func (t Tuple13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12
-}
-
-// Tuple14 is a tuple that contains 14 value(s).
+// Tuple14 is a tuple containing 14 value(s).
 type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] struct {
 	V0  T0
 	V1  T1
@@ -293,17 +228,12 @@ type Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any] str
 	V13 T13
 }
 
-// Create a new tuple of 14 value(s).
-func New14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
-	return Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13}
+// New14 creates a new tuple of 14 value(s).
+func New14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13) *Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13] {
+	return &Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13}
 }
 
-// Unpack the contents of the tuple into its 14 value(s).
-func (t Tuple14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13
-}
-
-// Tuple15 is a tuple that contains 15 value(s).
+// Tuple15 is a tuple containing 15 value(s).
 type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any] struct {
 	V0  T0
 	V1  T1
@@ -322,17 +252,12 @@ type Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any
 	V14 T14
 }
 
-// Create a new tuple of 15 value(s).
-func New15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
-	return Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14}
+// New15 creates a new tuple of 15 value(s).
+func New15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14) *Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14] {
+	return &Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14}
 }
 
-// Unpack the contents of the tuple into its 15 value(s).
-func (t Tuple15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14
-}
-
-// Tuple16 is a tuple that contains 16 value(s).
+// Tuple16 is a tuple containing 16 value(s).
 type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any] struct {
 	V0  T0
 	V1  T1
@@ -352,17 +277,12 @@ type Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V15 T15
 }
 
-// Create a new tuple of 16 value(s).
-func New16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
-	return Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15}
+// New16 creates a new tuple of 16 value(s).
+func New16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15) *Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15] {
+	return &Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15}
 }
 
-// Unpack the contents of the tuple into its 16 value(s).
-func (t Tuple16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15
-}
-
-// Tuple17 is a tuple that contains 17 value(s).
+// Tuple17 is a tuple containing 17 value(s).
 type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any] struct {
 	V0  T0
 	V1  T1
@@ -383,17 +303,12 @@ type Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V16 T16
 }
 
-// Create a new tuple of 17 value(s).
-func New17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
-	return Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16}
+// New17 creates a new tuple of 17 value(s).
+func New17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16) *Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16] {
+	return &Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16}
 }
 
-// Unpack the contents of the tuple into its 17 value(s).
-func (t Tuple17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16
-}
-
-// Tuple18 is a tuple that contains 18 value(s).
+// Tuple18 is a tuple containing 18 value(s).
 type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any] struct {
 	V0  T0
 	V1  T1
@@ -415,17 +330,12 @@ type Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V17 T17
 }
 
-// Create a new tuple of 18 value(s).
-func New18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
-	return Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17}
+// New18 creates a new tuple of 18 value(s).
+func New18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17) *Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17] {
+	return &Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17}
 }
 
-// Unpack the contents of the tuple into its 18 value(s).
-func (t Tuple18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17
-}
-
-// Tuple19 is a tuple that contains 19 value(s).
+// Tuple19 is a tuple containing 19 value(s).
 type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any] struct {
 	V0  T0
 	V1  T1
@@ -448,17 +358,12 @@ type Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V18 T18
 }
 
-// Create a new tuple of 19 value(s).
-func New19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
-	return Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18}
+// New19 creates a new tuple of 19 value(s).
+func New19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18) *Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18] {
+	return &Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18}
 }
 
-// Unpack the contents of the tuple into its 19 value(s).
-func (t Tuple19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18
-}
-
-// Tuple20 is a tuple that contains 20 value(s).
+// Tuple20 is a tuple containing 20 value(s).
 type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any] struct {
 	V0  T0
 	V1  T1
@@ -482,17 +387,12 @@ type Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V19 T19
 }
 
-// Create a new tuple of 20 value(s).
-func New20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
-	return Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19}
+// New20 creates a new tuple of 20 value(s).
+func New20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19) *Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] {
+	return &Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19}
 }
 
-// Unpack the contents of the tuple into its 20 value(s).
-func (t Tuple20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19
-}
-
-// Tuple21 is a tuple that contains 21 value(s).
+// Tuple21 is a tuple containing 21 value(s).
 type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any] struct {
 	V0  T0
 	V1  T1
@@ -517,17 +417,12 @@ type Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V20 T20
 }
 
-// Create a new tuple of 21 value(s).
-func New21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
-	return Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20}
+// New21 creates a new tuple of 21 value(s).
+func New21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20) *Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20] {
+	return &Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20}
 }
 
-// Unpack the contents of the tuple into its 21 value(s).
-func (t Tuple21[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20
-}
-
-// Tuple22 is a tuple that contains 22 value(s).
+// Tuple22 is a tuple containing 22 value(s).
 type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any] struct {
 	V0  T0
 	V1  T1
@@ -553,17 +448,12 @@ type Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V21 T21
 }
 
-// Create a new tuple of 22 value(s).
-func New22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
-	return Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21}
+// New22 creates a new tuple of 22 value(s).
+func New22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21) *Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21] {
+	return &Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21}
 }
 
-// Unpack the contents of the tuple into its 22 value(s).
-func (t Tuple22[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21
-}
-
-// Tuple23 is a tuple that contains 23 value(s).
+// Tuple23 is a tuple containing 23 value(s).
 type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any] struct {
 	V0  T0
 	V1  T1
@@ -590,17 +480,12 @@ type Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V22 T22
 }
 
-// Create a new tuple of 23 value(s).
-func New23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
-	return Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22}
+// New23 creates a new tuple of 23 value(s).
+func New23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22) *Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22] {
+	return &Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22}
 }
 
-// Unpack the contents of the tuple into its 23 value(s).
-func (t Tuple23[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22
-}
-
-// Tuple24 is a tuple that contains 24 value(s).
+// Tuple24 is a tuple containing 24 value(s).
 type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any] struct {
 	V0  T0
 	V1  T1
@@ -628,17 +513,12 @@ type Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V23 T23
 }
 
-// Create a new tuple of 24 value(s).
-func New24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
-	return Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23}
+// New24 creates a new tuple of 24 value(s).
+func New24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23) *Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23] {
+	return &Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23}
 }
 
-// Unpack the contents of the tuple into its 24 value(s).
-func (t Tuple24[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23
-}
-
-// Tuple25 is a tuple that contains 25 value(s).
+// Tuple25 is a tuple containing 25 value(s).
 type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any] struct {
 	V0  T0
 	V1  T1
@@ -667,17 +547,12 @@ type Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V24 T24
 }
 
-// Create a new tuple of 25 value(s).
-func New25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
-	return Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24}
+// New25 creates a new tuple of 25 value(s).
+func New25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24) *Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24] {
+	return &Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24}
 }
 
-// Unpack the contents of the tuple into its 25 value(s).
-func (t Tuple25[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24
-}
-
-// Tuple26 is a tuple that contains 26 value(s).
+// Tuple26 is a tuple containing 26 value(s).
 type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any] struct {
 	V0  T0
 	V1  T1
@@ -707,17 +582,12 @@ type Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V25 T25
 }
 
-// Create a new tuple of 26 value(s).
-func New26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
-	return Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25}
+// New26 creates a new tuple of 26 value(s).
+func New26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25) *Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25] {
+	return &Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25}
 }
 
-// Unpack the contents of the tuple into its 26 value(s).
-func (t Tuple26[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25
-}
-
-// Tuple27 is a tuple that contains 27 value(s).
+// Tuple27 is a tuple containing 27 value(s).
 type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any] struct {
 	V0  T0
 	V1  T1
@@ -748,17 +618,12 @@ type Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V26 T26
 }
 
-// Create a new tuple of 27 value(s).
-func New27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
-	return Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26}
+// New27 creates a new tuple of 27 value(s).
+func New27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26) *Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26] {
+	return &Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26}
 }
 
-// Unpack the contents of the tuple into its 27 value(s).
-func (t Tuple27[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26
-}
-
-// Tuple28 is a tuple that contains 28 value(s).
+// Tuple28 is a tuple containing 28 value(s).
 type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any] struct {
 	V0  T0
 	V1  T1
@@ -790,17 +655,12 @@ type Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V27 T27
 }
 
-// Create a new tuple of 28 value(s).
-func New28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
-	return Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27}
+// New28 creates a new tuple of 28 value(s).
+func New28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27) *Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27] {
+	return &Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27}
 }
 
-// Unpack the contents of the tuple into its 28 value(s).
-func (t Tuple28[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27
-}
-
-// Tuple29 is a tuple that contains 29 value(s).
+// Tuple29 is a tuple containing 29 value(s).
 type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any] struct {
 	V0  T0
 	V1  T1
@@ -833,17 +693,12 @@ type Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V28 T28
 }
 
-// Create a new tuple of 29 value(s).
-func New29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
-	return Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28}
+// New29 creates a new tuple of 29 value(s).
+func New29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28) *Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28] {
+	return &Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28}
 }
 
-// Unpack the contents of the tuple into its 29 value(s).
-func (t Tuple29[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28
-}
-
-// Tuple30 is a tuple that contains 30 value(s).
+// Tuple30 is a tuple containing 30 value(s).
 type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any] struct {
 	V0  T0
 	V1  T1
@@ -877,17 +732,12 @@ type Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V29 T29
 }
 
-// Create a new tuple of 30 value(s).
-func New30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
-	return Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29}
+// New30 creates a new tuple of 30 value(s).
+func New30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29) *Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29] {
+	return &Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29}
 }
 
-// Unpack the contents of the tuple into its 30 value(s).
-func (t Tuple30[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29
-}
-
-// Tuple31 is a tuple that contains 31 value(s).
+// Tuple31 is a tuple containing 31 value(s).
 type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any] struct {
 	V0  T0
 	V1  T1
@@ -922,17 +772,12 @@ type Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V30 T30
 }
 
-// Create a new tuple of 31 value(s).
-func New31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
-	return Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30}
+// New31 creates a new tuple of 31 value(s).
+func New31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30) *Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30] {
+	return &Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30}
 }
 
-// Unpack the contents of the tuple into its 31 value(s).
-func (t Tuple31[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30
-}
-
-// Tuple32 is a tuple that contains 32 value(s).
+// Tuple32 is a tuple containing 32 value(s).
 type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any] struct {
 	V0  T0
 	V1  T1
@@ -968,12 +813,7 @@ type Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T1
 	V31 T31
 }
 
-// Create a new tuple of 32 value(s).
-func New32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
-	return Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31}
-}
-
-// Unpack the contents of the tuple into its 32 value(s).
-func (t Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]) Unpack() (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) {
-	return t.V0, t.V1, t.V2, t.V3, t.V4, t.V5, t.V6, t.V7, t.V8, t.V9, t.V10, t.V11, t.V12, t.V13, t.V14, t.V15, t.V16, t.V17, t.V18, t.V19, t.V20, t.V21, t.V22, t.V23, t.V24, t.V25, t.V26, t.V27, t.V28, t.V29, t.V30, t.V31
+// New32 creates a new tuple of 32 value(s).
+func New32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31 any](v0 T0, v1 T1, v2 T2, v3 T3, v4 T4, v5 T5, v6 T6, v7 T7, v8 T8, v9 T9, v10 T10, v11 T11, v12 T12, v13 T13, v14 T14, v15 T15, v16 T16, v17 T17, v18 T18, v19 T19, v20 T20, v21 T21, v22 T22, v23 T23, v24 T24, v25 T25, v26 T26, v27 T27, v28 T28, v29 T29, v30 T30, v31 T31) *Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31] {
+	return &Tuple32[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31]{v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31}
 }
