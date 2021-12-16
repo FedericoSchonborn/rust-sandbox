@@ -92,7 +92,7 @@ func OkOr[T any, E error](o Option[T], err E) result.Result[T, E] {
 		return result.Ok[T, E](o.inner)
 	}
 
-	return result.Err[T, E](err)
+	return result.Err[T](err)
 }
 
 type OkOrElseFunc[E error] func() E
@@ -102,7 +102,7 @@ func OkOrElse[T any, E error](o Option[T], err OkOrElseFunc[E]) result.Result[T,
 		return result.Ok[T, E](o.inner)
 	}
 
-	return result.Err[T, E](err())
+	return result.Err[T](err())
 }
 
 type FilterFunc[T any] func(T) bool

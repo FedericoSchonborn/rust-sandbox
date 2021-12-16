@@ -18,7 +18,7 @@ func Get[T any](dt *DynTuple, i int) (T, error) {
 	var zero T
 
 	if i < 0 || i > dt.l {
-		return zero, fmt.Errorf("index %d is outside of range 0 to %d", i, dt.l)
+		return zero, fmt.Errorf("index %d is outside of range 0 to %d", i, dt.l-1)
 	}
 
 	value := dt.s[i]
