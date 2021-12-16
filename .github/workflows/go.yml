@@ -18,10 +18,15 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.18beta1
+          go-version: 1.17
+
+      - name: Set up Go tip
+        run: |
+          go install -v golang.org/dl/go1.18beta1@latest
+          go1.18beta1 download
 
       - name: Build
-        run: go build -v ./...
+        run: go1.18beta1 build -v ./...
 
       - name: Test
-        run: go test -v ./...
+        run: go1.18beta1 test -v ./...
