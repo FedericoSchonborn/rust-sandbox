@@ -3,11 +3,11 @@ package dyntuple
 import "fmt"
 
 type DynTuple struct {
-	s []interface{}
+	s []any
 	l int
 }
 
-func New(values ...interface{}) *DynTuple {
+func New(values ...any) *DynTuple {
 	return &DynTuple{
 		s: values,
 		l: len(values),

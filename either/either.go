@@ -8,7 +8,7 @@ import (
 
 type Either[L, R any] struct {
 	left  bool
-	inner interface{}
+	inner any // L | R
 }
 
 func Left[L, R any](value L) Either[L, R] {

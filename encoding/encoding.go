@@ -1,6 +1,6 @@
 package encoding
 
-type UnmarshalFunc func([]byte, interface{}) error
+type UnmarshalFunc func([]byte, any) error
 
 func Unmarshal[T any](f UnmarshalFunc, data []byte) (value T, err error) {
 	err = f(data, &value)

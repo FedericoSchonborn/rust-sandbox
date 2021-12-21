@@ -5,18 +5,18 @@ import (
 	"os"
 )
 
-func Eprint(a ...interface{}) (n int, err error) {
+func Eprint(a ...any) (n int, err error) {
 	return fmt.Fprint(os.Stderr, a...)
 }
 
-func Eprintf(format string, a ...interface{}) (n int, err error) {
+func Eprintf(format string, a ...any) (n int, err error) {
 	return fmt.Fprintf(os.Stderr, format, a...)
 }
 
-func Eprintln(a ...interface{}) (n int, err error) {
+func Eprintln(a ...any) (n int, err error) {
 	return fmt.Fprintln(os.Stderr, a...)
 }
 
-func Eprintfln(format string, a ...interface{}) (n int, err error) {
+func Eprintfln(format string, a ...any) (n int, err error) {
 	return Fprintfln(os.Stderr, format, a...)
 }

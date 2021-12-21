@@ -8,7 +8,7 @@ import (
 
 type Result[T, E any] struct {
 	ok    bool
-	inner interface{}
+	inner any // T | E
 }
 
 func Ok[T, E any](value T) Result[T, E] {
