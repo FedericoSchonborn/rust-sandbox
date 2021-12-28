@@ -3,15 +3,18 @@ package html_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/go-sandbox/html"
+	"github.com/fdschonborn/go-sandbox/html/a"
+	"github.com/fdschonborn/go-sandbox/html/p"
+	"github.com/fdschonborn/go-sandbox/html/span"
 )
 
 func Test(t *testing.T) {
-	html.P(
+	p.New(
 		"Here is a ",
-		html.A("https://go.dev", "link").
-			Target(html.ATargetBlank),
+		a.New("https://go.dev", "link").
+			Target(a.Blank),
 		", and a ",
-		html.Span("span"),
+		span.New("span"),
+		".",
 	)
 }
