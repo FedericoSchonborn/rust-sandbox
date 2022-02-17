@@ -3,7 +3,7 @@ package dyntuple_test
 import (
 	"fmt"
 
-	"github.com/fdschonborn/sandbox/tuple/dyntuple"
+	"github.com/fdschonborn/sandbox/go/tuple/dyntuple"
 )
 
 func Example() {

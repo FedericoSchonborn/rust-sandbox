@@ -3,7 +3,7 @@ package result
 import (
 	"fmt"
 
-	xfmt "github.com/fdschonborn/sandbox/fmt"
+	xfmt "github.com/fdschonborn/sandbox/go/fmt"
 )
 
 type Result[T, E any] struct {
