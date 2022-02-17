@@ -87,9 +87,9 @@ func Map[T, U any](o Option[T], fn MapFunc[T, U]) Option[U] {
 	return None[U]()
 }
 
-func OkOr[T any, E error](o Option[T], err E) result.Result[T, E] {
+func OkOr[T any, E error](o Option[T], err E) result.Result[T] {
 	if o.some {
-		return result.Ok[T, E](o.inner)
+		return result.Ok(o.inner)
 	}
 
 	return result.Err[T](err)
@@ -97,9 +97,9 @@ func OkOr[T any, E error](o Option[T], err E) result.Result[T, E] {
 
 type OkOrElseFunc[E error] func() E
 
-func OkOrElse[T any, E error](o Option[T], err OkOrElseFunc[E]) result.Result[T, E] {
+func OkOrElse[T any, E error](o Option[T], err OkOrElseFunc[E]) result.Result[T] {
 	if o.some {
-		return result.Ok[T, E](o.inner)
+		return result.Ok(o.inner)
 	}
 
 	return result.Err[T](err())
