@@ -1,8 +1,8 @@
 package ascii
 
 import (
-	"github.com/fdschonborn/go-sandbox/ascii"
-	"github.com/fdschonborn/go-sandbox/option"
+	"github.com/fdschonborn/sandbox/ascii"
+	"github.com/fdschonborn/sandbox/option"
 )
 
 func ToAscii(r rune) option.Option[byte] {

@@ -3,7 +3,7 @@ package either
 import (
 	"fmt"
 
-	xfmt "github.com/fdschonborn/go-sandbox/fmt"
+	xfmt "github.com/fdschonborn/sandbox/fmt"
 )
 
 type Either[L, R any] struct {

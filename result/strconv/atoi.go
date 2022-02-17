@@ -3,7 +3,7 @@ package strconv
 import (
 	"strconv"
 
-	"github.com/fdschonborn/go-sandbox/result"
+	"github.com/fdschonborn/sandbox/result"
 )
 
 func Atoi(s string) result.Result[int, error] {

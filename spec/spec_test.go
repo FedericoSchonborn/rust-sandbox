@@ -3,7 +3,7 @@ package spec_test
 import (
 	"fmt"
 
-	"github.com/fdschonborn/go-sandbox/spec"
+	"github.com/fdschonborn/sandbox/spec"
 )
 
 func Example() {

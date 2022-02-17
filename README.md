@@ -1,16 +1,20 @@
-# Go Sandbox
+# Code Sandbox
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/fdschonborn/go-sandbox.svg)](https://pkg.go.dev/github.com/fdschonborn/go-sandbox)
-[![Go](https://github.com/fdschonborn/go-sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/fdschonborn/go-sandbox/actions/workflows/go.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/fdschonborn/sandbox.svg)](https://pkg.go.dev/github.com/fdschonborn/sandbox)
+[![Go](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml)
+[![Rust](https://github.com/fdschonborn/sandbox/actions/workflows/rust.yml/badge.svg)](https://github.com/fdschonborn/sandbox/actions/workflows/rust.yml)
 
-Sandbox for code written in Go.
+## Notes
 
-**NOTE:** Almost all code on this repository requires Go 1.18+, as it uses type
-parameters. To install it, with a previously installed Go toolchain run:
+### Go
+
+Almost all Go packages on this repository require Go 1.18 or later, as they use
+type parameters. To install Go 1.18, with a previously installed Go toolchain
+run:
 
 ```sh
-$ go install golang.org/dl/gotip@latest
-# Installs the "gotip" command.
-$ gotip download
+$ go install golang.org/dl/go1.18rc1@latest
+# Installs the "go1.18rc1" command.
+$ go1.18rc1 download
 # Fetches and builds the Go toolchain.
 ```

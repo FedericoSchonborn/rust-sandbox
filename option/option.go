@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	xfmt "github.com/fdschonborn/go-sandbox/fmt"
-	"github.com/fdschonborn/go-sandbox/result"
+	xfmt "github.com/fdschonborn/sandbox/fmt"
+	"github.com/fdschonborn/sandbox/result"
 )
 
 type Option[T any] struct {

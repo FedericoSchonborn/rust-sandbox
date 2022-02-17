@@ -3,8 +3,8 @@ package result_test
 import (
 	"fmt"
 
-	"github.com/fdschonborn/go-sandbox/result"
-	"github.com/fdschonborn/go-sandbox/result/strconv"
+	"github.com/fdschonborn/sandbox/result"
+	"github.com/fdschonborn/sandbox/result/strconv"
 )
 
 func ExampleMap() {

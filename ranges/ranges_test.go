@@ -3,7 +3,7 @@ package ranges_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/go-sandbox/ranges"
+	"github.com/fdschonborn/sandbox/ranges"
 )
 
 func TestRangeContains(t *testing.T) {
