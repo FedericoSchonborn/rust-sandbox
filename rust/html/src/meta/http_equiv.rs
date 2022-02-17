@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub enum HttpEquiv {
     ContentSecurityPolicy(String),
     ContentType(String),

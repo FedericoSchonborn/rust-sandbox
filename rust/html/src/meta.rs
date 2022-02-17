@@ -3,6 +3,7 @@ pub use http_equiv::HttpEquiv;
 
 use crate::Element;
 
+#[derive(Debug)]
 pub enum Meta {
     Charset(String),
     HttpEquiv(HttpEquiv),
@@ -24,5 +25,5 @@ impl Meta {
 }
 
 impl Element for Meta {
-    fn render() {}
+    fn render(&self) {}
 }

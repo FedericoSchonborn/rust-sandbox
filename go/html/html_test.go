@@ -6,15 +6,16 @@ import (
 	"github.com/fdschonborn/sandbox/go/html/a"
 	"github.com/fdschonborn/sandbox/go/html/p"
 	"github.com/fdschonborn/sandbox/go/html/span"
+	"github.com/fdschonborn/sandbox/go/html/text"
 )
 
 func Test(t *testing.T) {
 	p.New(
-		"Here is a ",
-		a.New("https://go.dev", "link").
+		text.New("Here is a "),
+		a.New("https://go.dev", text.New("link")).
 			Target(a.Blank),
-		", and a ",
-		span.New("span"),
-		".",
+		text.New(", and a "),
+		span.New(text.New("span")),
+		text.New("."),
 	)
 }

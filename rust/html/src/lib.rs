@@ -10,6 +10,6 @@ pub mod p;
 #[doc(inline)]
 pub use p::P;
 
-pub trait Element {
-    fn render();
+pub trait Element: std::fmt::Debug {
+    fn render(&self);
 }

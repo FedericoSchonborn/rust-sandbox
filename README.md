@@ -1,4 +1,4 @@
-# Code Sandbox
+# Sandbox
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/fdschonborn/sandbox.svg)](https://pkg.go.dev/github.com/fdschonborn/sandbox)
 [![Go](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml)

@@ -1,5 +1,7 @@
 package a
 
+import "github.com/fdschonborn/sandbox/go/html"
+
 type Target string
 
 const (
@@ -12,10 +14,10 @@ const (
 type Element struct {
 	href     string
 	target   Target
-	children []any // Element | string
+	children []html.Element
 }
 
-func New(href string, children ...any) *Element {
+func New(href string, children ...html.Element) *Element {
 	return &Element{href: href, children: children}
 }
 
