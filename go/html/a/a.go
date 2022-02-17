@@ -1,23 +1,21 @@
 package a
 
-import "github.com/fdschonborn/sandbox/go/html"
-
 type Target string
 
 const (
-	Blank  Target = "_blank"
-	Self   Target = "_self"
-	Parent Target = "_parent"
-	Top    Target = "_top"
+	TargetBlank  Target = "_blank"
+	TargetSelf   Target = "_self"
+	TargetParent Target = "_parent"
+	TargetTop    Target = "_top"
 )
 
 type Element struct {
 	href     string
 	target   Target
-	children []html.Element
+	children []any
 }
 
-func New(href string, children ...html.Element) *Element {
+func New(href string, children ...any) *Element {
 	return &Element{href: href, children: children}
 }
 

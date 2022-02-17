@@ -1,12 +1,10 @@
 package p
 
-import "github.com/fdschonborn/sandbox/go/html"
-
 type Element struct {
-	children []html.Element
+	children []any
 }
 
-func New(children ...html.Element) *Element {
+func New(children ...any) *Element {
 	return &Element{children}
 }
 
