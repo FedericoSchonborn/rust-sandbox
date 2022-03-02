@@ -19,8 +19,8 @@ func Join[T any](handles ...*Handle[T]) []T {
 			result := handle.Join()
 
 			m.Lock()
-			defer m.Unlock()
 			results = append(results, result)
+			m.Unlock()
 
 			wg.Done()
 		}(handle)
