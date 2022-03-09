@@ -1,10 +1,12 @@
+//go:build go1.18
+
 package result_test
 
 import (
 	"fmt"
 
-	"github.com/fdschonborn/sandbox/go/result"
-	"github.com/fdschonborn/sandbox/go/result/strconv"
+	"github.com/FedericoSchonborn/sandbox/go/result"
+	"github.com/FedericoSchonborn/sandbox/go/result/strconv"
 )
 
 func ExampleMap() {

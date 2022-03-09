@@ -1,3 +1,5 @@
+//go:build go1.18
+
 package task_test
 
 import (
@@ -5,7 +7,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/fdschonborn/sandbox/go/task"
+	"github.com/FedericoSchonborn/sandbox/go/task"
 )
 
 func Example() {

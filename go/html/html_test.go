@@ -3,9 +3,9 @@ package html_test
 import (
 	"testing"
 
-	"github.com/fdschonborn/sandbox/go/html/a"
-	"github.com/fdschonborn/sandbox/go/html/p"
-	"github.com/fdschonborn/sandbox/go/html/span"
+	"github.com/FedericoSchonborn/sandbox/go/html/a"
+	"github.com/FedericoSchonborn/sandbox/go/html/p"
+	"github.com/FedericoSchonborn/sandbox/go/html/span"
 )
 
 func Test(t *testing.T) {

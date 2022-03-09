@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/fdschonborn/sandbox/go/ascii"
+	"github.com/FedericoSchonborn/sandbox/go/ascii"
 )
 
 func TestIs(t *testing.T) {

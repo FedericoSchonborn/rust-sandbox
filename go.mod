@@ -1,3 +1,3 @@
-module github.com/fdschonborn/sandbox
+module github.com/FedericoSchonborn/sandbox
 
 go 1.18

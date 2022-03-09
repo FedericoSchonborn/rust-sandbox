@@ -1,9 +1,11 @@
+//go:build go1.18
+
 package result
 
 import (
 	"fmt"
 
-	xfmt "github.com/fdschonborn/sandbox/go/fmt"
+	xfmt "github.com/FedericoSchonborn/sandbox/go/fmt"
 )
 
 type Result[T any] struct {

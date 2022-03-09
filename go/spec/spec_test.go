@@ -1,9 +1,11 @@
+//go:build go1.18
+
 package spec_test
 
 import (
 	"fmt"
 
-	"github.com/fdschonborn/sandbox/go/spec"
+	"github.com/FedericoSchonborn/sandbox/go/spec"
 )
 
 func Example() {

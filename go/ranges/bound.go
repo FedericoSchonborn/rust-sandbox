@@ -1,31 +1,17 @@
 package ranges
 
-type boundTag byte
-
-const (
-	boundIncluded  boundTag = 1
-	boundExcluded  boundTag = 2
-	boundUnbounded boundTag = 3
-)
-
 type Bound interface {
-	boundTag() boundTag
+	boundMarker()
 }
 
 type BoundIncluded int
 
-func (bi BoundIncluded) boundTag() boundTag {
-	return boundIncluded
-}
+func (BoundIncluded) boundMarker() {}
 
 type BoundExcluded int
 
-func (be BoundExcluded) boundTag() boundTag {
-	return boundExcluded
-}
+func (BoundExcluded) boundMarker() {}
 
 type BoundUnbounded struct{}
 
-func (bu BoundUnbounded) boundTag() boundTag {
-	return boundUnbounded
-}
+func (BoundUnbounded) boundMarker() {}

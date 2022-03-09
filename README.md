@@ -1,8 +1,8 @@
 # Sandbox
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/fdschonborn/sandbox.svg)](https://pkg.go.dev/github.com/fdschonborn/sandbox)
-[![Go](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/fdschonborn/sandbox/actions/workflows/go.yml)
-[![Rust](https://github.com/fdschonborn/sandbox/actions/workflows/rust.yml/badge.svg)](https://github.com/fdschonborn/sandbox/actions/workflows/rust.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/FedericoSchonborn/sandbox.svg)](https://pkg.go.dev/github.com/FedericoSchonborn/sandbox)
+[![Go](https://github.com/FedericoSchonborn/sandbox/actions/workflows/go.yml/badge.svg)](https://github.com/FedericoSchonborn/sandbox/actions/workflows/go.yml)
+[![Rust](https://github.com/FedericoSchonborn/sandbox/actions/workflows/rust.yml/badge.svg)](https://github.com/FedericoSchonborn/sandbox/actions/workflows/rust.yml)
 
 ## Notes
 

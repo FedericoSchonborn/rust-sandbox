@@ -1,9 +1,11 @@
+//go:build go1.18
+
 package strconv
 
 import (
 	"strconv"
 
-	"github.com/fdschonborn/sandbox/go/result"
+	"github.com/FedericoSchonborn/sandbox/go/result"
 )
 
 func Atoi(s string) result.Result[int] {
