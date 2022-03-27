@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	file, err := os.Create("tuple/tuple.go")
+	file, err := os.Create("go/tuple/tuple.go")
 	if err != nil {
 		panic(err)
 	}
@@ -25,7 +25,7 @@ func main() {
 		panic(err)
 	}
 
-	for n := 0; n < 32; n++ {
+	for n := 0; n < 128; n++ {
 		typeName := "Tuple" + strconv.Itoa(n+1)
 		funcName := "New" + strconv.Itoa(n+1)
 
@@ -79,7 +79,7 @@ func %[9]s[%[2]s](%[5]s) *%[1]s[%[4]s] {
 		}
 	}
 
-	cmd := exec.Command("gotip", "fmt", "./tuple")
+	cmd := exec.Command("go", "fmt", "./go/tuple")
 	cmd.Stdout = os.Stdout
 	if err := cmd.Run(); err != nil {
 		panic(err)
