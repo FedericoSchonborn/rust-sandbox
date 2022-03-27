@@ -4,22 +4,18 @@ package task
 
 import (
 	"sync"
-	"sync/atomic"
 )
 
 type Handle[T any] struct {
 	done  chan bool
 	value T
-	err   error
 }
 
-func Join[T any](handles ...*Handle[T]) ([]T, error) {
+func Join[T any](handles ...*Handle[T]) []T {
 	var (
 		wg     sync.WaitGroup
 		mu     sync.Mutex
 		values []T
-		err    error
-		stop   int32
 	)
 
 	for _, handle := range handles {
@@ -27,21 +23,7 @@ func Join[T any](handles ...*Handle[T]) ([]T, error) {
 
 		go func(handle *Handle[T]) {
 			defer wg.Done()
-
-			if atomic.LoadInt32(&stop) == 1 {
-				return
-			}
-
-			value, _err := handle.Join()
-			if _err != nil {
-				mu.Lock()
-				err = _err
-				mu.Unlock()
-
-				atomic.StoreInt32(&stop, 1)
-				return
-			}
-
+			value := handle.Join()
 			mu.Lock()
 			values = append(values, value)
 			mu.Unlock()
@@ -49,22 +31,22 @@ func Join[T any](handles ...*Handle[T]) ([]T, error) {
 	}
 
 	wg.Wait()
-	return values, err
+	return values
 }
 
-func New[T any](fn func() (T, error)) *Handle[T] {
+func New[T any](fn func() T) *Handle[T] {
 	handle := &Handle[T]{
 		done: make(chan bool),
 	}
 
 	go func() {
-		handle.value, handle.err = fn()
+		handle.value = fn()
 		handle.done <- true
 	}()
 	return handle
 }
 
-func (h *Handle[T]) Join() (T, error) {
+func (h *Handle[T]) Join() T {
 	<-h.done
-	return h.value, h.err
+	return h.value
 }

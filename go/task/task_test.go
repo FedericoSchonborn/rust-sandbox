@@ -11,27 +11,20 @@ import (
 )
 
 func Example() {
-	waitOneSecondAndReturnFive := func() (int, error) {
+	waitOneSecondAndReturnFive := func() int {
 		time.Sleep(1 * time.Second)
-		return 5, nil
-	}
-	handle := task.New(waitOneSecondAndReturnFive)
-
-	result, err := handle.Join()
-	if err != nil {
-		fmt.Println(err)
-		return
+		return 5
 	}
 
-	fmt.Println(result)
+	fmt.Println(task.New(waitOneSecondAndReturnFive).Join())
 	// Output:
 	// 5
 }
 
 func ExampleJoin() {
 	rand.Seed(time.Now().Unix())
-	returnSix := func() (int, error) {
-		return 6, nil
+	returnSix := func() int {
+		return 6
 	}
 
 	handles := make([]*task.Handle[int], 10)
@@ -39,13 +32,7 @@ func ExampleJoin() {
 		handles[i] = task.New(returnSix)
 	}
 
-	array, err := task.Join(handles...)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	fmt.Println(array)
+	fmt.Println(task.Join(handles...))
 	// Output:
 	// [6 6 6 6 6 6 6 6 6 6]
 }
