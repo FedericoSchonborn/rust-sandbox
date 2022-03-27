@@ -36,10 +36,10 @@ func (e Either[L, R]) IsRight() bool {
 func (e Either[L, R]) Format(f fmt.State, verb rune) {
 	var kind string
 	if e.left {
-		kind = "Left "
+		kind = "Left("
 	} else {
-		kind = "Right "
+		kind = "Right("
 	}
 
-	fmt.Fprintf(f, kind+xfmt.Format(f, verb), e.inner)
+	fmt.Fprintf(f, kind+xfmt.Format(f, verb)+")", e.inner)
 }

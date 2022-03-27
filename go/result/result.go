@@ -47,10 +47,10 @@ func Map[T any, U any](r Result[T], op func(T) U) Result[U] {
 func (r Result[T]) Format(f fmt.State, verb rune) {
 	var kind string
 	if r.ok {
-		kind = "Ok "
+		kind = "Ok("
 	} else {
-		kind = "Err "
+		kind = "Err("
 	}
 
-	fmt.Fprintf(f, kind+xfmt.Format(f, verb), r.inner)
+	fmt.Fprintf(f, kind+xfmt.Format(f, verb)+")", r.inner)
 }

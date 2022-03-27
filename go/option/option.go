@@ -134,15 +134,15 @@ func (o Option[T]) OrElse(fn OrElseFunc[T]) Option[T] {
 }
 
 type Zipped[L, R any] struct {
-	L L
-	R R
+	Left  L
+	Right R
 }
 
 func Zip[L, R any](l Option[L], r Option[R]) Option[Zipped[L, R]] {
 	if l.some && r.some {
 		return Some(Zipped[L, R]{
-			L: l.inner,
-			R: r.inner,
+			Left:  l.inner,
+			Right: r.inner,
 		})
 	}
 
@@ -155,5 +155,5 @@ func (o Option[T]) Format(f fmt.State, verb rune) {
 		return
 	}
 
-	fmt.Fprintf(f, "Some "+xfmt.Format(f, verb), o.inner)
+	fmt.Fprintf(f, "Some("+xfmt.Format(f, verb)+")", o.inner)
 }
