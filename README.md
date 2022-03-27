@@ -6,15 +6,4 @@
 
 ## Notes
 
-### Go
-
-Almost all Go packages on this repository require Go 1.18 or later, as they use
-type parameters. To install Go 1.18, with a previously installed Go toolchain
-run:
-
-```sh
-$ go install golang.org/dl/go1.18rc1@latest
-# Installs the "go1.18rc1" command.
-$ go1.18rc1 download
-# Fetches and builds the Go toolchain.
-```
+Almost all Go packages on this repository require Go 1.18 or later, as they use generics.
