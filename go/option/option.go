@@ -6,6 +6,7 @@ import (
 
 	xfmt "github.com/FedericoSchonborn/sandbox/go/fmt"
 	"github.com/FedericoSchonborn/sandbox/go/result"
+	"github.com/FedericoSchonborn/sandbox/go/zero"
 )
 
 type Option[T any] struct {
@@ -73,8 +74,7 @@ func (o Option[T]) UnwrapOrZero() (value T, ok bool) {
 		return o.inner, true
 	}
 
-	var zero T
-	return zero, false
+	return zero.Zero[T](), false
 }
 
 type MapFunc[T, U any] func(T) U
