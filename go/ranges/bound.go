@@ -1,16 +1,22 @@
 package ranges
 
+import "golang.org/x/exp/constraints"
+
 type Bound interface {
 	boundMarker()
 }
 
-type BoundIncluded int
+type BoundIncluded[T constraints.Ordered] struct {
+	Value T
+}
 
-func (BoundIncluded) boundMarker() {}
+func (BoundIncluded[T]) boundMarker() {}
 
-type BoundExcluded int
+type BoundExcluded[T constraints.Ordered] struct {
+	Value T
+}
 
-func (BoundExcluded) boundMarker() {}
+func (BoundExcluded[T]) boundMarker() {}
 
 type BoundUnbounded struct{}
 

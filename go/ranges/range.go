@@ -1,51 +1,53 @@
 package ranges
 
-type Bounds interface {
-	StartBound() Bound
-	EndBound() Bound
-	Contains(int) bool
+import "golang.org/x/exp/constraints"
+
+type Interface[T any, S Bound, E Bound] interface {
+	StartBound() S
+	EndBound() E
+	Contains(T) bool
 }
 
-var _ Bounds = Range{}
+var _ Interface[int, BoundIncluded[int], BoundExcluded[int]] = Range[int]{}
 
-type Range struct {
-	Start, End int
+type Range[T constraints.Ordered] struct {
+	Start, End T
 }
 
-func New(start, end int) Range {
-	return Range{Start: start, End: end}
+func New[T constraints.Ordered](start, end T) Range[T] {
+	return Range[T]{Start: start, End: end}
 }
 
-func (r Range) StartBound() Bound {
-	return BoundIncluded(r.Start)
+func (r Range[T]) StartBound() BoundIncluded[T] {
+	return BoundIncluded[T]{r.Start}
 }
 
-func (r Range) EndBound() Bound {
-	return BoundExcluded(r.End)
+func (r Range[T]) EndBound() BoundExcluded[T] {
+	return BoundExcluded[T]{r.End}
 }
 
-func (r Range) Contains(index int) bool {
+func (r Range[T]) Contains(index T) bool {
 	return (r.Start <= index) && (index < r.End)
 }
 
-var _ Bounds = Inclusive{}
+var _ Interface[int, BoundIncluded[int], BoundIncluded[int]] = Inclusive[int]{}
 
-type Inclusive struct {
-	Start, End int
+type Inclusive[T constraints.Ordered] struct {
+	Start, End T
 }
 
-func NewInclusive(start, end int) Inclusive {
-	return Inclusive{Start: start, End: end}
+func NewInclusive[T constraints.Ordered](start, end T) Inclusive[T] {
+	return Inclusive[T]{Start: start, End: end}
 }
 
-func (ir Inclusive) StartBound() Bound {
-	return BoundIncluded(ir.Start)
+func (ir Inclusive[T]) StartBound() BoundIncluded[T] {
+	return BoundIncluded[T]{ir.Start}
 }
 
-func (ir Inclusive) EndBound() Bound {
-	return BoundIncluded(ir.End)
+func (ir Inclusive[T]) EndBound() BoundIncluded[T] {
+	return BoundIncluded[T]{ir.End}
 }
 
-func (ir Inclusive) Contains(index int) bool {
+func (ir Inclusive[T]) Contains(index T) bool {
 	return (ir.Start <= index) && (index <= ir.End)
 }
