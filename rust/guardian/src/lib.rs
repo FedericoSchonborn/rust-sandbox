@@ -1,3 +1,5 @@
+#![warn(clippy::pedantic, clippy::cargo)]
+
 mod private {
     pub trait Sealed {}
 }
