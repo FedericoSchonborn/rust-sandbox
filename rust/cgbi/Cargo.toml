@@ -1,0 +1,11 @@
+[package]
+name = "cbgi"
+description = "Const Generics Bounding Integers!"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+unstable = ["guardian"]
+
+[dependencies]
+guardian = { path = "../guardian", optional = true }
