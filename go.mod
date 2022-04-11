@@ -2,4 +2,4 @@ module github.com/FedericoSchonborn/sandbox
 
 go 1.18
 
-require golang.org/x/exp v0.0.0-20220325121720-054d8573a5d8 // indirect
+require golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4
