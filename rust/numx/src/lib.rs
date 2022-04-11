@@ -1,43 +1,49 @@
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct BoundedUsize<const S: usize, const E: usize>(usize);
+#![warn(clippy::pedantic, clippy::cargo)]
 
-impl<const S: usize, const E: usize> BoundedUsize<S, E> {
-    pub fn new(value: usize) -> Option<Self> {
-        if value > S && value < E {
-            Some(Self(value))
-        } else {
-            None
+macro_rules! bounded_impl {
+    ($ty:ty => $name:ident) => {
+
+        pub struct $name<const MAX: $ty, const MIN: $ty>($ty);
+
+        impl<const MAX: $ty, const MIN: $ty> $name<MAX, MIN> {
+            #[must_use]
+            pub fn new(value: $ty) -> Option<Self> {
+                if value > MAX && value < MIN {
+                    Some(Self(value))
+                } else {
+                    None
+                }
+            }
+
+            #[must_use]
+            #[allow(clippy::missing_safety_doc)]
+            pub unsafe fn new_unchecked(value: $ty) -> Self {
+                Self(value)
+            }
+
+            #[must_use]
+            pub fn get(self) -> $ty {
+                self.0
+            }
         }
-    }
-
-    #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn new_unchecked(value: usize) -> Self {
-        Self(value)
-    }
-
-    pub fn get(self) -> usize {
-        self.0
+    };
+    ($ty:ty => $name:ident, $($tys:ty => $names:ident),+) => {
+        bounded_impl!($ty => $name);
+        bounded_impl!($($tys => $names),+);
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct BoundedIsize<const S: isize, const E: isize>(isize);
-
-impl<const S: isize, const E: isize> BoundedIsize<S, E> {
-    pub fn new(value: isize) -> Option<Self> {
-        if value > S && value < E {
-            Some(Self(value))
-        } else {
-            None
-        }
-    }
-
-    #[allow(clippy::missing_safety_doc)]
-    pub unsafe fn new_unchecked(value: isize) -> Self {
-        Self(value)
-    }
-
-    pub fn get(self) -> isize {
-        self.0
-    }
+bounded_impl! {
+    usize => BoundedUsize,
+    isize => BoundedIsize,
+    u8 => BoundedU8,
+    i8 => BoundedI8,
+    u16 => BoundedU16,
+    i16 => BoundedI16,
+    u32 => BoundedU32,
+    i32 => BoundedI32,
+    u64 => BoundedU64,
+    i64 => BoundedI64,
+    u128 => BoundedU128,
+    i128 => BoundedI128
 }
