@@ -16,5 +16,5 @@ func ExampleMap() {
 	fmt.Println(value)
 
 	// Output:
-	// Ok 4
+	// Ok(4)
 }
