@@ -1,24 +1,21 @@
-#![allow(incomplete_features)]
-#![feature(generic_const_exprs)]
-
 macro_rules! bounded_impl {
     ($name:ident($ty:ty)) => {
-        pub struct $name<const MIN: $ty, const MAX: $ty>($ty, ::guardian::Guard::<true>);
+        pub struct $name<const MIN: $ty, const MAX: $ty>($ty);
 
-        impl<const MIN: $ty, const MAX: $ty> $name<MIN, MAX> where ::guardian::Guard::<{ MIN < MAX }>: ::guardian::True {
+        impl<const MIN: $ty, const MAX: $ty> $name<MIN, MAX> where ::guardian::If::<{ MIN < MAX }>: ::guardian::True {
             #[must_use]
             pub fn new(value: $ty) -> Option<Self> {
                 if value < MIN || value > MAX {
                     None
                 } else {
-                    Some(Self(value, ::guardian::Guard))
+                    Some(Self(value))
                 }
             }
 
             #[must_use]
             #[allow(clippy::missing_safety_doc)]
             pub unsafe fn new_unchecked(value: $ty) -> Self {
-                Self(value, ::guardian::Guard)
+                Self(value)
             }
 
             #[must_use]
