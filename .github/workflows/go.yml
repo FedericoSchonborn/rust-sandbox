@@ -9,24 +9,20 @@ on:
       - master
 
 jobs:
-  build:
-    name: Build
+  build-test:
+    name: Build & Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Set up Go
+      - name: Install Go 1.18
         uses: actions/setup-go@v2
         with:
-          go-version: 1.17
-
-      - name: Set up Go tip
-        run: |
-          go install -v golang.org/dl/go1.18beta1@latest
-          go1.18beta1 download
+          go-version: 1.18
 
       - name: Build
-        run: go1.18beta1 build -v ./...
+        run: go build -v ./...
 
       - name: Test
-        run: go1.18beta1 test -v ./...
+        run: go test -v ./...
