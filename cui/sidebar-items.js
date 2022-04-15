@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BoundedI128",""],["BoundedI16",""],["BoundedI32",""],["BoundedI64",""],["BoundedI8",""],["BoundedIsize",""],["BoundedU128",""],["BoundedU16",""],["BoundedU32",""],["BoundedU64",""],["BoundedU8",""],["BoundedUsize",""]]});
+initSidebarItems({"struct":[["I128",""],["I16",""],["I32",""],["I64",""],["I8",""],["Isize",""],["U128",""],["U16",""],["U32",""],["U64",""],["U8",""],["Usize",""]]});
