@@ -40,16 +40,16 @@ macro_rules! cui {
 }
 
 cui![
-    Usize(usize),
-    Isize(isize),
-    U8(u8),
-    I8(i8),
-    U16(u16),
-    I16(i16),
-    U32(u32),
-    I32(i32),
-    U64(u64),
-    I64(i64),
-    U128(u128),
-    I128(i128)
+    ConstrainedUsize(usize),
+    ConstrainedIsize(isize),
+    ConstrainedU8(u8),
+    ConstrainedI8(i8),
+    ConstrainedU16(u16),
+    ConstrainedI16(i16),
+    ConstrainedU32(u32),
+    ConstrainedI32(i32),
+    ConstrainedU64(u64),
+    ConstrainedI64(i64),
+    ConstrainedU128(u128),
+    ConstrainedI128(i128)
 ];
