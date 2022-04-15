@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["And",""],["If",""],["Nand",""],["Nor",""],["Not",""],["Or",""],["Xnor",""],["Xor",""]],"trait":[["False",""],["True",""]]});
+initSidebarItems({"struct":[["And",""],["Guard",""],["Nand",""],["Nor",""],["Not",""],["Or",""],["Xnor",""],["Xor",""]],"trait":[["False",""],["True",""]]});

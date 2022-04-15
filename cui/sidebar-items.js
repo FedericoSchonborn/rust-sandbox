@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BoundedI128",""],["BoundedI16",""],["BoundedI32",""],["BoundedI64",""],["BoundedI8",""],["BoundedIsize",""],["BoundedU128",""],["BoundedU16",""],["BoundedU32",""],["BoundedU64",""],["BoundedU8",""],["BoundedUsize",""]]});

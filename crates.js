@@ -1,1 +1,1 @@
-window.ALL_CRATES = ["boolish","cbgi","guardian","stdpp"];
+window.ALL_CRATES = ["boolish","cui","guardian","stdpp"];
