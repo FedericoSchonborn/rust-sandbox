@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["stdpp"] = [{"text":"impl&lt;T&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/ops/bit/trait.Shl.html\" title=\"trait core::ops::bit::Shl\">Shl</a>&lt;T&gt; for <a class=\"struct\" href=\"stdpp/struct.cout.html\" title=\"struct stdpp::cout\">cout</a> <span class=\"where fmt-newline\">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html\" title=\"trait core::fmt::Display\">Display</a>,&nbsp;</span>","synthetic":false,"types":["stdpp::cout"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
