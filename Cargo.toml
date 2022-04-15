@@ -1,2 +1,2 @@
 [workspace]
-members = ["rust/*"]
+members = ["boolish", "cgbi", "guardian", "stdpp"]
