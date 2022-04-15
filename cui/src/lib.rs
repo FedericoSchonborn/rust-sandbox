@@ -1,15 +1,24 @@
-macro_rules! bounded_impl {
+#![warn(clippy::pedantic, clippy::cargo)]
+#![allow(incomplete_features)]
+#![feature(generic_const_exprs)]
+
+macro_rules! cui {
     ($name:ident($ty:ty)) => {
         pub struct $name<const MIN: $ty, const MAX: $ty>($ty);
 
-        impl<const MIN: $ty, const MAX: $ty> $name<MIN, MAX> where ::guardian::If::<{ MIN < MAX }>: ::guardian::True {
+        impl<const MIN: $ty, const MAX: $ty> $name<MIN, MAX> where ::guardian::Guard::<{ MIN <= MAX }>: ::guardian::True {
             #[must_use]
             pub fn new(value: $ty) -> Option<Self> {
-                if value < MIN || value > MAX {
+                if value <= MIN || value >= MAX {
                     None
                 } else {
                     Some(Self(value))
                 }
+            }
+
+            #[must_use]
+            pub fn from_const<const N: $ty>() -> Self where ::guardian::And<{ N >= MIN }, { N <= MAX }>: ::guardian::True {
+                Self(N)
             }
 
             #[must_use]
@@ -25,12 +34,12 @@ macro_rules! bounded_impl {
         }
     };
     ($name:ident($ty:ty), $($names:ident($tys:ty)),+) => {
-        bounded_impl!($name($ty));
-        bounded_impl!($($names($tys)),+);
+        cui!($name($ty));
+        cui!($($names($tys)),+);
     }
 }
 
-bounded_impl! {
+cui![
     BoundedUsize(usize),
     BoundedIsize(isize),
     BoundedU8(u8),
@@ -42,5 +51,5 @@ bounded_impl! {
     BoundedU64(u64),
     BoundedI64(i64),
     BoundedU128(u128),
-    BoundedI12(i128)
-}
+    BoundedI128(i128)
+];

@@ -7,4 +7,7 @@ fn main() {
     assert!(AsciiLowerAlpha::new(b'z').is_some());
     assert!(AsciiLowerAlpha::new(b'`').is_none());
     assert!(AsciiLowerAlpha::new(b'{').is_none());
+
+    #[cfg(feature = "guard")]
+    AsciiLowerAlpha::from_const::<b'f'>();
 }

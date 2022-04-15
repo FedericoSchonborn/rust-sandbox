@@ -10,7 +10,7 @@ impl Boolish for bool {
 
 impl Boolish for str {
     fn boolish(&self) -> bool {
-        self != ""
+        !self.is_empty()
     }
 }
 

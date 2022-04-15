@@ -11,10 +11,10 @@ pub trait True: private::Sealed {}
 pub trait False: private::Sealed {}
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct If<const C: bool>;
+pub struct Guard<const C: bool>;
 
-impl False for If<false> {}
-impl True for If<true> {}
+impl False for Guard<false> {}
+impl True for Guard<true> {}
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct Not<const C: bool>;

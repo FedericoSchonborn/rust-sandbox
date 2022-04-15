@@ -1,2 +1,2 @@
 [workspace]
-members = ["boolish", "cgbi", "guardian", "stdpp"]
+members = ["boolish", "cui", "guardian", "stdpp"]
